@@ -1,3 +1,4 @@
+import ContactForm from "../component/contact/ContactForm"
 import IconFacebook from "../iconos/IconFacebook"
 import IconInstagram from "../iconos/IconInstagram"
 import IconMail from "../iconos/IconMail"
@@ -12,7 +13,7 @@ const ContactPage = () => {
         <main className="h-[65%] flex">
             <aside className="h-full w-80 flex flex-col justify-between">
                 <div className="flex flex-col gap-12">
-                    <h2 className="text-3xl">Let’s discuss on something <span className="text-purple-500">cool</span> together</h2>
+                    <h2 className="text-3xl font-bold">Let’s discuss on something <span className="text-purple-500">cool</span> together</h2>
                     <div className="flex flex-col gap-4">
                         <button className="hover:bg-purple-500/20 flex gap-4 p-2 justify-start items-center ring-0 ring-purple-500 ring-inset hover:ring-2 rounded-md transition-all duration-300 hover:text-purple-600">
                             <div className="w-6 h-6"><IconMail/></div>
@@ -40,9 +41,8 @@ const ContactPage = () => {
                     </button>
                 </div>
             </aside>
-            <form>
+            <ContactForm/>
 
-            </form>
 
         </main>
     </div>

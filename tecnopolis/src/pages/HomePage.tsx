@@ -1,6 +1,6 @@
 import Robot from "../asset/robot.png"
 import Triangulo from "../asset/triangulo.png"
-import FooterInfo from '../component/FooterInfo'
+import FooterInfo from '../component/home/FooterInfo'
 
 const HomePage = () => {
   return (
@@ -16,8 +16,8 @@ const HomePage = () => {
           </div>
           <footer className="absolute bottom-0 left-1/2 -translate-x-1/2 flex">
             <FooterInfo title="What we Do" content="we do all likd if tecjjjlklkkljust test and see how we rool here at mmekut tech house "/>
-            <FooterInfo title="Our Vision" content="we do all likd if tecjjjlklkkljust test and see how we rool here at mmekut tech house "/>
-            <FooterInfo title="Contact Us" content="we do all likd if tecjjjlklkkljust test and see how we rool here at mmekut tech house "/>
+            <FooterInfo title="Technologies" content="we do all likd if tecjjjlklkkljust test and see how we rool here at mmekut tech house "/>
+            <FooterInfo title="Blog" content="we do all likd if tecjjjlklkkljust test and see how we rool here at mmekut tech house "/>
           </footer>
     </>
   )
