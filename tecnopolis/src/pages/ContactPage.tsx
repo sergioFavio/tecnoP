@@ -10,8 +10,8 @@ import IconX from "../iconos/IconX"
 const ContactPage = () => {
   return (
     <div className="text-white w-full h-full flex items-center justify-center">
-        <main className="h-[65%] flex">
-            <aside className="h-full w-80 flex flex-col justify-between">
+        <main className="h-[65%] flex gap-8">
+            <aside className="h-full w-64 flex flex-col justify-between">
                 <div className="flex flex-col gap-12">
                     <h2 className="text-3xl font-bold">Let’s discuss on something <span className="text-purple-500">cool</span> together</h2>
                     <div className="flex flex-col gap-4">

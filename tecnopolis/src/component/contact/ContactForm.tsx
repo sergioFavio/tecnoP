@@ -22,7 +22,7 @@ const ContactForm = () => {
             <Input placeholder="Your Message"/>
             <Input placeholder="Your Whatsapp/Telegram"/>
         </div>
-        <button className="text-white bg-purple-800 border-purple-800 cursor-pointer px-2 py-1 text-sm border rounded-md w-fit">Enviar</button>
+        <button className="text-white bg-purple-800 border-purple-800 cursor-pointer px-2 py-1 text-sm border rounded-md w-fit flex gap-2 items-center"><div className="w-4 h-4"><IconSend/></div>Enviar</button>
     </form>
   )
 }

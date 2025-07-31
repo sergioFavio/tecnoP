@@ -1,0 +1,55 @@
+.grilla {
+  -webkit-box-flex: 0;
+          flex: 0 0 auto;
+  -webkit-perspective: 600px;
+          perspective: 600px;
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  grid-template-rows: repeat(3, 150px);
+  grid-gap: 20px;
+  max-width: 480px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+.grilla> div {
+  
+  padding: 20px;
+  
+  box-shadow: 30px 30px 30px -20px rgba(0, 0, 0, 0.6);
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.grilla> div:hover{
+    -webkit-transform: translate3d(0px, 0px, 80px) !important;
+            transform: translate3d(0px, 0px, 80px) !important;
+    box-shadow: 15px 15px 20px -20px rgba(0, 0, 0, 0.8) !important;
+     
+}
+.grilla> div:nth-child(odd) {
+  -webkit-animation: 1000ms ease-in-out infinite alternate pulse;
+          animation: 1000ms ease-in-out infinite alternate pulse;
+}
+.grilla> div:nth-child(even) {
+  -webkit-animation: 1000ms 1000ms ease-in-out infinite alternate pulse;
+          animation: 1000ms 1000ms ease-in-out infinite alternate pulse;
+}
+
+@-webkit-keyframes pulse {
+  to {
+    -webkit-transform: translate3d(0px, 0px, -60px);
+            transform: translate3d(0px, 0px, -60px);
+    box-shadow: 15px 15px 20px -20px rgba(0, 0, 0, 0.8);
+  }
+}
+
+@keyframes pulse {
+  to {
+    -webkit-transform: translate3d(0px, 0px, -60px);
+            transform: translate3d(0px, 0px, -60px);
+    box-shadow: 15px 15px 20px -20px rgba(0, 0, 0, 0.8);
+  }
+}
