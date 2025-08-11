@@ -15,9 +15,9 @@ const HomePage = () => {
             </div> 
           </div>
           <footer className="absolute bottom-0 left-1/2 -translate-x-1/2 flex">
-            <FooterInfo title="What we Do" content="we do all likd if tecjjjlklkkljust test and see how we rool here at mmekut tech house "/>
-            <FooterInfo title="Technologies" content="we do all likd if tecjjjlklkkljust test and see how we rool here at mmekut tech house "/>
-            <FooterInfo title="Blog" content="we do all likd if tecjjjlklkkljust test and see how we rool here at mmekut tech house "/>
+            <FooterInfo linking="/what_we_do" title="What we Do" content="we do all likd if tecjjjlklkkljust test and see how we rool here at mmekut tech house "/>
+            <FooterInfo linking="/technology" title="Technologies" content="we do all likd if tecjjjlklkkljust test and see how we rool here at mmekut tech house "/>
+            <FooterInfo linking="/" title="Blog" content="we do all likd if tecjjjlklkkljust test and see how we rool here at mmekut tech house "/>
           </footer>
     </>
   )
