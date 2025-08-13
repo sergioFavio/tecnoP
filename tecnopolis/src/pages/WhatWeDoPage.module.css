@@ -17,10 +17,11 @@
     transform-style: preserve-3d;
     transition: transform 1s ease;
     cursor: pointer;
+    animation: rotate3d 8s infinite linear;
 }
 
 .box-card:hover {
-    animation: rotate3d 8s infinite linear;
+    animation-play-state: paused;
 }
 
 .face {

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./TechnologyPage.module.css";
 
 const TechnologyPage = () => {
@@ -5,16 +6,16 @@ const TechnologyPage = () => {
     <div className={styles.container}>
       <ul className={styles.socialList}>
         <li>
-          <a href="#">
+          <Link to="/card_hologram">
             <i className="fa fa-facebook" aria-hidden="true"></i>
             <span> - Deep Learning</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link to="/spread_fx_gallery">
             <i className="fa fa-twitter" aria-hidden="true"></i>
             <span> - AI Generative</span>
-          </a>
+          </Link>
         </li>
         <li>
           <a href="#">

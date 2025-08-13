@@ -8,6 +8,9 @@ import ProductsPage from "./pages/ProductsPage"
 import WhatWeDoPage from "./pages/WhatWeDoPage"
 import TechnologyPage from "./pages/TechnologyPage"
 
+import CardHologramPage from "./pages/CardHologramPage"
+import SpreadFxGallery from "./pages/SpreadFxGallery"
+
 function App() {
   
 
@@ -23,6 +26,10 @@ function App() {
 
          <Route path="/what_we_do" element={<WhatWeDoPage/>}/>
         <Route path="/technology" element={<TechnologyPage/>}/>
+
+        <Route path="/card_hologram" element={<CardHologramPage/>}/>
+        <Route path="/spread_fx_gallery" element={<SpreadFxGallery/>}/>
+
         </Route>
       </Routes>
     </HashRouter>

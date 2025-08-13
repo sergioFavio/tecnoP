@@ -1,17 +1,19 @@
-import { Link } from "react-router-dom"
+import type { HomeSubPages } from "../../pages/HomePage"
+import type React from "react"
 
 interface Props{
-    linking:string
+    linking:HomeSubPages
     title:string
     content:string
+    setSubpage: React.Dispatch<React.SetStateAction<HomeSubPages>>
 }
 
-const FooterInfo = ({ linking,title,content}:Props) => {
+const FooterInfo = ({ linking,title,content, setSubpage}:Props) => {
   return (
-    <div className="bg-black p-4 flex flex-col gap-2 w-80">
-        <h2 className="w-full text-center text-white font-medium"><Link to={linking} className="text-white">{title}</Link></h2>
-        <p className="text-white text-sm opacity-80">{content}</p>
-    </div>
+    <button onClick={()=>setSubpage(linking)} className="bg-black p-4 flex flex-col gap-2 w-80">
+        <h2 className="w-full text-center text-white font-medium">{title}</h2>
+        <p className="text-white text-sm opacity-80 text-start">{content}</p>
+    </button>
   )
 }
 
