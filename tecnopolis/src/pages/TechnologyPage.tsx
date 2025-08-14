@@ -8,7 +8,7 @@ const TechnologyPage = () => {
         <li>
           <Link to="/card_hologram">
             <i className="fa fa-facebook" aria-hidden="true"></i>
-            <span> - Deep Learning</span>
+            <span> - CV Computer Vi..</span>
           </Link>
         </li>
         <li>
@@ -20,13 +20,13 @@ const TechnologyPage = () => {
         <li>
           <Link to="/spread_fx_gallery">
             <i className="fa fa-google-plus" aria-hidden="true"></i>
-            <span> - NLP</span>
+            <span> - NLP Natural La..</span>
           </Link>
         </li>
         <li>
           <Link to="/spread_fx_gallery">
             <i className="fa fa-instagram" aria-hidden="true"></i>
-            <span> - Virtuals Assistants</span>
+            <span> - VA Virtual Assi..</span>
           </Link>
         </li>
       </ul>

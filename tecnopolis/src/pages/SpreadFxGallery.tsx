@@ -108,12 +108,12 @@ const SpreadFxGallery = () => {
     {
       width: 130,
       height: 90,
-      image: 'http://localhost:5173/src/asset/ai_model.png' //'https://picsum.photos/1618/712?random=996'
+      image: 'https://tecnopolis.pythonanywhere.com/assets/tecnologia01.png' // 'http://localhost:5173/src/asset/ai_model.png' 
     },
     {
       width: 120,
       height: 80,
-      image: 'https://picsum.photos/1200/800?random=1005'
+      image: 'https://tecnopolis.pythonanywhere.com/assets/ai_model.png' // 'https://picsum.photos/1200/800?random=1005'
     },
     {
       width: 64,
