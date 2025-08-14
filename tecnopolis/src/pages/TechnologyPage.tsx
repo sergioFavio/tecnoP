@@ -18,16 +18,16 @@ const TechnologyPage = () => {
           </Link>
         </li>
         <li>
-          <a href="#">
+          <Link to="/spread_fx_gallery">
             <i className="fa fa-google-plus" aria-hidden="true"></i>
             <span> - NLP</span>
-          </a>
+          </Link>
         </li>
         <li>
-          <a href="#">
+          <Link to="/spread_fx_gallery">
             <i className="fa fa-instagram" aria-hidden="true"></i>
             <span> - Virtuals Assistants</span>
-          </a>
+          </Link>
         </li>
       </ul>
     </div>
