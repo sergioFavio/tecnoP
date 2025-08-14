@@ -12,7 +12,7 @@ const TechnologyPage = () => {
           </Link>
         </li>
         <li>
-          <Link to="/spread_fx_gallery">
+          <Link to="/card_ancha">
             <i className="fa fa-twitter" aria-hidden="true"></i>
             <span> - AI Generative</span>
           </Link>

@@ -11,6 +11,8 @@ import TechnologyPage from "./pages/TechnologyPage"
 import CardHologramPage from "./pages/CardHologramPage"
 import SpreadFxGallery from "./pages/SpreadFxGallery"
 
+import CardAnchaPage from "./pages/CardAnchaPage"
+
 function App() {
   
 
@@ -28,6 +30,9 @@ function App() {
         <Route path="/technology" element={<TechnologyPage/>}/>
 
         <Route path="/card_hologram" element={<CardHologramPage/>}/>
+
+        <Route path="/card_ancha" element={<CardAnchaPage/>}/>
+
         <Route path="/spread_fx_gallery" element={<SpreadFxGallery/>}/>
 
         </Route>
