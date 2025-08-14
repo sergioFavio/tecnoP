@@ -30,7 +30,7 @@ const HomePage = () => {
         {subPage==="Technology" && <TechnologyPage/>}
         {/*subPage==="Blog" && <BlogPage/>*/}
           <footer className="absolute bottom-0 left-1/2 -translate-x-1/2 flex">
-            <FooterInfo setSubpage={setSubPage} linking="What We Do" title="What we Do" content="we do all likd if tecjjjlklkkljust test and see how we rool here at mmekut tech house "/>
+            <FooterInfo setSubpage={setSubPage} linking="What We Do" title="What We Do" content="we do all likd if tecjjjlklkkljust test and see how we rool here at mmekut tech house "/>
             <FooterInfo setSubpage={setSubPage} linking="Technology" title="Technologies" content="we do all likd if tecjjjlklkkljust test and see how we rool here at mmekut tech house "/>
             <FooterInfo setSubpage={setSubPage} linking="Blog" title="Blog" content="we do all likd if tecjjjlklkkljust test and see how we rool here at mmekut tech house "/>
           </footer>
