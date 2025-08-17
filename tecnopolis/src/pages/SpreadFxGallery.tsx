@@ -16,7 +16,7 @@ const SpreadFxGallery = () => {
       justifyContent: 'center',
       flexFlow: 'column nowrap',
       overflowX: 'hidden',
-      background: 'linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 50%, #2a2a4a 100%)',
+      background:'#000', //'linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 50%, #2a2a4a 100%)',
       fontFamily: 'Arial, sans-serif'
     },
     title: {
@@ -98,12 +98,14 @@ const SpreadFxGallery = () => {
     {
       width: 120,
       height: 80,
-      text: 'La creatividad es la inteligencia divirtiéndose. Cada idea que surge de la imaginación tiene el potencial de transformar el mundo. '
+      image: 'https://tecnopolis.pythonanywhere.com/assets/tecnologia01.png',
+      //text: 'La creatividad es la inteligencia divirtiéndose. Cada idea que surge de la imaginación tiene el potencial de transformar el mundo. '
     },
     {
       width: 90,
       height: 130,
-      text: 'El arte y la tecnología se fusionan para crear experiencias inmersivas que desafían nuestra percepción de la realidad. Cada interacción es una oportunidad para descubrir algo nuevo.'
+      image: 'https://tecnopolis.pythonanywhere.com/assets/ai_model.png'
+      //text: 'El arte y la tecnología se fusionan para crear experiencias inmersivas que desafían nuestra percepción de la realidad. Cada interacción es una oportunidad para descubrir algo nuevo.'
     },
     {
       width: 130,
@@ -118,12 +120,12 @@ const SpreadFxGallery = () => {
     {
       width: 64,
       height: 84,
-      image: 'https://picsum.photos/1042/1356?random=978'
+      image: 'https://tecnopolis.pythonanywhere.com/assets/ai_model.png'  //'https://picsum.photos/1042/1356?random=978'
     },
     {
       width: 100,
       height: 66,
-      image: 'https://picsum.photos/1000/666?random=943'
+      image: 'https://tecnopolis.pythonanywhere.com/assets/tecnologia02.png' //'https://picsum.photos/1000/666?random=943'
     }
   ];
 

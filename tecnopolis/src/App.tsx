@@ -12,6 +12,7 @@ import CardHologramPage from "./pages/CardHologramPage"
 import SpreadFxGallery from "./pages/SpreadFxGallery"
 
 import CardAnchaPage from "./pages/CardAnchaPage"
+import BlogPage from "./pages/BlogPage"
 
 function App() {
   
@@ -34,6 +35,8 @@ function App() {
         <Route path="/card_ancha" element={<CardAnchaPage/>}/>
 
         <Route path="/spread_fx_gallery" element={<SpreadFxGallery/>}/>
+
+        <Route path="/blog" element={<BlogPage/>}/>
 
         </Route>
       </Routes>
