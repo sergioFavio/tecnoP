@@ -38,7 +38,8 @@ const CardHologramPage = () => {
         fontFamily: 'Consolas, monospace',
         width: '100%',
         minHeight: '100vh',
-        background: '#1d061a',
+        //background: '#1d061a',
+        background: '#242424',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center'
@@ -250,7 +251,8 @@ const CardHologramPage = () => {
                 fontSize: '1.1em',
                 marginBottom: '10px',
                 lineHeight: '1.4em'
-              }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur.</p>
               <a 
                 href="#"
                 style={{

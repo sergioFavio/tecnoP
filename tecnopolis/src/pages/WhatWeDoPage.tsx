@@ -1,5 +1,6 @@
 import styles from "./WhatWeDoPage.module.css";
 
+
 const WhatWeDoPage = () => {
   return (
     <div className={styles.container}>
@@ -10,7 +11,7 @@ const WhatWeDoPage = () => {
         <div className={`${styles.face} ${styles.left}`}>Left</div>
         <div className={`${styles.face} ${styles.top}`}>Top</div>
         <div className={`${styles.face} ${styles.bottom}`}>Bottom</div>
-      </div>
+      </div>     
     </div>
   );
 }

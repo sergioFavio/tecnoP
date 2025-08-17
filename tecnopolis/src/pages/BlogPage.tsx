@@ -16,6 +16,7 @@ interface Article {
 const BlogPage = () => {
   const [visibleArticles, setVisibleArticles] = useState<number[]>([]);
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
 
   const articles = [
@@ -104,31 +105,40 @@ const BlogPage = () => {
     return colors[category] || 'bg-gray-500';
   };
 
-  const scrollLeft = () => {
+  const scrollToIndex = (index: number) => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -300, behavior: 'smooth' });
+      const cardWidth = 300; // Approximate width of each card including margin
+      carouselRef.current.scrollTo({ 
+        left: index * cardWidth, 
+        behavior: 'smooth' 
+      });
+      setCurrentIndex(index);
     }
   };
 
-  const scrollRight = () => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+  // Handle scroll to update current index
+  useEffect(() => {
+    const handleScroll = () => {
+      if (carouselRef.current) {
+        const scrollLeft = carouselRef.current.scrollLeft;
+        const cardWidth = 300;
+        const newIndex = Math.round(scrollLeft / cardWidth);
+        setCurrentIndex(Math.min(newIndex, articles.length - 1));
+      }
+    };
+
+    const carousel = carouselRef.current;
+    if (carousel) {
+      carousel.addEventListener('scroll', handleScroll);
+      return () => carousel.removeEventListener('scroll', handleScroll);
     }
-  };
+  }, [articles.length]);
 
   return (
-    <div className="min-h-screen bg-transparent w-full mt-20">
+    <div className="min-h-screen bg-transparent w-full mt-12">
       {/* Articles Carousel */}
       <main className="h-screen max-w-5xl mx-auto px-4 sm:px-6 lg:px-2 pb-10 pt-10 relative">
         <div className="relative">
-          <button 
-            onClick={scrollLeft}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-black bg-opacity-50 text-white p-2 rounded hover:bg-opacity-75 transition-opacity"
-            aria-label="Scroll left"
-          >
-            &lt;
-          </button>
-          
           <div 
             ref={carouselRef}
             className="flex overflow-x-auto scrollbar-hide snap-x snap-mandatory space-x-6 pb-4"
@@ -196,13 +206,21 @@ const BlogPage = () => {
             ))}
           </div>
           
-          <button 
-            onClick={scrollRight}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-black bg-opacity-50 text-white p-2 rounded hover:bg-opacity-75 transition-opacity"
-            aria-label="Scroll right"
-          >
-            &gt;
-          </button>
+          {/* Dots Navigation */}
+          <div className="flex justify-center mt-1 space-x-2">
+            {articles.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => scrollToIndex(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  currentIndex === index 
+                    ? 'bg-blue-600 shadow-lg' 
+                    : 'bg-gray-300 hover:bg-gray-400'
+                }`}
+                aria-label={`Ir al artículo ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </main>
 
@@ -268,15 +286,11 @@ const BlogPage = () => {
         </div>
       )}
 
-      {/* Animated Background Elements */}
+      {/* Animated Background Elements - Solo elementos que no sean puntos pulsantes */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-20 left-10 w-2 h-2 bg-blue-400 rounded-full opacity-20 animate-ping"></div>
-        <div className="absolute top-40 right-20 w-3 h-3 bg-purple-400 rounded-full opacity-30 animate-pulse"></div>
         <div className="absolute bottom-32 left-16 w-1 h-1 bg-pink-400 rounded-full opacity-25 animate-bounce"></div>
-        <div className="absolute top-60 left-1/2 w-2 h-2 bg-green-400 rounded-full opacity-20 animate-ping"></div>
         <div className="absolute bottom-48 right-12 w-1 h-1 bg-yellow-400 rounded-full opacity-30 animate-pulse"></div>
       </div>
-
 
     </div>
   );
