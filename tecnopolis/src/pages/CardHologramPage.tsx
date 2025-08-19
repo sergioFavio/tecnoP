@@ -91,7 +91,7 @@ const CardHologramPage = () => {
       title: "Card One",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur.",
       gradient: "linear-gradient(315deg, #ffbc00, #ff0058)",
-      modalContent: "Este es el contenido detallado de la primera carta. Aquí puedes incluir información más extensa sobre los servicios, productos o características que deseas mostrar. El efecto de holograma crea una experiencia visual única que captura la atención del usuario y hace que la información sea más memorable y atractiva."
+      modalContent: "Este es el contenido detallado de la primera carta. Aquí puedes incluir información más extensa sobre los servicios, productos o características que deseas mostrar. El efecto de holograma crea una experiencia visual única que captura la atención del usuario y hace que la información sea más memorable y atractiva.   Esta sección puede incluir especificaciones técnicas, beneficios adicionales, o cualquier información que consideres importante para tu audiencia. El diseño holográfico mantiene la consistencia visual mientras proporciona una experiencia interactiva."
     },
     {
       title: "Card Two", 

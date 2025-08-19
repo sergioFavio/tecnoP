@@ -2,9 +2,9 @@ import { useState } from "react"
 import Robot from "../asset/robot.png"
 import Triangulo from "../asset/triangulo.png"
 import FooterInfo from '../component/home/FooterInfo'
-//import WhatWeDoPage from "./WhatWeDoPage"
 
-import CardHologramPage from "./CardHologramPage"
+import WhatWeDoPage from "./WhatWeDoPage"
+//import CardHologramPage from "./CardHologramPage"
 
 import TechnologyPage from "./TechnologyPage"
 
@@ -31,7 +31,7 @@ const HomePage = () => {
           </>
         )}
 
-        {subPage==="What We Do" && <CardHologramPage/>}
+        {subPage==="What We Do" && <WhatWeDoPage/>}
         {subPage==="Technology" && <TechnologyPage/>}
         {subPage==="Blog" && <BlogPage/>}
           <footer className="absolute bottom-0 left-1/2 -translate-x-1/2 flex">
