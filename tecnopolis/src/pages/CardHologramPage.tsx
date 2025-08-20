@@ -77,7 +77,7 @@ const CardHologramPage = () => {
     }
   `;
 
-  const openModal = (title, content) => {
+  const openModal = (title:string, content:string) => {
     setModalContent({ title, content });
     setModalOpen(true);
   };
@@ -107,7 +107,7 @@ const CardHologramPage = () => {
     }
   ];
 
-  const renderCard = (cardInfo, index) => (
+  const renderCard = (cardInfo:any, index:number) => (
     <div 
       key={index}
       className="hologram-box"
@@ -123,11 +123,11 @@ const CardHologramPage = () => {
       }}
       onMouseEnter={(e) => {
         const box = e.currentTarget;
-        const before = box.querySelector('.before-element');
-        const after = box.querySelector('.after-element');
-        const content = box.querySelector('.content');
-        const spanBefore = box.querySelector('.span-before');
-        const spanAfter = box.querySelector('.span-after');
+        const before = box.querySelector('.before-element') as HTMLElement;
+        const after = box.querySelector('.after-element') as HTMLElement;
+        const content = box.querySelector('.content') as HTMLElement;
+        const spanBefore = box.querySelector('.span-before') as HTMLElement;
+        const spanAfter = box.querySelector('.span-after') as HTMLElement;
         
         if (before && after) {
           before.style.transform = 'skewX(0deg)';
@@ -161,11 +161,11 @@ const CardHologramPage = () => {
       }}
       onMouseLeave={(e) => {
         const box = e.currentTarget;
-        const before = box.querySelector('.before-element');
-        const after = box.querySelector('.after-element');
-        const content = box.querySelector('.content');
-        const spanBefore = box.querySelector('.span-before');
-        const spanAfter = box.querySelector('.span-after');
+        const before = box.querySelector('.before-element') as HTMLElement;
+        const after = box.querySelector('.after-element') as HTMLElement;
+        const content = box.querySelector('.content') as HTMLElement;
+        const spanBefore = box.querySelector('.span-before') as HTMLElement;
+        const spanAfter = box.querySelector('.span-after') as HTMLElement;
         
         if (before && after) {
           before.style.transform = 'skewX(15deg)';
@@ -322,13 +322,13 @@ const CardHologramPage = () => {
             cursor: 'pointer'
           }}
           onMouseEnter={(e) => {
-            const target = e.target;
+            const target = e.target as HTMLElement;
             target.style.background = '#ffcf4d';
             target.style.border = '1px solid rgba(255, 0, 88, 0.4)';
             target.style.boxShadow = '0 1px 15px rgba(1, 1, 1, 0.2)';
           }}
           onMouseLeave={(e) => {
-            const target = e.target;
+            const target = e.target as HTMLElement;
             target.style.background = '#fff';
             target.style.border = 'none';
             target.style.boxShadow = 'none';
@@ -466,14 +466,16 @@ const CardHologramPage = () => {
                   textShadow: '0 0 10px #00ffff'
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.background = '#00ffff';
-                  e.target.style.color = '#000';
-                  e.target.style.boxShadow = '0 0 20px #00ffff';
+                  const element = e.target as HTMLElement;
+                  element.style.background = '#00ffff';
+                  element.style.color = '#000';
+                  element.style.boxShadow = '0 0 20px #00ffff';
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.background = 'transparent';
-                  e.target.style.color = '#00ffff';
-                  e.target.style.boxShadow = 'none';
+                  const element = e.target as HTMLElement;
+                  element.style.background = 'transparent';
+                  element.style.color = '#00ffff';
+                  element.style.boxShadow = 'none';
                 }}
               >×</button>
 

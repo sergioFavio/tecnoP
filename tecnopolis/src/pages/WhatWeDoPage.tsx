@@ -1,176 +1,15 @@
 import { useState } from 'react';
+import "./WhatWeDoPage.css";
 
 const WhatWeDoPage = () => {
   const [modalOpen, setModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState({ title: '', content: '', color: '' });
 
-  const cubeStyles = `
-    .container {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #242424;
-        color: #fff;
-        font-family: Arial, sans-serif;
-        perspective: 1000px;
-    }
-
-    .box-card {
-        width: 200px;
-        height: 200px;
-        position: relative;
-        transform-style: preserve-3d;
-        transition: transform 1s ease;
-        cursor: pointer;
-        animation: rotate3d 8s infinite linear;
-    }
-
-    .box-card:hover {
-        animation-play-state: paused;
-    }
-
-    .face {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 1.5rem;
-        font-weight: bold;
-        backface-visibility: visible;
-        border-radius: 12px;
-        background: linear-gradient(145deg, #2a2a2a, #383838);
-        border: 2px solid #646cff;
-        transition: all 0.3s ease;
-        overflow: hidden;
-    }
-
-    .face::before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-        top: -100%;
-        left: -100%;
-        transition: all 0.5s ease;
-        transform: translateZ(20px);
-    }
-
-    .face::after {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(
-            135deg,
-            transparent 0%,
-            rgba(255, 255, 255, 0.05) 50%,
-            transparent 100%
-        );
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    .face:hover::before {
-        top: 100%;
-        left: 100%;
-    }
-
-    .face:hover::after {
-        opacity: 1;
-    }
-
-    .front {
-        transform: translateZ(100px);
-        border-color: #646cff;
-    }
-
-    .back {
-        transform: translateZ(-100px) rotateY(180deg);
-        border-color: #00bcd4;
-    }
-
-    .right {
-        transform: translateX(100px) rotateY(90deg);
-        border-color: #4caf50;
-    }
-
-    .left {
-        transform: translateX(-100px) rotateY(-90deg);
-        border-color: #ff4081;
-    }
-
-    .top {
-        transform: translateY(-100px) rotateX(90deg);
-        border-color: #ffc107;
-    }
-
-    .bottom {
-        transform: translateY(100px) rotateX(-90deg);
-        border-color: #9c27b0;
-    }
-
-    @keyframes rotate3d {
-        0% {
-            transform: rotateX(0) rotateY(0);
-        }
-        25% {
-            transform: rotateX(90deg) rotateY(90deg);
-        }
-        50% {
-            transform: rotateX(180deg) rotateY(180deg);
-        }
-        75% {
-            transform: rotateX(270deg) rotateY(270deg);
-        }
-        100% {
-            transform: rotateX(360deg) rotateY(360deg);
-        }
-    }
-
-    @keyframes modalAppear {
-      0% {
-        opacity: 0;
-        transform: scale(0.8) translateY(-50px);
-      }
-      100% {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-      }
-    }
-
-    @keyframes hologramGlow {
-      0%, 100% {
-        box-shadow: 0 0 20px rgba(0, 255, 255, 0.3), 0 0 40px rgba(0, 255, 255, 0.2);
-      }
-      50% {
-        box-shadow: 0 0 30px rgba(0, 255, 255, 0.5), 0 0 60px rgba(0, 255, 255, 0.3);
-      }
-    }
-
-    .hologram-modal {
-      animation: hologramGlow 2s ease-in-out infinite, modalAppear 0.5s ease-out;
-    }
-
-    @media (max-width: 768px) {
-        .box-card {
-            width: 150px;
-            height: 150px;
-        }
-        
-        .front { transform: translateZ(75px); }
-        .back { transform: translateZ(-75px) rotateY(180deg); }
-        .right { transform: translateX(75px) rotateY(90deg); }
-        .left { transform: translateX(-75px) rotateY(-90deg); }
-        .top { transform: translateY(-75px) rotateX(90deg); }
-        .bottom { transform: translateY(75px) rotateX(-90deg); }
-    }
-  `;
-
-  const faceData = {
+  const faceData:Record<string,{
+    title: string;
+    content: string;
+    color:string;
+  }> = {
     front: {
       title: 'Front Face',
       content: 'Esta es la cara frontal del cubo. Aquí puedes mostrar información sobre servicios principales, presentación de la empresa, o cualquier contenido destacado que desees que los usuarios vean primero.',
@@ -203,7 +42,7 @@ const WhatWeDoPage = () => {
     }
   };
 
-  const openModal = (face) => {
+  const openModal = (face:string) => {
     setModalContent(faceData[face]);
     setModalOpen(true);
   };
@@ -212,15 +51,14 @@ const WhatWeDoPage = () => {
     setModalOpen(false);
   };
 
-  const handleFaceClick = (face, event) => {
+  const handleFaceClick = (face:string, event: any) => {
     event.stopPropagation();
     openModal(face);
   };
 
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: cubeStyles }} />
-      <div className="container">
+      <div className="cubo-container">
         <div className="box-card">
           <div 
             className="face front" 
@@ -360,16 +198,18 @@ const WhatWeDoPage = () => {
                   textShadow: `0 0 10px ${modalContent.color}`
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.background = modalContent.color;
-                  e.target.style.color = '#000';
-                  e.target.style.boxShadow = `0 0 20px ${modalContent.color}`;
-                  e.target.style.transform = 'scale(1.1)';
+                  const element = e.target as HTMLElement;
+                  element.style.background = modalContent.color;
+                  element.style.color = '#000';
+                  element.style.boxShadow = `0 0 20px ${modalContent.color}`;
+                  element.style.transform = 'scale(1.1)';
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.background = 'transparent';
-                  e.target.style.color = modalContent.color;
-                  e.target.style.boxShadow = 'none';
-                  e.target.style.transform = 'scale(1)';
+                  const element = e.target as HTMLElement;
+                  element.style.background = 'transparent';
+                  element.style.color = modalContent.color;
+                  element.style.boxShadow = 'none';
+                  element.style.transform = 'scale(1)';
                 }}
               >×</button>
 

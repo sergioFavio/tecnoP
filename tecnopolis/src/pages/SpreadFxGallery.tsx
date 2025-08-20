@@ -16,7 +16,7 @@ const SpreadFxGallery = () => {
       justifyContent: 'center',
       flexFlow: 'column nowrap',
       overflowX: 'hidden',
-      background:'#000', //'linear-gradient(135deg, #0a0a1a 0%, #1a1a3a 50%, #2a2a4a 100%)',
+      //background:'#000', 
       fontFamily: 'Arial, sans-serif'
     },
     title: {

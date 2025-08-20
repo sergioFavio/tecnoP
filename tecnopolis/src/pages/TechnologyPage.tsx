@@ -6,25 +6,25 @@ const TechnologyPage = () => {
     <div className={styles.container}>
       <ul className={styles.socialList}>
         <li>
-          <Link to="/card_hologram">
+          <Link to="/technology/card_hologram">
             <i className="fa fa-facebook" aria-hidden="true"></i>
             <span> - CV Computer Vi..</span>
           </Link>
         </li>
         <li>
-          <Link to="/card_ancha">
+          <Link to="/technology/card_ancha">
             <i className="fa fa-twitter" aria-hidden="true"></i>
             <span> - AI Generative</span>
           </Link>
         </li>
         <li>
-          <Link to="/spread_fx_gallery">
+          <Link to="/technology/spread_fx_gallery">
             <i className="fa fa-google-plus" aria-hidden="true"></i>
             <span> - NLP Natural La..</span>
           </Link>
         </li>
         <li>
-          <Link to="/spread_fx_gallery">
+          <Link to="/technology/spread_fx_gallery">
             <i className="fa fa-instagram" aria-hidden="true"></i>
             <span> - VA Virtual Assi..</span>
           </Link>
