@@ -1,25 +1,238 @@
-import ServiceBox from "../component/services/ServiceBox"
-import styles from "./ServicesPage.module.css"
+import React from 'react';
+import { Link } from "react-router-dom";
 
-const ServicesPage = () => {
+const ServicesPage: React.FC = () => {
   return (
-    <div className="text-white flex items-center justify-center h-full w-full">
-        <div className="scale-[.80]">
-            <div className={styles.grilla}>
-                <ServiceBox titulo="Consultoría" descripcion="En TecnóPolis.Ai llevamos a cabo consultoría y desarrollo de ..." fondo={[255,0,0]}/>
-                <ServiceBox titulo="Asistentes Virtuales" descripcion="Desarrollo e implementación de asistentes virtuales inteligentes,..." fondo={[0,255,0]} letraColor/>
-                <ServiceBox titulo="Procesamiento de imágenes" descripcion="Detección y/o clasificación de objetos, mediante el procesa..." fondo={[0,0,255]}/>
-                <ServiceBox titulo="Procesamiento de Lenguaje Natural" descripcion="Análisis de sentimientos y emociones, mediante el ..." fondo={[255,255,0]} letraColor/>
-                <ServiceBox titulo="Agricultura" descripcion="Detección y Clasificación de enfermedades y plagas mediante..." fondo={[255,0,255]}/>
-                <ServiceBox titulo="Salud" descripcion="Desarrollo de aplicaciones IA para las áreas de Psiquiatría y Nutrición..." fondo={[0,255,255]} letraColor/>
-                <ServiceBox titulo="Seminarios" descripcion="Realización de Seminarios de alguna tématica en particular de IA..." fondo={[217, 160, 24]}/>
-                <ServiceBox titulo="titulo1" descripcion="descripción" fondo={[27, 24, 217]}/>
-                <ServiceBox titulo="titulo1" descripcion="descripción" fondo={[130, 130, 255]} letraColor/>
-                
-            </div>
-        </div>
+    <div className="flex items-center justify-center w-full bg-transparent">
+      <div className="grid grid-cols-3 gap-6 p-4">
+        {/* Slide In Down */}
+        <Link to="/card_ancha" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-amber-300 shadow-md rounded-lg animate-slide-in-down hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+          <span className="text-xs text-center">slideindown</span>
+        </Link>
+        
+        {/* Slide In Up */}
+        <Link to="/card_ancha" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-white shadow-md rounded-lg animate-slide-in-up hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+          <span className="text-xs text-center">slideinup</span>
+        </Link>
+        
+        {/* Slide In Left */}
+        <Link to="/card_ancha" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-orange-400 shadow-md rounded-lg animate-slide-in-left hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+          <span className="text-xs text-center">slideinleft</span>
+        </Link>
+        
+        {/* Slide In Right */}
+        <Link to="/card_ancha" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-green-400 shadow-md rounded-lg animate-slide-in-right hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+          <span className="text-xs text-center">slideinright</span>
+        </Link>
+        
+        {/* Slide Out Down */}
+        <Link to="/card_ancha" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-amber-300 shadow-md rounded-lg animate-slide-out-down hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+          <span className="text-xs text-center">slideoutdown</span>
+        </Link>
+        
+        {/* Slide Out Up */}
+        <Link to="/card_ancha" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-lime-400 shadow-md rounded-lg animate-slide-out-up hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+          <span className="text-xs text-center">slideoutup</span>
+        </Link>
+        
+        {/* Slide Out Left */}
+        <Link to="/card_ancha" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-orange-400 shadow-md rounded-lg animate-slide-out-left hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+          <span className="text-xs text-center">slideoutleft</span>
+        </Link>
+        
+        {/* Slide Out Right */}
+        <Link to="/card_ancha" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-sky-400 shadow-md rounded-lg animate-slide-out-right hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+          <span className="text-xs text-center">slideoutright</span>
+        </Link>
+        
+        {/* Slide Down */}
+        <Link to="/card_ancha" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-amber-400 shadow-md rounded-lg animate-slide-down hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+          <span className="text-xs text-center">slidedown</span>
+        </Link>
+        
+        {/* Slide Up */}
+        <Link to="/card_ancha" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-lime-400 shadow-md rounded-lg animate-slide-up hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+          <span className="text-xs text-center">slideup</span>
+        </Link>
+        
+        {/* Slide Left */}
+        <Link to="/card_ancha" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-blue-500 shadow-md rounded-lg animate-slide-left hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+          <span className="text-xs text-center">slideleft</span>
+        </Link>
+        
+        {/* Slide Right */}
+        <Link to="/card_ancha" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-red-500 shadow-md rounded-lg animate-slide-right hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+          <span className="text-xs text-center">slideright</span>
+        </Link>
+      </div>
+      
+      <style jsx>{`
+        @keyframes slide-in-down {
+          0% {
+            visibility: visible;
+            transform: translate3d(0, -100%, 0);
+          }
+          100% {
+            transform: translate3d(0, 0, 0);
+          }
+        }
+        
+        @keyframes slide-in-up {
+          0% {
+            visibility: visible;
+            transform: translate3d(0, 100%, 0);
+          }
+          100% {
+            transform: translate3d(0, 0, 0);
+          }
+        }
+        
+        @keyframes slide-in-left {
+          0% {
+            visibility: visible;
+            transform: translate3d(-100%, 0, 0);
+          }
+          100% {
+            transform: translate3d(0, 0, 0);
+          }
+        }
+        
+        @keyframes slide-in-right {
+          0% {
+            visibility: visible;
+            transform: translate3d(100%, 0, 0);
+          }
+          100% {
+            transform: translate3d(0, 0, 0);
+          }
+        }
+        
+        @keyframes slide-out-down {
+          0% {
+            transform: translate3d(0, 0, 0);
+          }
+          100% {
+            visibility: hidden;
+            transform: translate3d(0, 100%, 0);
+          }
+        }
+        
+        @keyframes slide-out-up {
+          0% {
+            transform: translate3d(0, 0, 0);
+          }
+          100% {
+            visibility: hidden;
+            transform: translate3d(0, -100%, 0);
+          }
+        }
+        
+        @keyframes slide-out-left {
+          0% {
+            transform: translate3d(0, 0, 0);
+          }
+          100% {
+            visibility: hidden;
+            transform: translate3d(-100%, 0, 0);
+          }
+        }
+        
+        @keyframes slide-out-right {
+          0% {
+            transform: translate3d(0, 0, 0);
+          }
+          100% {
+            visibility: hidden;
+            transform: translate3d(100%, 0, 0);
+          }
+        }
+        
+        @keyframes slide-down {
+          0% {
+            transform: translate3d(0, 0, 0);
+          }
+          100% {
+            transform: translate3d(0, 100%, 0);
+          }
+        }
+        
+        @keyframes slide-up {
+          0% {
+            transform: translate3d(0, 0, 0);
+          }
+          100% {
+            transform: translate3d(0, -100%, 0);
+          }
+        }
+        
+        @keyframes slide-left {
+          0% {
+            transform: translate3d(0, 0, 0);
+          }
+          100% {
+            transform: translate3d(-100%, 0, 0);
+          }
+        }
+        
+        @keyframes slide-right {
+          0% {
+            transform: translate3d(0, 0, 0);
+          }
+          100% {
+            transform: translate3d(100%, 0, 0);
+          }
+        }
+        
+        .animate-slide-in-down {
+          animation: slide-in-down 3s ease-in-out infinite;
+        }
+        
+        .animate-slide-in-up {
+          animation: slide-in-up 3s ease-in-out infinite;
+        }
+        
+        .animate-slide-in-left {
+          animation: slide-in-left 3s ease-in-out infinite;
+        }
+        
+        .animate-slide-in-right {
+          animation: slide-in-right 3s ease-in-out infinite;
+        }
+        
+        .animate-slide-out-down {
+          animation: slide-out-down 3s ease-in-out infinite;
+        }
+        
+        .animate-slide-out-up {
+          animation: slide-out-up 3s ease-in-out infinite;
+        }
+        
+        .animate-slide-out-left {
+          animation: slide-out-left 3s ease-in-out infinite;
+        }
+        
+        .animate-slide-out-right {
+          animation: slide-out-right 3s ease-in-out infinite;
+        }
+        
+        .animate-slide-down {
+          animation: slide-down 3s ease-in-out infinite;
+        }
+        
+        .animate-slide-up {
+          animation: slide-up 3s ease-in-out infinite;
+        }
+        
+        .animate-slide-left {
+          animation: slide-left 3s ease-in-out infinite;
+        }
+        
+        .animate-slide-right {
+          animation: slide-right 3s ease-in-out infinite;
+        }
+      `}</style>
     </div>
-  )
-}
+  );
+};
 
-export default ServicesPage
+export default ServicesPage;
