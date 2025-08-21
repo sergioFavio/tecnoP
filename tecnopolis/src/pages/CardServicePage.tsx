@@ -38,7 +38,7 @@ const CardServicePage = () => {
         fontFamily: 'Consolas, monospace',
         width: '100%',
         minHeight: '100vh',
-        background: '#1d061a',
+        //background: '#1d061a',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center'

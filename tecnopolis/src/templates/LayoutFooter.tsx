@@ -11,19 +11,19 @@ const LayoutFooter = () => {
         <FooterInfo
           linking="/what_we_do"
           title="What We Do"
-          content="we do all likd if tecjjjlklkkljust test and see how we rool here at mmekut tech house "
+          content="Quienes somos, que hacemos, nuestros servicios, nuestros objetivos. "
         />
         <span className="h-full w-[1px] bg-white opacity-80"></span>
         <FooterInfo
           linking="/technology"
           title="Technologies"
-          content="we do all likd if tecjjjlklkkljust test and see how we rool here at mmekut tech house "
+          content="En TecnóPolis.Ai utilizamos cuatro tipos de tecnologías de Inteligencia Artificial (IA). "
         />
         <span className="h-full w-[1px] bg-white opacity-80"></span>
         <FooterInfo
           linking="/blog"
           title="Blog"
-          content="we do all likd if tecjjjlklkkljust test and see how we rool here at mmekut tech house "
+          content="Publicaciones de artículos recientes sobre las áreas de IA, con temas de interés y actualidad. "
         />
       </footer>
     </div>

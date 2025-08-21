@@ -38,7 +38,7 @@ const CardAnchaPage = () => {
         fontFamily: 'Consolas, monospace',
         width: '100%',
         minHeight: '100vh',
-        background: '#1d061a',
+        //background: '#1d061a',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center'
@@ -239,20 +239,20 @@ const CardAnchaPage = () => {
                 zIndex: 1,
                 transition: '0.5s',
                 color: '#fff'
-              }}
+              }} 
             >
               <h2 style={{
                 fontSize: '2.5em',
                 color: '#fff',
                 marginBottom: '20px',
                 textAlign: 'center'
-              }}>Hologram Card</h2>
+              }}>AI Generative</h2>
               <p style={{
                 fontSize: '1.3em',
                 marginBottom: '20px',
                 lineHeight: '1.6em',
                 textAlign: 'center'
-              }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              }}>La IA Generativa es un área de la inteligencia artificial que permite a las máquinas crear contenido nuevo y original, como textos, imágenes, música o código, a partir de patrones aprendidos de grandes volúmenes de datos. Utiliza modelos avanzados, como redes neuronales profundas, para simular la creatividad humana y generar resultados que antes solo podían producir las personas, siendo útil en campos como el arte, el diseño, la programación, la educación y más.</p>
               <div style={{ textAlign: 'center' }}>
                 <a 
                   href="#"

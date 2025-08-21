@@ -6,9 +6,9 @@ const ServicesPage: React.FC = () => {
     <div className="flex items-center justify-center w-full bg-transparent">
       <div className="grid grid-cols-3 gap-6 p-4">
         {/* Slide In Down */}
-        <Link to="/card_service" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-amber-300 shadow-md rounded-lg animate-slide-in-down hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
-          <span className="text-xs text-center">slideindown</span>
-        </Link>
+        {/*<Link to="/card_service" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-amber-300 shadow-md rounded-lg animate-slide-in-down hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+          <span className="text-xs text-center">slideindownSERGIO</span>
+        </Link>*/}
         
         {/* Slide In Up */}
         <Link to="/card_service" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-white shadow-md rounded-lg animate-slide-in-up hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
@@ -56,14 +56,14 @@ const ServicesPage: React.FC = () => {
         </Link>
         
         {/* Slide Left */}
-        <Link to="/card_service" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-blue-500 shadow-md rounded-lg animate-slide-left hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+        {/*<Link to="/card_service" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-blue-500 shadow-md rounded-lg animate-slide-left hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
           <span className="text-xs text-center">slideleft</span>
-        </Link>
+        </Link>*/}
         
         {/* Slide Right */}
-        <Link to="/card_service" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-red-500 shadow-md rounded-lg animate-slide-right hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
-          <span className="text-xs text-center">slideright</span>
-        </Link>
+        {/*<Link to="/card_service" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-red-500 shadow-md rounded-lg animate-slide-right hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+          <span className="text-xs text-center">sliderightINDIRA</span>
+        </Link>*/}
       </div>
       
       <style>{`

@@ -32,9 +32,9 @@ const ProductsPage: React.FC = () => {
     },
     {
       id: 3,
-      title: 'Profesora Dislexia',
-      description: 'Profesora Dislexia es una plataforma de IA que ayuda a niños que tienen trastorno de aprendizaje, proporcionando una interacción con imágenes con algún contenido, pronunciando correctamente las palabras asociadas a dicha imagen mediante la ayuda de un asistente virtual (Profesora Dislexia), para luego recibir la dicción del niño(a) y evaluar si está correctamente hablada.',
-      videoUrl: 'https://www.youtube.com/embed/tirN-ZtSSBQ',
+      title: 'Camila Plejia',
+      description: 'El potencial de cambiar las vidas de las personas con ciertos tipos de discapacidad es una de las promesas de la inteligencia artificial (IA). En este contexto nace Camila Plejia, un asistente virtual con IA que permite a las personas con movilidad restringida realizar acciones para las que antes hubieran necesitado ayuda externa.Leer mensajes, redactar correos electrónicos, buscar videos o películas, encender luces o poner música, son tareas que las personas con movilidad dan por sentadas, pero que, para alguien con cuadriplejia (parálisis de las extremidades superiores e inferiores) se convierten en misiones imposibles, pero que ahora son posibles gracias a la tecnología.Una persona que está imposibilitada de mover sus manos y piernas, es muy dependiente de otras personas. Para ayudarlas es que se desarrolló esta herramienta que se llama Camila Plejia y que, mediante comandos de voz posibilita que se pueda interactuar con el computador. Es un asistente virtual que ayuda a personas con tetraplejia a mejorar su comunicación con el mundo exterior.',
+      videoUrl: 'https://www.youtube.com/watch?v=iPhoCedKH-c',
       imageUrl: '/img/projects/proyectoProfesoraDislexia.jpg',
       color: 'blue'
     }
@@ -58,7 +58,7 @@ const ProductsPage: React.FC = () => {
   console.log('Modal state:', isModalOpen); // Debug log
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen ">
       <style>{`
         @keyframes fadeIn {
           from { opacity: 0; }
@@ -100,7 +100,7 @@ const ProductsPage: React.FC = () => {
                 <span className="absolute block inset-x-0 bottom-0 lg:hidden lg:inset-y-0 lg:right-auto bg-gradient-to-t lg:bg-gradient-to-r from-white to-transparent w-full h-16 lg:h-full lg:w-16"></span>
                 
                 <div className="relative flex justify-end lg:justify-start flex-wrap text-white text-xl font-bold m-4">
-                  <div className="bg-green-500 px-4 py-1 rounded">Proyectos</div>
+                  <div className="bg-green-500 px-4 py-1 rounded">Proyecto</div>
                 </div>
               </div>
 

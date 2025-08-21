@@ -88,22 +88,22 @@ const CardHologramPage = () => {
 
   const cardData = [
     {
-      title: "Card One",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur.",
+      title: "Computer Vision (1)",
+      description: "Computer Vision (Visión por Computador), concepto y obejtivo.",
       gradient: "linear-gradient(315deg, #ffbc00, #ff0058)",
-      modalContent: "Este es el contenido detallado de la primera carta. Aquí puedes incluir información más extensa sobre los servicios, productos o características que deseas mostrar. El efecto de holograma crea una experiencia visual única que captura la atención del usuario y hace que la información sea más memorable y atractiva.   Esta sección puede incluir especificaciones técnicas, beneficios adicionales, o cualquier información que consideres importante para tu audiencia. El diseño holográfico mantiene la consistencia visual mientras proporciona una experiencia interactiva."
+      modalContent: "Computer Vision (visión por computadora) es un campo de la inteligencia artificial que permite a las máquinas interpretar y comprender el mundo visual. Utiliza algoritmos y modelos de aprendizaje automático para analizar imágenes y videos, extrayendo información útil como objetos, rostros, texto o movimientos. Su objetivo es imitar la capacidad humana de ver y entender el entorno, pero con la precisión y velocidad de una máquina."
     },
     {
-      title: "Card Two", 
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      title: "Computer Vision (2)", 
+      description: "Aplicaciones de Computer Vision (Visión por Computador), en distintos tipos de industrias.",
       gradient: "linear-gradient(315deg, #03a9f4, #ff0058)",
-      modalContent: "Contenido detallado de la segunda carta con información relevante. Esta sección puede incluir especificaciones técnicas, beneficios adicionales, o cualquier información que consideres importante para tu audiencia. El diseño holográfico mantiene la consistencia visual mientras proporciona una experiencia interactiva."
+      modalContent: "Esta tecnología se aplica en una amplia variedad de sectores. En la medicina, por ejemplo, ayuda a detectar enfermedades en radiografías o resonancias. En la industria automotriz, es clave para los vehículos autónomos, que deben reconocer señales de tránsito, peatones y otros vehículos. También se usa en la seguridad, el comercio minorista, la agricultura y muchas otras áreas donde la interpretación visual automatizada puede aportar eficiencia y precisión."
     },
     {
-      title: "Card Three",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", 
+      title: "Computer Vision (3)",
+      description: "Proceso y etapas de la Visón por Computador.", 
       gradient: "linear-gradient(315deg, #4dff03, #00d0ff)",
-      modalContent: "Información completa de la tercera carta. Aquí puedes agregar detalles específicos, características únicas, o cualquier contenido que ayude a los usuarios a entender mejor lo que ofreces. El modal holográfico proporciona un espacio dedicado para información más detallada sin saturar las tarjetas principales."
+      modalContent: "El proceso de Computer Vision generalmente incluye varias etapas: adquisición de la imagen, preprocesamiento, detección de características, clasificación y toma de decisiones. Gracias a los avances en redes neuronales profundas (deep learning), especialmente las redes convolucionales (CNN), la precisión de los sistemas de visión por computadora ha mejorado notablemente, acercándose e incluso superando en algunos casos la capacidad humana."
     }
   ];
 
