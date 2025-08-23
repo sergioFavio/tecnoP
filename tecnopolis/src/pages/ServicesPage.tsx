@@ -6,13 +6,16 @@ const ServicesPage: React.FC = () => {
     <div className="flex items-center justify-center w-full bg-transparent">
       <div className="grid grid-cols-3 gap-6 p-4">
         {/* Slide In Up */}
-        <Link to="/card_service?title=Slide In Up" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-white shadow-md rounded-lg animate-slide-in-up hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
-          <span className="text-xs text-center">Slide In Up</span>
+        <Link to="/card_service?title=Detección y Análisis de Imágenes&info=Análisis médico: Se aplica en la medicina para el análisis de radiografías y resonancias magnéticas. Se debe destacar la precisión y la velocidad con la que esta tecnología puede procesar grandes volúmenes de imágenes. Diagnóstico por imágenes, detección de anomalías en radiografías." className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-white shadow-md rounded-lg animate-slide-in-up hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+          <span className="text-xs text-center">Detección y Análisis de Imágenes</span>
         </Link>
         
         {/* Slide In Left */}
-        <Link to="/card_service?title=Slide In Left" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-orange-400 shadow-md rounded-lg animate-slide-in-left hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
-          <span className="text-xs text-center">Slide In Left</span>
+        <Link to="/card_service?title=Procesamiento de Lenguaje Natural (NLP)&info=Análisis de sentimientos: Monitoreo de redes sociales, feedback de clientes
+\nExtracción de información: Procesamiento de documentos, análisis de contratos
+\nClasificación de texto: Categorización automática de emails, documentos
+\nDetección de emociones: Análisis del estado emocional en conversaciones" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-orange-400 shadow-md rounded-lg animate-slide-in-left hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+          <span className="text-xs text-center">Procesamiento de Lenguaje Natural (NLP)</span>
         </Link>
         
         {/* Slide In Right */}
@@ -26,8 +29,8 @@ const ServicesPage: React.FC = () => {
         </Link>
         
         {/* Slide Out Up */}
-        <Link to="/card_service?title=Slide Out Up" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-lime-400 shadow-md rounded-lg animate-slide-out-up hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
-          <span className="text-xs text-center">Slide Out Up</span>
+        <Link to="/card_service?title=Capacitación" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-lime-400 shadow-md rounded-lg animate-slide-out-up hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+          <span className="text-xs text-center">Capacitación</span>
         </Link>
         
         {/* Slide Out Left */}
@@ -36,8 +39,8 @@ const ServicesPage: React.FC = () => {
         </Link>
         
         {/* Slide Out Right */}
-        <Link to="/card_service?title=Slide Out Right" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-sky-400 shadow-md rounded-lg animate-slide-out-right hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
-          <span className="text-xs text-center">Slide Out Right</span>
+        <Link to="/card_service?title=Consultoría" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-sky-400 shadow-md rounded-lg animate-slide-out-right hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+          <span className="text-xs text-center">Consultoría</span>
         </Link>
         
         {/* Slide Down */}

@@ -3,6 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 const CardServicePage = () => {
   const [searchParams] = useSearchParams();
   const title = searchParams.get('title') || 'Hologram Card';
+  const info = searchParams.get('info') || 'No hay información - Nao tem informacao - Do not have information.';
 
   // Estilos CSS como string para incluir las animaciones y responsividad
   const styles = `
@@ -324,7 +325,7 @@ const CardServicePage = () => {
                 marginBottom: window.innerWidth <= 768 ? '15px' : '20px',
                 lineHeight: window.innerWidth <= 480 ? '1.5em' : '1.6em',
                 textAlign: 'center'
-              }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              }}>{info}</p>
               <div style={{ textAlign: 'center' }}>
                 <Link 
                   to="/services"
