@@ -5,65 +5,50 @@ const ServicesPage: React.FC = () => {
   return (
     <div className="flex items-center justify-center w-full bg-transparent">
       <div className="grid grid-cols-3 gap-6 p-4">
-        {/* Slide In Down */}
-        {/*<Link to="/card_service" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-amber-300 shadow-md rounded-lg animate-slide-in-down hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
-          <span className="text-xs text-center">slideindownSERGIO</span>
-        </Link>*/}
-        
         {/* Slide In Up */}
-        <Link to="/card_service" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-white shadow-md rounded-lg animate-slide-in-up hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
-          <span className="text-xs text-center">slideinup</span>
+        <Link to="/card_service?title=Slide In Up" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-white shadow-md rounded-lg animate-slide-in-up hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+          <span className="text-xs text-center">Slide In Up</span>
         </Link>
         
         {/* Slide In Left */}
-        <Link to="/card_service" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-orange-400 shadow-md rounded-lg animate-slide-in-left hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
-          <span className="text-xs text-center">slideinleft</span>
+        <Link to="/card_service?title=Slide In Left" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-orange-400 shadow-md rounded-lg animate-slide-in-left hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+          <span className="text-xs text-center">Slide In Left</span>
         </Link>
         
         {/* Slide In Right */}
-        <Link to="/card_service" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-green-400 shadow-md rounded-lg animate-slide-in-right hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
-          <span className="text-xs text-center">slideinright</span>
+        <Link to="/card_service?title=Slide In Right" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-green-400 shadow-md rounded-lg animate-slide-in-right hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+          <span className="text-xs text-center">Slide In Right</span>
         </Link>
         
         {/* Slide Out Down */}
-        <Link to="/card_service" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-amber-300 shadow-md rounded-lg animate-slide-out-down hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
-          <span className="text-xs text-center">slideoutdown</span>
+        <Link to="/card_service?title=Slide Out Down" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-amber-300 shadow-md rounded-lg animate-slide-out-down hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+          <span className="text-xs text-center">Slide Out Down</span>
         </Link>
         
         {/* Slide Out Up */}
-        <Link to="/card_service" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-lime-400 shadow-md rounded-lg animate-slide-out-up hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
-          <span className="text-xs text-center">slideoutup</span>
+        <Link to="/card_service?title=Slide Out Up" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-lime-400 shadow-md rounded-lg animate-slide-out-up hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+          <span className="text-xs text-center">Slide Out Up</span>
         </Link>
         
         {/* Slide Out Left */}
-        <Link to="/card_service" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-orange-400 shadow-md rounded-lg animate-slide-out-left hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
-          <span className="text-xs text-center">slideoutleft</span>
+        <Link to="/card_service?title=Slide Out Left" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-orange-400 shadow-md rounded-lg animate-slide-out-left hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+          <span className="text-xs text-center">Slide Out Left</span>
         </Link>
         
         {/* Slide Out Right */}
-        <Link to="/card_service" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-sky-400 shadow-md rounded-lg animate-slide-out-right hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
-          <span className="text-xs text-center">slideoutright</span>
+        <Link to="/card_service?title=Slide Out Right" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-sky-400 shadow-md rounded-lg animate-slide-out-right hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+          <span className="text-xs text-center">Slide Out Right</span>
         </Link>
         
         {/* Slide Down */}
-        <Link to="/card_service" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-amber-400 shadow-md rounded-lg animate-slide-down hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
-          <span className="text-xs text-center">slidedown</span>
+        <Link to="/card_service?title=Slide Down" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-amber-400 shadow-md rounded-lg animate-slide-down hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+          <span className="text-xs text-center">Slide Down</span>
         </Link>
         
         {/* Slide Up */}
-        <Link to="/card_service" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-lime-400 shadow-md rounded-lg animate-slide-up hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
-          <span className="text-xs text-center">slideup</span>
+        <Link to="/card_service?title=Slide Up" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-lime-400 shadow-md rounded-lg animate-slide-up hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+          <span className="text-xs text-center">Slide Up</span>
         </Link>
-        
-        {/* Slide Left */}
-        {/*<Link to="/card_service" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-blue-500 shadow-md rounded-lg animate-slide-left hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
-          <span className="text-xs text-center">slideleft</span>
-        </Link>*/}
-        
-        {/* Slide Right */}
-        {/*<Link to="/card_service" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-red-500 shadow-md rounded-lg animate-slide-right hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
-          <span className="text-xs text-center">sliderightINDIRA</span>
-        </Link>*/}
       </div>
       
       <style>{`

@@ -1,4 +1,9 @@
+import { useSearchParams } from 'react-router-dom';
+
 const CardServicePage = () => {
+  const [searchParams] = useSearchParams();
+  const title = searchParams.get('title') || 'Hologram Card';
+
   // Estilos CSS como string para incluir las animaciones
   const styles = `
     @keyframes float1 {
@@ -246,7 +251,7 @@ const CardServicePage = () => {
                 color: '#fff',
                 marginBottom: '20px',
                 textAlign: 'center'
-              }}>Hologram Card</h2>
+              }}>{title}</h2>
               <p style={{
                 fontSize: '1.3em',
                 marginBottom: '20px',
@@ -290,4 +295,4 @@ const CardServicePage = () => {
   );
 };
 
-export default CardServicePage
+export default CardServicePage;
