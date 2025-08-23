@@ -51,7 +51,7 @@ const ServicesPage: React.FC = () => {
         </Link>
         
         {/* Slide Up */}
-        <Link to="/card_ancha" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-lime-400 shadow-md rounded-lg animate-slide-up hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+        <Link to="/card_service" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-lime-400 shadow-md rounded-lg animate-slide-up hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
           <span className="text-xs text-center">slideup</span>
         </Link>
         
