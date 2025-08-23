@@ -1,10 +1,10 @@
-import { useSearchParams } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 
 const CardServicePage = () => {
   const [searchParams] = useSearchParams();
   const title = searchParams.get('title') || 'Hologram Card';
 
-  // Estilos CSS como string para incluir las animaciones
+  // Estilos CSS como string para incluir las animaciones y responsividad
   const styles = `
     @keyframes float1 {
       0%, 100% {
@@ -31,6 +31,70 @@ const CardServicePage = () => {
     .floating-element-2 {
       animation: float2 3s ease-in-out infinite 1.5s;
     }
+
+    /* Media queries para responsividad */
+    @media (max-width: 1200px) {
+      .hologram-box {
+        width: 80vw !important;
+        max-width: 800px !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hologram-box {
+        width: 90vw !important;
+        height: auto !important;
+        min-height: 300px !important;
+        margin: 20px 15px !important;
+      }
+      
+      .content {
+        padding: 15px 20px !important;
+      }
+      
+      .content h2 {
+        font-size: 2em !important;
+        margin-bottom: 15px !important;
+      }
+      
+      .content p {
+        font-size: 1.1em !important;
+        margin-bottom: 15px !important;
+      }
+      
+      .content a {
+        font-size: 1.1em !important;
+        padding: 12px 20px !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hologram-box {
+        width: 95vw !important;
+        min-height: 280px !important;
+        margin: 15px 10px !important;
+      }
+      
+      .content {
+        padding: 12px 16px !important;
+      }
+      
+      .content h2 {
+        font-size: 1.8em !important;
+        margin-bottom: 12px !important;
+      }
+      
+      .content p {
+        font-size: 1em !important;
+        margin-bottom: 12px !important;
+        line-height: 1.5em !important;
+      }
+      
+      .content a {
+        font-size: 1em !important;
+        padding: 10px 18px !important;
+      }
+    }
   `;
 
   return (
@@ -43,7 +107,6 @@ const CardServicePage = () => {
         fontFamily: 'Consolas, monospace',
         width: '100%',
         minHeight: '100vh',
-        //background: '#1d061a',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center'
@@ -59,12 +122,14 @@ const CardServicePage = () => {
           margin: '0 auto'
         }}>
           
-          {/* Card 1 - Triple Width */}
+          {/* Card Responsive */}
           <div 
             className="hologram-box"
             style={{
               position: 'relative',
-              width: '960px',
+              width: '90vw',
+              maxWidth: '960px',
+              minWidth: '280px',
               height: '400px',
               display: 'flex',
               justifyContent: 'center',
@@ -90,23 +155,23 @@ const CardServicePage = () => {
               }
               
               if (content) {
-                content.style.left = '-25px';
-                content.style.padding = '60px 40px';
+                content.style.left = window.innerWidth <= 768 ? '0' : '-25px';
+                content.style.padding = window.innerWidth <= 768 ? '20px' : '60px 40px';
               }
               
               if (spanBefore) {
-                spanBefore.style.top = '-50px';
-                spanBefore.style.left = '50px';
-                spanBefore.style.width = '100px';
-                spanBefore.style.height = '100px';
+                spanBefore.style.top = window.innerWidth <= 768 ? '-30px' : '-50px';
+                spanBefore.style.left = window.innerWidth <= 768 ? '30px' : '50px';
+                spanBefore.style.width = window.innerWidth <= 768 ? '60px' : '100px';
+                spanBefore.style.height = window.innerWidth <= 768 ? '60px' : '100px';
                 spanBefore.style.opacity = '1';
               }
               
               if (spanAfter) {
-                spanAfter.style.bottom = '-50px';
-                spanAfter.style.right = '50px';
-                spanAfter.style.width = '100px';
-                spanAfter.style.height = '100px';
+                spanAfter.style.bottom = window.innerWidth <= 768 ? '-30px' : '-50px';
+                spanAfter.style.right = window.innerWidth <= 768 ? '30px' : '50px';
+                spanAfter.style.width = window.innerWidth <= 768 ? '60px' : '100px';
+                spanAfter.style.height = window.innerWidth <= 768 ? '60px' : '100px';
                 spanAfter.style.opacity = '1';
               }
             }}
@@ -120,16 +185,16 @@ const CardServicePage = () => {
               
               if (before && after) {
                 before.style.transform = 'skewX(15deg)';
-                before.style.left = '50px';
+                before.style.left = window.innerWidth <= 768 ? '30px' : '50px';
                 before.style.width = '50%';
                 after.style.transform = 'skewX(15deg)';
-                after.style.left = '50px';
+                after.style.left = window.innerWidth <= 768 ? '30px' : '50px';
                 after.style.width = '50%';
               }
               
               if (content) {
                 content.style.left = '0';
-                content.style.padding = '20px 40px';
+                content.style.padding = window.innerWidth <= 768 ? '15px 20px' : '20px 40px';
               }
               
               if (spanBefore) {
@@ -156,7 +221,7 @@ const CardServicePage = () => {
                 content: '',
                 position: 'absolute',
                 top: 0,
-                left: '50px',
+                left: window.innerWidth <= 768 ? '30px' : '50px',
                 width: '50%',
                 height: '100%',
                 background: 'linear-gradient(315deg, #ffbc00, #ff0058)',
@@ -173,7 +238,7 @@ const CardServicePage = () => {
                 content: '',
                 position: 'absolute',
                 top: 0,
-                left: '50px',
+                left: window.innerWidth <= 768 ? '30px' : '50px',
                 width: '50%',
                 height: '100%',
                 background: 'linear-gradient(315deg, #ffbc00, #ff0058)',
@@ -236,37 +301,39 @@ const CardServicePage = () => {
               style={{
                 position: 'relative',
                 left: 0,
-                padding: '20px 40px',
+                padding: window.innerWidth <= 768 ? '15px 20px' : '20px 40px',
                 background: 'rgba(255, 255, 255, 0.05)',
                 backdropFilter: 'blur(10px)',
                 boxShadow: '0 5px 15px rgba(0, 0, 0, 0.1)',
                 borderRadius: '8px',
                 zIndex: 1,
                 transition: '0.5s',
-                color: '#fff'
+                color: '#fff',
+                width: '100%',
+                boxSizing: 'border-box'
               }}
             >
               <h2 style={{
-                fontSize: '2.5em',
+                fontSize: window.innerWidth <= 480 ? '1.8em' : window.innerWidth <= 768 ? '2em' : '2.5em',
                 color: '#fff',
-                marginBottom: '20px',
+                marginBottom: window.innerWidth <= 768 ? '15px' : '20px',
                 textAlign: 'center'
               }}>{title}</h2>
               <p style={{
-                fontSize: '1.3em',
-                marginBottom: '20px',
-                lineHeight: '1.6em',
+                fontSize: window.innerWidth <= 480 ? '1em' : window.innerWidth <= 768 ? '1.1em' : '1.3em',
+                marginBottom: window.innerWidth <= 768 ? '15px' : '20px',
+                lineHeight: window.innerWidth <= 480 ? '1.5em' : '1.6em',
                 textAlign: 'center'
               }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
               <div style={{ textAlign: 'center' }}>
-                <a 
-                  href="#"
+                <Link 
+                  to="/services"
                   style={{
                     display: 'inline-block',
-                    fontSize: '1.2em',
+                    fontSize: window.innerWidth <= 480 ? '1em' : window.innerWidth <= 768 ? '1.1em' : '1.2em',
                     color: '#111',
                     background: '#fff',
-                    padding: '15px 25px',
+                    padding: window.innerWidth <= 480 ? '10px 18px' : window.innerWidth <= 768 ? '12px 20px' : '15px 25px',
                     borderRadius: '8px',
                     textDecoration: 'none',
                     fontWeight: '700',
@@ -285,7 +352,7 @@ const CardServicePage = () => {
                     target.style.border = 'none';
                     target.style.boxShadow = 'none';
                   }}
-                >Read More</a>
+                >Close</Link>
               </div>
             </div>
           </div>
