@@ -34,8 +34,8 @@ const ServicesPage: React.FC = () => {
         </Link>
         
         {/* Slide Out Left */}
-        <Link to="/card_service?title=Slide Out Left" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-orange-400 shadow-md rounded-lg animate-slide-out-left hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
-          <span className="text-xs text-center">Slide Out Left</span>
+        <Link to="/card_service?title=Análisis de Emociones&info=El análisis de emociones es una técnica de inteligencia artificial que permite identificar y clasificar las emociones humanas expresadas en datos como texto, audio, imágenes o video, utilizando modelos de procesamiento del lenguaje natural y aprendizaje automático. Esta herramienta se aplica en diversos campos como el marketing, la atención al cliente, la salud mental, la educación, los recursos humanos y la seguridad, ayudando a comprender mejor las reacciones emocionales de las personas y a tomar decisiones más informadas y empáticas en contextos digitales y sociales." className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-orange-400 shadow-md rounded-lg animate-slide-out-left hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+          <span className="text-xs text-center">Análisis de Emociones</span>
         </Link>
         
         {/* Slide Out Right */}
@@ -44,13 +44,13 @@ const ServicesPage: React.FC = () => {
         </Link>
         
         {/* Slide Down */}
-        <Link to="/card_service?title=Slide Down" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-amber-400 shadow-md rounded-lg animate-slide-down hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
-          <span className="text-xs text-center">Slide Down</span>
+        <Link to="/card_service?title=Anáilis de Sentimientos&info=El análisis de sentimientos es una técnica de procesamiento de lenguaje natural que permite identificar, extraer y clasificar las emociones expresadas en un texto, como opiniones positivas, negativas o neutras. Se utiliza ampliamente en áreas como el marketing, la atención al cliente y la política para entender cómo se sienten los usuarios o consumidores respecto a productos, servicios, marcas o temas específicos. Por ejemplo, una empresa puede aplicar análisis de sentimientos a comentarios en redes sociales para evaluar la percepción pública de una campaña, o un partido político puede analizar opiniones en Twitter para ajustar su estrategia comunicacional." className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-fuchsia-500 shadow-md rounded-lg animate-slide-down hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+          <span className="text-xs text-center">Anáilis de Sentimientos</span>
         </Link>
         
         {/* Slide Up */}
-        <Link to="/card_service?title=Slide Up" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-lime-400 shadow-md rounded-lg animate-slide-up hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
-          <span className="text-xs text-center">Slide Up</span>
+        <Link to="/card_service?title=Sistema de Recomendación&info=Un sistema de recomendación es una herramienta que utiliza algoritmos para sugerir productos, servicios o contenidos personalizados a los usuarios, basándose en sus preferencias, comportamientos anteriores o similitudes con otros usuarios. Su objetivo principal es facilitar la toma de decisiones y mejorar la experiencia del usuario, al mismo tiempo que ayuda a las empresas a aumentar la retención, las ventas y la satisfacción del cliente." className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-red-600 shadow-md rounded-lg animate-slide-up hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+          <span className="text-xs text-center">Sistema de Recomendación</span>
         </Link>
       </div>
       

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const CardAnchaPage = () => {
   // Estilos CSS como string para incluir las animaciones
   const styles = `
@@ -254,8 +256,8 @@ const CardAnchaPage = () => {
                 textAlign: 'center'
               }}>La IA Generativa es un área de la inteligencia artificial que permite a las máquinas crear contenido nuevo y original, como textos, imágenes, música o código, a partir de patrones aprendidos de grandes volúmenes de datos. Utiliza modelos avanzados, como redes neuronales profundas, para simular la creatividad humana y generar resultados que antes solo podían producir las personas, siendo útil en campos como el arte, el diseño, la programación, la educación y más.</p>
               <div style={{ textAlign: 'center' }}>
-                <a 
-                  href="#"
+                <Link 
+                  to="/technology"
                   style={{
                     display: 'inline-block',
                     fontSize: '1.2em',
@@ -280,7 +282,7 @@ const CardAnchaPage = () => {
                     target.style.border = 'none';
                     target.style.boxShadow = 'none';
                   }}
-                >Read More</a>
+                >Close</Link>
               </div>
             </div>
           </div>
