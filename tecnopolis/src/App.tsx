@@ -34,14 +34,13 @@ function App() {
             path="/technology/spread_fx_gallery"
             element={<SpreadFxGallery />}
           />
-        </Route>
-
-        <Route path="/" element={<Layout />}>
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/contact" element={<ContactPage />} />
-          <Route path="/card_service" element={<CardServicePage />} />
+          <Route path="/services/card_service" element={<CardServicePage />} />
         </Route>
+
+        <Route path="/" element={<Layout />}></Route>
       </Routes>
     </HashRouter>
   );

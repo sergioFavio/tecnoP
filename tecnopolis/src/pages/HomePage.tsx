@@ -12,7 +12,7 @@ const HomePage = () => {
       </div>
       <div className="w-full h-auto md:h-full flex justify-center">
         <div className="relative h-auto md:h-full w-full max-w-4xl flex items-center justify-center isolate">
-          <img src={Triangulo} className="absolute w-3/4 md:w-full h-auto mb-12 md:mb-28 ml-0 md:ml-28 max-w-md md:max-w-none"/>
+          <img src={Triangulo} className="absolute mt-12 scale-[0.8] w-3/4 md:w-full h-auto mb-12 md:mb-28 ml-0 md:ml-28 max-w-md md:max-w-none"/>
           <img src={Robot} className="h-64 md:h-full w-auto z-10 max-h-96 md:max-h-none"/>
         </div> 
       </div>

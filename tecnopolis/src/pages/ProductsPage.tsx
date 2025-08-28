@@ -217,7 +217,7 @@ const ProductsPage: React.FC = () => {
       ) : null}
 
       {/* Extra spacing */}
-      <div className="py-60 mt-8"></div>
+      {/*<div className="py-60 mt-8"></div>*/}
     </div>
   );
 };
