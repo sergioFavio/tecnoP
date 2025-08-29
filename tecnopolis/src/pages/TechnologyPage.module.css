@@ -1,69 +1,96 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400');
 
-.container {
+/* Reset para asegurar ancho completo */
+* {
   margin: 0;
   padding: 0;
-  background: #ccc;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.container {
+  margin: 0;
+  padding: 20px;
+  /*background: #ccc; */
   font-family: 'Roboto Condensed', sans-serif;
   min-height: 100vh;
+  width: 100%;
+  position: relative;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .socialList {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   display: flex;
+  flex-wrap: wrap;
   margin: 0;
-  padding: 0;
+  padding: 0 20px;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: none;
 }
 
 .socialList li {
   list-style: none;
-  margin: 0 5px;
+  margin: 10px 0;
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  justify-content: center;
 }
 
 .socialList li a .fa {
-  font-size: 40px;
+  font-size: 30px;
   color: #262626;
-  line-height: 80px;
+  line-height: 60px;
   transition: .5s;
-  padding-right: 14px;
+  padding-right: 10px;
 }
 
 .socialList li a span {
   padding: 0;
   margin: 0;
   position: absolute;
-  top: 30px;
+  top: 22px;
   color: #262626;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   transition: .5s;
+  font-size: 14px;
 }
 
 .socialList li a {
   text-decoration: none;
   display: block;
-  width: 210px;
-  height: 80px;
+  width: 180px;
+  height: 60px;
   background: #fff;
   text-align: left;
-  padding-left: 20px;
+  padding-left: 15px;
   transform: rotate(-30deg) skew(25deg) translate(0,0);
   transition: .5s;
-  box-shadow: -20px 20px 10px rgba(0,0,0,.5);
+  box-shadow: -15px 15px 8px rgba(0,0,0,.5);
 }
 
 .socialList li a:before {
   content: '';
   position: absolute;
-  top: 10px;
-  left: -20px;
+  top: 8px;
+  left: -15px;
   height: 100%;
-  width: 20px;
+  width: 15px;
   background: #b1b1b1;
   transition: .5s;
   transform: rotate(0deg) skewY(-45deg);
@@ -72,9 +99,9 @@
 .socialList li a:after {
   content: '';
   position: absolute;
-  bottom: -20px;
-  left: -10px;
-  height: 20px;
+  bottom: -15px;
+  left: -8px;
+  height: 15px;
   width: 100%;
   background: #b1b1b1;
   transition: .5s;
@@ -82,8 +109,8 @@
 }
 
 .socialList li a:hover {
-  transform: rotate(-30deg) skew(25deg) translate(20px,-15px);
-  box-shadow: -50px 50px 50px rgba(0,0,0,.5);
+  transform: rotate(-30deg) skew(25deg) translate(15px,-12px);
+  box-shadow: -40px 40px 40px rgba(0,0,0,.5);
 }
 
 .socialList li:hover .fa {
@@ -132,4 +159,165 @@
 }
 .socialList li:hover:nth-child(4) a:after {
   background: #e46880;
+}
+
+/* Media Queries para responsividad */
+
+/* Tablets y pantallas medianas */
+@media (max-width: 1024px) {
+  .socialList {
+    flex-direction: row;
+    gap: 15px;
+    justify-content: space-between;
+    padding: 0 15px;
+  }
+  
+  .socialList li {
+    margin: 5px 0;
+    flex: 1;
+    min-width: 180px;
+  }
+  
+  .socialList li a {
+    width: 200px;
+    height: 65px;
+  }
+  
+  .socialList li a .fa {
+    font-size: 32px;
+    line-height: 65px;
+    padding-right: 12px;
+  }
+  
+  .socialList li a span {
+    top: 25px;
+    letter-spacing: 3px;
+  }
+}
+
+/* Móviles */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px 0;
+  }
+  
+  .socialList {
+    flex-direction: row;
+    gap: 5px;
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+  
+  .socialList li {
+    margin: 8px 0;
+    flex: 1;
+    min-width: 120px;
+  }
+  
+  .socialList li a {
+    width: 140px;
+    height: 55px;
+    padding-left: 12px;
+  }
+  
+  .socialList li a .fa {
+    font-size: 22px;
+    line-height: 55px;
+    padding-right: 6px;
+  }
+  
+  .socialList li a span {
+    top: 20px;
+    letter-spacing: 0.5px;
+    font-size: 11px;
+  }
+  
+  .socialList li a:before {
+    top: 6px;
+    left: -12px;
+    width: 12px;
+  }
+  
+  .socialList li a:after {
+    bottom: -12px;
+    left: -6px;
+    height: 12px;
+  }
+  
+  .socialList li a:hover {
+    transform: rotate(-30deg) skew(25deg) translate(10px,-8px);
+    box-shadow: -30px 30px 30px rgba(0,0,0,.5);
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: 480px) {
+  .container {
+    padding: 10px 0;
+  }
+  
+  .socialList {
+    flex-direction: column;
+    gap: 15px;
+    padding: 0;
+  }
+  
+  .socialList li {
+    flex: none;
+    width: 100%;
+    min-width: auto;
+  }
+  
+  .socialList li a {
+    width: 250px;
+    height: 50px;
+    padding-left: 10px;
+  }
+  
+  .socialList li a .fa {
+    font-size: 20px;
+    line-height: 50px;
+    padding-right: 6px;
+  }
+  
+  .socialList li a span {
+    top: 18px;
+    letter-spacing: 0.5px;
+    font-size: 11px;
+  }
+  
+  .socialList li a:before {
+    top: 5px;
+    left: -10px;
+    width: 10px;
+  }
+  
+  .socialList li a:after {
+    bottom: -10px;
+    left: -5px;
+    height: 10px;
+  }
+  
+  .socialList li a:hover {
+    transform: rotate(-30deg) skew(25deg) translate(8px,-6px);
+    box-shadow: -25px 25px 25px rgba(0,0,0,.5);
+  }
+}
+
+/* Pantallas muy pequeñas */
+@media (max-width: 360px) {
+  .socialList li a {
+    width: 180px;
+    height: 45px;
+  }
+  
+  .socialList li a .fa {
+    font-size: 18px;
+    line-height: 45px;
+  }
+  
+  .socialList li a span {
+    top: 16px;
+    font-size: 10px;
+  }
 }
