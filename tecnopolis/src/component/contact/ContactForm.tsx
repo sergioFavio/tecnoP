@@ -18,11 +18,11 @@ const ContactForm = () => {
   };
 
   return (
-    <form className="h-full w-96 gap-8 bg-white rounded-lg text-black p-8 flex flex-col overflow-hidden justify-between">
-      <div className="flex flex-col gap-6 flex-1 overflow-y-auto">
-        <div className="flex flex-col gap-4">
-          <h3 className="font-bold">Tengo interés en ...</h3>
-          <div className="flex gap-2 flex-wrap">
+    <form className="h-full w-96 gap-6 bg-white rounded-lg text-black px-8 pt-6 pb-8 flex flex-col overflow-hidden justify-between">
+      <div className="flex flex-col gap-4 flex-1 overflow-y-auto mt-2">
+        <div className="flex flex-col gap-3">
+          <h3 className="font-bold mt-2">Tengo interés en ...</h3>
+          <div className="flex gap-1 flex-wrap">
             <CheckBox text="opción 1" name="interes" />
             <CheckBox text="opción 2" name="interes" />
             <CheckBox text="opción 3" name="interes" />

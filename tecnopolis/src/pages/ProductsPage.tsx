@@ -70,7 +70,7 @@ const ProductsPage: React.FC = () => {
         }
         
         .project-image-1 {
-          background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjNGY4OGZmIi8+PGNpcmNsZSBjeD0iMjAwIiBjeT0iMTUwIiByPSI4MCIgZmlsbD0iIzMzNzNkYyIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LXNpemU9IjE0IiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkF0ZW5lYSBCeXRlPC90ZXh0Pjwvc3ZnPg==');
+          background-image: url('https://tecnopolis.pythonanywhere.com/assets/profesoraDislexia.png');
           background-size: cover;
           background-position: center;
         }
@@ -82,7 +82,7 @@ const ProductsPage: React.FC = () => {
         }
         
         .project-image-3 {
-          background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjOGI1Y2Y2Ii8+PGNpcmNsZSBjeD0iMjAwIiBjeT0iMTUwIiByPSI4MCIgZmlsbD0iIzdjM2FlZCIvPjx0ZXh0IHg�IjUwJSIgeT0iNTAlIiBmb250LXNpemU9IjEyIiBmaWxsPSJ3aGl0ZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPlByb2Zlc29yYSBEaXNsZXhpYTwvdGV4dD48L3N2Zz4=');
+          background-image: url('https://tecnopolis.pythonanywhere.com/assets/tecnologia01.png');
           background-size: cover;
           background-position: center;
         }
