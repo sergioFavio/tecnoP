@@ -13,7 +13,8 @@ const ContactPage = () => {
         <main className="w-full max-w-4xl flex flex-col lg:flex-row gap-8 items-center lg:items-start justify-center">
             <aside className="w-full lg:w-64 flex flex-col justify-between gap-8 lg:gap-0">
                 <div className="flex flex-col gap-6 lg:gap-12">
-                    <h2 className="text-2xl md:text-3xl font-bold text-center lg:text-left">
+                    {/* Título oculto en móvil, visible en desktop */}
+                    <h2 className="hidden lg:block text-2xl md:text-3xl font-bold text-center lg:text-left">
                         Let's discuss on something <span className="text-purple-500">cool</span> together
                     </h2>
                     <div className="flex flex-col gap-3 lg:gap-4">
@@ -31,7 +32,7 @@ const ContactPage = () => {
                         </button>
                     </div>
                 </div>
-                <div className="flex justify-center lg:justify-start gap-4 mt-4 lg:mt-0">
+                <div className="flex justify-center lg:justify-start gap-4 mt-4 lg:mt-6">
                     <button className="p-2 rounded-full hover:bg-purple-500 transition-all duration-300">
                         <div className="w-6 h-6"><IconFacebook/></div>
                     </button>
