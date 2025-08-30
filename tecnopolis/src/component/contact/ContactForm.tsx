@@ -1,3 +1,4 @@
+// ContactForm.tsx
 import { useState } from "react";
 import IconSend from "../../iconos/IconSend";
 import CheckBox from "../ui/CheckBox";
@@ -18,7 +19,7 @@ const ContactForm = () => {
   };
 
   return (
-    <form className="h-full w-96 gap-6 bg-white rounded-lg text-black px-8 pt-6 pb-8 flex flex-col overflow-hidden justify-between">
+    <form className="w-full max-w-md lg:w-96 gap-6 bg-white rounded-lg text-black px-6 lg:px-8 py-6 flex flex-col overflow-hidden justify-between">
       <div className="flex flex-col gap-4 flex-1 overflow-y-auto mt-2">
         <div className="flex flex-col gap-3">
           <h3 className="font-bold mt-2">Tengo interés en ...</h3>
@@ -56,7 +57,7 @@ const ContactForm = () => {
           e.preventDefault();
           handleSend();
         }}
-        className="text-white bg-purple-800 border-purple-800 cursor-pointer px-2 py-1 text-sm border rounded-md w-fit flex gap-2 items-center"
+        className="text-white bg-purple-800 border-purple-800 cursor-pointer px-2 py-1 text-sm border rounded-md w-fit flex gap-2 items-center self-center lg:self-start"
       >
         <div className="w-4 h-4">
           <IconSend />
