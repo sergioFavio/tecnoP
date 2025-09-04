@@ -19,14 +19,11 @@ const LayoutFooter = () => {
               content="Quienes somos, que hacemos, nuestros servicios, nuestros objetivos. "
             />
 
-            
             <FooterInfo
               linking="/technology"
               title="Technologies"
               content="En Tecnópolis.Ai utilizamos cuatro tipos de tecnologías de Inteligencia Artificial (IA). "
             />
-
-        
 
             <FooterInfo
               linking="/blog"
@@ -36,19 +33,19 @@ const LayoutFooter = () => {
           </div>
 
           {/* Mobile layout: 1 sola caja con títulos clicables */}
-          <div className="md:hidden bg-white border-t border-gray-300 py-4 px-6">
-            <div className="mb-2">
+          <div className="md:hidden bg-black py-4 px-6">
+            <div className="mb-1">
               <Link
                 to="/what_we_do"
-                className="block text-lg font-semibold text-gray-800 hover:text-blue-600"
+                className="block text-lg font-sans text-white hover:text-orange-500"
               >
                 What We Do
               </Link>
             </div>
-            <div className="mb-2">
+            <div className="mb-1">
               <Link
                 to="/technology"
-                className="block text-lg font-semibold text-gray-800 hover:text-blue-600"
+                className="block text-lg font-sans text-white hover:text-orange-500"
               >
                 Technologies
               </Link>
@@ -56,7 +53,7 @@ const LayoutFooter = () => {
             <div>
               <Link
                 to="/blog"
-                className="block text-lg font-semibold text-gray-800 hover:text-blue-600"
+                className="block text-lg font-sans text-white hover:text-orange-500"
               >
                 Blog
               </Link>

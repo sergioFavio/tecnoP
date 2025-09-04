@@ -21,14 +21,15 @@ const ContactForm = () => {
   return (
     <form className="w-full max-w-md lg:w-96 gap-6 bg-white rounded-lg text-black px-6 lg:px-8 py-6 flex flex-col overflow-hidden justify-between">
       <div className="flex flex-col gap-4 flex-1 overflow-y-auto mt-2">
-        <div className="flex flex-col gap-3">
+        {/* Bloque oculto en modo responsivo (pantallas pequeñas) */}
+        <div className="hidden lg:flex flex-col gap-3">
           <h3 className="font-bold mt-2">Tengo interés en ...</h3>
           <div className="flex gap-1 flex-wrap">
             <CheckBox text="opción 1" name="interes" />
             <CheckBox text="opción 2" name="interes" />
             <CheckBox text="opción 3" name="interes" />
             <CheckBox text="opción 4" name="interes" />
-            <CheckBox text="opción 5" name="interes" />
+            {/*<CheckBox text="opción 5" name="interes" />*/}
           </div>
         </div>
         <Input

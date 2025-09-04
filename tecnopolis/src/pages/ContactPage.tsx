@@ -32,7 +32,8 @@ const ContactPage = () => {
                         </button>
                     </div>
                 </div>
-                <div className="flex justify-center lg:justify-start gap-4 mt-4 lg:mt-6">
+                {/* Íconos de redes sociales - ocultos en móvil, visibles desde lg */}
+                <div className="hidden lg:flex justify-center lg:justify-start gap-4 mt-4 lg:mt-6">
                     <button className="p-2 rounded-full hover:bg-purple-500 transition-all duration-300">
                         <div className="w-6 h-6"><IconFacebook/></div>
                     </button>
