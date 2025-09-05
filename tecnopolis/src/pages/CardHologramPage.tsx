@@ -1,8 +1,25 @@
-import { useState } from 'react';
+import { useState, useEffect } from "react";
 
 const CardHologramPage = () => {
   const [modalOpen, setModalOpen] = useState(false);
-  const [modalContent, setModalContent] = useState({ title: '', content: '' });
+  const [modalContent, setModalContent] = useState({ title: "", content: "" });
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+  const [activeCard, setActiveCard] = useState<number | null>(null);
+
+  // Detectar si es móvil
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkIsMobile();
+    window.addEventListener("resize", checkIsMobile);
+
+    return () => {
+      window.removeEventListener("resize", checkIsMobile);
+    };
+  }, []);
 
   // Estilos CSS como string para incluir las animaciones
   const styles = `
@@ -53,6 +70,28 @@ const CardHologramPage = () => {
       }
     }
     
+    @keyframes slideIn {
+      0% {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes dotPulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 10px #00ffff;
+      }
+      50% {
+        transform: scale(1.2);
+        box-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff;
+      }
+    }
+    
     .floating-element-1 {
       animation: float1 3s ease-in-out infinite;
     }
@@ -75,9 +114,84 @@ const CardHologramPage = () => {
       );
       background-size: 100% 4px;
     }
+    
+    .carousel-container {
+      overflow: hidden;
+      width: 100%;
+      position: relative;
+    }
+    
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+      gap: 15px;
+    }
+    
+    .carousel-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.2);
+      border: 2px solid rgba(0, 255, 255, 0.3);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .carousel-dot:hover {
+      background-color: rgba(0, 255, 255, 0.4);
+      border-color: rgba(0, 255, 255, 0.6);
+      transform: scale(1.1);
+    }
+    
+    .carousel-dot.active {
+      background-color: #00ffff;
+      border-color: #00ffff;
+      animation: dotPulse 2s ease-in-out infinite;
+    }
+    
+    .carousel-dot.active::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 8px;
+      height: 8px;
+      background: #000;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
+    @media (max-width: 768px) {
+      .hologram-box {
+        min-width: 100%;
+        margin: 20px 0;
+        cursor: pointer;
+      }
+      
+      .carousel-dots {
+        padding: 0 20px;
+      }
+      
+      .carousel-dot {
+        width: 20px;
+        height: 20px;
+      }
+      
+      .carousel-dot.active::after {
+        width: 10px;
+        height: 10px;
+      }
+    }
   `;
 
-  const openModal = (title:string, content:string) => {
+  const openModal = (title: string, content: string) => {
     setModalContent({ title, content });
     setModalOpen(true);
   };
@@ -86,439 +200,573 @@ const CardHologramPage = () => {
     setModalOpen(false);
   };
 
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
+
+  const handleCardClick = (index: number) => {
+    if (isMobile) {
+      setActiveCard(activeCard === index ? null : index);
+    }
+  };
+
   const cardData = [
     {
       title: "Computer Vision (1)",
-      description: "Computer Vision (Visión por Computador), concepto y obejtivo.",
+      description:
+        "Computer Vision (Visión por Computador), concepto y objetivo.",
       gradient: "linear-gradient(315deg, #ffbc00, #ff0058)",
-      modalContent: "Computer Vision (visión por computadora) es un campo de la inteligencia artificial que permite a las máquinas interpretar y comprender el mundo visual. Utiliza algoritmos y modelos de aprendizaje automático para analizar imágenes y videos, extrayendo información útil como objetos, rostros, texto o movimientos. Su objetivo es imitar la capacidad humana de ver y entender el entorno, pero con la precisión y velocidad de una máquina."
+      modalContent:
+        "Computer Vision (visión por computadora) es un campo de la inteligencia artificial que permite a las máquinas interpretar y comprender el mundo visual. Utiliza algoritmos y modelos de aprendizaje automático para analizar imágenes y videos, extrayendo información útil como objetos, rostros, texto o movimientos. Su objetivo es imitar la capacidad humana de ver y entender el entorno, pero con la precisión y velocidad de una máquina.",
     },
     {
-      title: "Computer Vision (2)", 
-      description: "Aplicaciones de Computer Vision (Visión por Computador), en distintos tipos de industrias.",
+      title: "Computer Vision (2)",
+      description:
+        "Aplicaciones de Computer Vision (Visión por Computador), en distintos tipos de industrias.",
       gradient: "linear-gradient(315deg, #03a9f4, #ff0058)",
-      modalContent: "Esta tecnología se aplica en una amplia variedad de sectores. En la medicina, por ejemplo, ayuda a detectar enfermedades en radiografías o resonancias. En la industria automotriz, es clave para los vehículos autónomos, que deben reconocer señales de tránsito, peatones y otros vehículos. También se usa en la seguridad, el comercio minorista, la agricultura y muchas otras áreas donde la interpretación visual automatizada puede aportar eficiencia y precisión."
+      modalContent:
+        "Esta tecnología se aplica en una amplia variedad de sectores. En la medicina, por ejemplo, ayuda a detectar enfermedades en radiografías o resonancias. En la industria automotriz, es clave para los vehículos autónomos, que deben reconocer señales de tránsito, peatones y otros vehículos. También se usa en la seguridad, el comercio minorista, la agricultura y muchas otras áreas donde la interpretación visual automatizada puede aportar eficiencia y precisión.",
     },
     {
       title: "Computer Vision (3)",
-      description: "Proceso y etapas de la Visón por Computador.", 
+      description: "Proceso y etapas de la Visión por Computador.",
       gradient: "linear-gradient(315deg, #4dff03, #00d0ff)",
-      modalContent: "El proceso de Computer Vision generalmente incluye varias etapas: adquisición de la imagen, preprocesamiento, detección de características, clasificación y toma de decisiones. Gracias a los avances en redes neuronales profundas (deep learning), especialmente las redes convolucionales (CNN), la precisión de los sistemas de visión por computadora ha mejorado notablemente, acercándose e incluso superando en algunos casos la capacidad humana."
-    }
+      modalContent:
+        "El proceso de Computer Vision generalmente incluye varias etapas: adquisición de la imagen, preprocesamiento, detección de características, clasificación y toma de decisiones. Gracias a los avances en redes neuronales profundas (deep learning), especialmente las redes convolucionales (CNN), la precisión de los sistemas de visión por computadora ha mejorado notablemente, acercándose e incluso superando en algunos casos la capacidad humana.",
+    },
   ];
 
-  const renderCard = (cardInfo:any, index:number) => (
-    <div 
-      key={index}
-      className="hologram-box"
-      style={{
-        position: 'relative',
-        width: '320px',
-        height: '400px',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        margin: '40px 30px',
-        transition: '0.5s'
-      }}
-      onMouseEnter={(e) => {
-        const box = e.currentTarget;
-        const before = box.querySelector('.before-element') as HTMLElement;
-        const after = box.querySelector('.after-element') as HTMLElement;
-        const content = box.querySelector('.content') as HTMLElement;
-        const spanBefore = box.querySelector('.span-before') as HTMLElement;
-        const spanAfter = box.querySelector('.span-after') as HTMLElement;
-        
-        if (before && after) {
-          before.style.transform = 'skewX(0deg)';
-          before.style.left = '20px';
-          before.style.width = 'calc(100% - 90px)';
-          after.style.transform = 'skewX(0deg)';
-          after.style.left = '20px';
-          after.style.width = 'calc(100% - 90px)';
-        }
-        
-        if (content) {
-          content.style.left = '-25px';
-          content.style.padding = '60px 40px';
-        }
-        
-        if (spanBefore) {
-          spanBefore.style.top = '-50px';
-          spanBefore.style.left = '50px';
-          spanBefore.style.width = '100px';
-          spanBefore.style.height = '100px';
-          spanBefore.style.opacity = '1';
-        }
-        
-        if (spanAfter) {
-          spanAfter.style.bottom = '-50px';
-          spanAfter.style.right = '50px';
-          spanAfter.style.width = '100px';
-          spanAfter.style.height = '100px';
-          spanAfter.style.opacity = '1';
-        }
-      }}
-      onMouseLeave={(e) => {
-        const box = e.currentTarget;
-        const before = box.querySelector('.before-element') as HTMLElement;
-        const after = box.querySelector('.after-element') as HTMLElement;
-        const content = box.querySelector('.content') as HTMLElement;
-        const spanBefore = box.querySelector('.span-before') as HTMLElement;
-        const spanAfter = box.querySelector('.span-after') as HTMLElement;
-        
-        if (before && after) {
-          before.style.transform = 'skewX(15deg)';
-          before.style.left = '50px';
-          before.style.width = '50%';
-          after.style.transform = 'skewX(15deg)';
-          after.style.left = '50px';
-          after.style.width = '50%';
-        }
-        
-        if (content) {
-          content.style.left = '0';
-          content.style.padding = '20px 40px';
-        }
-        
-        if (spanBefore) {
-          spanBefore.style.top = '0';
-          spanBefore.style.left = '0';
-          spanBefore.style.width = '0';
-          spanBefore.style.height = '0';
-          spanBefore.style.opacity = '0';
-        }
-        
-        if (spanAfter) {
-          spanAfter.style.bottom = '0';
-          spanAfter.style.right = '0';
-          spanAfter.style.width = '0';
-          spanAfter.style.height = '0';
-          spanAfter.style.opacity = '0';
-        }
-      }}
-    >
-      {/* Before pseudo-element */}
-      <div 
-        className="before-element"
+  const getCardStyles = (index: number) => {
+    const isActive = isMobile && activeCard === index;
+    return {
+      beforeAfter: {
+        transform: isActive ? "skewX(0deg)" : "skewX(15deg)",
+        left: isActive ? "20px" : "50px",
+        width: isActive ? "calc(100% - 40px)" : "50%",
+      },
+      content: {
+        left: isActive ? "-15px" : "0",
+        padding: isActive ? "40px 40px" : "20px 40px",
+      },
+      spans: {
+        top: isActive ? "-40px" : "0",
+        left: isActive ? "40px" : "0",
+        bottom: isActive ? "-40px" : "0",
+        right: isActive ? "40px" : "0",
+        width: isActive ? "80px" : "0",
+        height: isActive ? "80px" : "0",
+        opacity: isActive ? "1" : "0",
+      }
+    };
+  };
+
+  const renderCard = (cardInfo: any, index: number) => {
+    const cardStyles = getCardStyles(index);
+    
+    return (
+      <div
+        key={index}
+        className="hologram-box"
         style={{
-          content: '',
-          position: 'absolute',
-          top: 0,
-          left: '50px',
-          width: '50%',
-          height: '100%',
-          background: cardInfo.gradient,
-          borderRadius: '8px',
-          transform: 'skewX(15deg)',
-          transition: '0.5s'
+          position: "relative",
+          width: isMobile ? "calc(100% - 60px)" : "320px",
+          height: "400px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          margin: isMobile ? "20px 30px" : "40px 30px",
+          transition: "0.5s",
+          animation: isMobile && currentSlide === index ? "slideIn 0.5s ease-out" : "none",
         }}
-      />
-      
-      {/* After pseudo-element (blur effect) */}
-      <div 
-        className="after-element"
-        style={{
-          content: '',
-          position: 'absolute',
-          top: 0,
-          left: '50px',
-          width: '50%',
-          height: '100%',
-          background: cardInfo.gradient,
-          borderRadius: '8px',
-          transform: 'skewX(15deg)',
-          transition: '0.5s',
-          filter: 'blur(30px)'
+        onClick={() => handleCardClick(index)}
+        onMouseEnter={(e) => {
+          if (isMobile) return; // En móvil usar click en lugar de hover
+          
+          const box = e.currentTarget;
+          const before = box.querySelector(".before-element") as HTMLElement;
+          const after = box.querySelector(".after-element") as HTMLElement;
+          const content = box.querySelector(".content") as HTMLElement;
+          const spanBefore = box.querySelector(".span-before") as HTMLElement;
+          const spanAfter = box.querySelector(".span-after") as HTMLElement;
+
+          if (before && after) {
+            before.style.transform = "skewX(0deg)";
+            before.style.left = "20px";
+            before.style.width = "calc(100% - 90px)";
+            after.style.transform = "skewX(0deg)";
+            after.style.left = "20px";
+            after.style.width = "calc(100% - 90px)";
+          }
+
+          if (content) {
+            content.style.left = "-25px";
+            content.style.padding = "60px 40px";
+          }
+
+          if (spanBefore) {
+            spanBefore.style.top = "-50px";
+            spanBefore.style.left = "50px";
+            spanBefore.style.width = "100px";
+            spanBefore.style.height = "100px";
+            spanBefore.style.opacity = "1";
+          }
+
+          if (spanAfter) {
+            spanAfter.style.bottom = "-50px";
+            spanAfter.style.right = "50px";
+            spanAfter.style.width = "100px";
+            spanAfter.style.height = "100px";
+            spanAfter.style.opacity = "1";
+          }
         }}
-      />
-      
-      {/* Animated spans */}
-      <span style={{
-        display: 'block',
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        zIndex: 5,
-        pointerEvents: 'none'
-      }}>
-        <div 
-          className="span-before floating-element-1"
-          style={{
-            content: '',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: 0,
-            height: 0,
-            borderRadius: '8px',
-            background: 'rgba(255, 255, 255, 0.1)',
-            backdropFilter: 'blur(10px)',
-            opacity: 0,
-            transition: '0.1s',
-            boxShadow: '0 5px 15px rgba(0,0,0,0.08)'
-          }}
-        />
-        <div 
-          className="span-after floating-element-2"
-          style={{
-            content: '',
-            position: 'absolute',
-            bottom: 0,
-            right: 0,
-            width: '0',
-            height: '0',
-            borderRadius: '8px',
-            background: 'rgba(255, 255, 255, 0.1)',
-            backdropFilter: 'blur(10px)',
-            opacity: 0,
-            transition: '0.5s',
-            boxShadow: '0 5px 15px rgba(0,0,0,0.08)'
-          }}
-        />
-      </span>
-      
-      <div 
-        className="content"
-        style={{
-          position: 'relative',
-          left: 0,
-          padding: '20px 40px',
-          background: 'rgba(255, 255, 255, 0.05)',
-          backdropFilter: 'blur(10px)',
-          boxShadow: '0 5px 15px rgba(0, 0, 0, 0.1)',
-          borderRadius: '8px',
-          zIndex: 1,
-          transition: '0.5s',
-          color: '#fff'
+        onMouseLeave={(e) => {
+          if (isMobile) return; // En móvil usar click en lugar de hover
+          
+          const box = e.currentTarget;
+          const before = box.querySelector(".before-element") as HTMLElement;
+          const after = box.querySelector(".after-element") as HTMLElement;
+          const content = box.querySelector(".content") as HTMLElement;
+          const spanBefore = box.querySelector(".span-before") as HTMLElement;
+          const spanAfter = box.querySelector(".span-after") as HTMLElement;
+
+          if (before && after) {
+            before.style.transform = "skewX(15deg)";
+            before.style.left = "50px";
+            before.style.width = "50%";
+            after.style.transform = "skewX(15deg)";
+            after.style.left = "50px";
+            after.style.width = "50%";
+          }
+
+          if (content) {
+            content.style.left = "0";
+            content.style.padding = "20px 40px";
+          }
+
+          if (spanBefore) {
+            spanBefore.style.top = "0";
+            spanBefore.style.left = "0";
+            spanBefore.style.width = "0";
+            spanBefore.style.height = "0";
+            spanBefore.style.opacity = "0";
+          }
+
+          if (spanAfter) {
+            spanAfter.style.bottom = "0";
+            spanAfter.style.right = "0";
+            spanAfter.style.width = "0";
+            spanAfter.style.height = "0";
+            spanAfter.style.opacity = "0";
+          }
         }}
       >
-        <h2 style={{
-          fontSize: '2em',
-          color: '#fff',
-          marginBottom: '10px'
-        }}>{cardInfo.title}</h2>
-        <p style={{
-          fontSize: '1.1em',
-          marginBottom: '10px',
-          lineHeight: '1.4em'
-        }}>{cardInfo.description}</p>
-        <button 
-          onClick={() => openModal(cardInfo.title, cardInfo.modalContent)}
+        {/* Before pseudo-element */}
+        <div
+          className="before-element"
           style={{
-            display: 'inline-block',
-            fontSize: '1.1em',
-            color: '#111',
-            background: '#fff',
-            padding: '10px',
-            borderRadius: '4px',
-            textDecoration: 'none',
-            fontWeight: '700',
-            marginTop: '5px',
-            transition: '0.3s',
-            border: 'none',
-            cursor: 'pointer'
+            content: "",
+            position: "absolute",
+            top: 0,
+            left: cardStyles.beforeAfter.left,
+            width: cardStyles.beforeAfter.width,
+            height: "100%",
+            background: cardInfo.gradient,
+            borderRadius: "8px",
+            transform: cardStyles.beforeAfter.transform,
+            transition: "0.5s",
           }}
-          onMouseEnter={(e) => {
-            const target = e.target as HTMLElement;
-            target.style.background = '#ffcf4d';
-            target.style.border = '1px solid rgba(255, 0, 88, 0.4)';
-            target.style.boxShadow = '0 1px 15px rgba(1, 1, 1, 0.2)';
+        />
+
+        {/* After pseudo-element (blur effect) */}
+        <div
+          className="after-element"
+          style={{
+            content: "",
+            position: "absolute",
+            top: 0,
+            left: cardStyles.beforeAfter.left,
+            width: cardStyles.beforeAfter.width,
+            height: "100%",
+            background: cardInfo.gradient,
+            borderRadius: "8px",
+            transform: cardStyles.beforeAfter.transform,
+            transition: "0.5s",
+            filter: "blur(30px)",
           }}
-          onMouseLeave={(e) => {
-            const target = e.target as HTMLElement;
-            target.style.background = '#fff';
-            target.style.border = 'none';
-            target.style.boxShadow = 'none';
+        />
+
+        {/* Animated spans */}
+        <span
+          style={{
+            display: "block",
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            zIndex: 5,
+            pointerEvents: "none",
           }}
-        >Read More</button>
+        >
+          <div
+            className="span-before floating-element-1"
+            style={{
+              content: "",
+              position: "absolute",
+              top: cardStyles.spans.top,
+              left: cardStyles.spans.left,
+              width: cardStyles.spans.width,
+              height: cardStyles.spans.height,
+              borderRadius: "8px",
+              background: "rgba(255, 255, 255, 0.1)",
+              backdropFilter: "blur(10px)",
+              opacity: cardStyles.spans.opacity,
+              transition: "0.5s",
+              boxShadow: "0 5px 15px rgba(0,0,0,0.08)",
+            }}
+          />
+          <div
+            className="span-after floating-element-2"
+            style={{
+              content: "",
+              position: "absolute",
+              bottom: cardStyles.spans.bottom,
+              right: cardStyles.spans.right,
+              width: cardStyles.spans.width,
+              height: cardStyles.spans.height,
+              borderRadius: "8px",
+              background: "rgba(255, 255, 255, 0.1)",
+              backdropFilter: "blur(10px)",
+              opacity: cardStyles.spans.opacity,
+              transition: "0.5s",
+              boxShadow: "0 5px 15px rgba(0,0,0,0.08)",
+            }}
+          />
+        </span>
+
+        <div
+          className="content"
+          style={{
+            position: "relative",
+            left: cardStyles.content.left,
+            padding: cardStyles.content.padding,
+            background: "rgba(255, 255, 255, 0.05)",
+            backdropFilter: "blur(10px)",
+            boxShadow: "0 5px 15px rgba(0, 0, 0, 0.1)",
+            borderRadius: "8px",
+            zIndex: 1,
+            transition: "0.5s",
+            color: "#fff",
+          }}
+        >
+          <h2
+            style={{
+              fontSize: "2em",
+              color: "#fff",
+              marginBottom: "10px",
+            }}
+          >
+            {cardInfo.title}
+          </h2>
+          <p
+            style={{
+              fontSize: "1.1em",
+              marginBottom: "10px",
+              lineHeight: "1.4em",
+            }}
+          >
+            {cardInfo.description}
+          </p>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              openModal(cardInfo.title, cardInfo.modalContent);
+            }}
+            style={{
+              display: "inline-block",
+              fontSize: "1.1em",
+              color: "#111",
+              background: "#fff",
+              padding: "10px",
+              borderRadius: "4px",
+              textDecoration: "none",
+              fontWeight: "700",
+              marginTop: "5px",
+              transition: "0.3s",
+              border: "none",
+              cursor: "pointer",
+            }}
+            onMouseEnter={(e) => {
+              const target = e.target as HTMLElement;
+              target.style.background = "#ffcf4d";
+              target.style.border = "1px solid rgba(255, 0, 88, 0.4)";
+              target.style.boxShadow = "0 1px 15px rgba(1, 1, 1, 0.2)";
+            }}
+            onMouseLeave={(e) => {
+              const target = e.target as HTMLElement;
+              target.style.background = "#fff";
+              target.style.border = "none";
+              target.style.boxShadow = "none";
+            }}
+          >
+            Read More
+          </button>
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   return (
     <>
       <style dangerouslySetInnerHTML={{ __html: styles }} />
-      <div style={{
-        margin: 0,
-        padding: 0,
-        boxSizing: 'border-box',
-        fontFamily: 'Consolas, monospace',
-        width: '100%',
-        minHeight: '100vh',
-        background: '#242424',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
-      }}>
-        <div style={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          flexWrap: 'wrap',
-          padding: '40px 20px',
-          width: '100%',
-          maxWidth: '1200px',
-          margin: '0 auto'
-        }}>
-          {cardData.map((card, index) => renderCard(card, index))}
-        </div>
+      <div
+        style={{
+          margin: 0,
+          padding: 0,
+          boxSizing: "border-box",
+          fontFamily: "Consolas, monospace",
+          width: "100%",
+          minHeight: "100vh",
+          background: "#242424",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {isMobile ? (
+          <div
+            style={{
+              width: "100%",
+              padding: "40px 0",
+            }}
+          >
+            <div className="carousel-container">
+              <div
+                className="carousel-track"
+                style={{
+                  transform: `translateX(-${currentSlide * 100}%)`,
+                }}
+              >
+                {cardData.map((card, index) => (
+                  <div
+                    key={index}
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      minWidth: "100%",
+                    }}
+                  >
+                    {renderCard(card, index)}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="carousel-dots">
+              {cardData.map((_, index) => (
+                <div
+                  key={index}
+                  className={`carousel-dot ${currentSlide === index ? "active" : ""}`}
+                  onClick={() => goToSlide(index)}
+                  style={{
+                    transform: currentSlide === index ? "scale(1.2)" : "scale(1)",
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              flexWrap: "wrap",
+              padding: "40px 20px",
+              width: "100%",
+              maxWidth: "1200px",
+              margin: "0 auto",
+            }}
+          >
+            {cardData.map((card, index) => renderCard(card, index))}
+          </div>
+        )}
 
         {/* Modal */}
         {modalOpen && (
-          <div 
+          <div
             style={{
-              position: 'fixed',
+              position: "fixed",
               top: 0,
               left: 0,
-              width: '100%',
-              height: '100%',
-              backgroundColor: 'transparent',
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
+              width: "100%",
+              height: "100%",
+              backgroundColor: "transparent",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
               zIndex: 1000,
-              backdropFilter: 'none'
+              backdropFilter: "none",
             }}
             onClick={closeModal}
           >
-            <div 
+            <div
               className="hologram-modal scan-lines"
               style={{
-                position: 'relative',
-                maxWidth: '600px',
-                width: '90%',
-                maxHeight: '80%',
-                background: 'rgba(0, 20, 40, 0.95)',
-                border: '2px solid #00ffff',
-                borderRadius: '10px',
-                padding: '40px',
-                backdropFilter: 'blur(15px)',
-                boxShadow: '0 0 50px rgba(0, 255, 255, 0.4), inset 0 0 50px rgba(0, 255, 255, 0.1), 0 0 100px rgba(0, 255, 255, 0.2)',
-                overflow: 'auto',
-                color: '#00ffff'
+                position: "relative",
+                maxWidth: "600px",
+                width: "90%",
+                maxHeight: "80%",
+                background: "rgba(0, 20, 40, 0.95)",
+                border: "2px solid #00ffff",
+                borderRadius: "10px",
+                padding: "40px",
+                backdropFilter: "blur(15px)",
+                boxShadow:
+                  "0 0 50px rgba(0, 255, 255, 0.4), inset 0 0 50px rgba(0, 255, 255, 0.1), 0 0 100px rgba(0, 255, 255, 0.2)",
+                overflow: "auto",
+                color: "#00ffff",
               }}
               onClick={(e) => e.stopPropagation()}
             >
               {/* Efecto de esquinas holográficas */}
-              <div style={{
-                position: 'absolute',
-                top: '10px',
-                left: '10px',
-                width: '30px',
-                height: '30px',
-                borderTop: '3px solid #00ffff',
-                borderLeft: '3px solid #00ffff',
-                opacity: 0.7
-              }} />
-              <div style={{
-                position: 'absolute',
-                top: '10px',
-                right: '10px',
-                width: '30px',
-                height: '30px',
-                borderTop: '3px solid #00ffff',
-                borderRight: '3px solid #00ffff',
-                opacity: 0.7
-              }} />
-              <div style={{
-                position: 'absolute',
-                bottom: '10px',
-                left: '10px',
-                width: '30px',
-                height: '30px',
-                borderBottom: '3px solid #00ffff',
-                borderLeft: '3px solid #00ffff',
-                opacity: 0.7
-              }} />
-              <div style={{
-                position: 'absolute',
-                bottom: '10px',
-                right: '10px',
-                width: '30px',
-                height: '30px',
-                borderBottom: '3px solid #00ffff',
-                borderRight: '3px solid #00ffff',
-                opacity: 0.7
-              }} />
+              <div
+                style={{
+                  position: "absolute",
+                  top: "10px",
+                  left: "10px",
+                  width: "30px",
+                  height: "30px",
+                  borderTop: "3px solid #00ffff",
+                  borderLeft: "3px solid #00ffff",
+                  opacity: 0.7,
+                }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  top: "10px",
+                  right: "10px",
+                  width: "30px",
+                  height: "30px",
+                  borderTop: "3px solid #00ffff",
+                  borderRight: "3px solid #00ffff",
+                  opacity: 0.7,
+                }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "10px",
+                  left: "10px",
+                  width: "30px",
+                  height: "30px",
+                  borderBottom: "3px solid #00ffff",
+                  borderLeft: "3px solid #00ffff",
+                  opacity: 0.7,
+                }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: "10px",
+                  right: "10px",
+                  width: "30px",
+                  height: "30px",
+                  borderBottom: "3px solid #00ffff",
+                  borderRight: "3px solid #00ffff",
+                  opacity: 0.7,
+                }}
+              />
 
               {/* Botón de cierre */}
               <button
                 onClick={closeModal}
                 style={{
-                  position: 'absolute',
-                  top: '20px',
-                  right: '20px',
-                  background: 'transparent',
-                  border: '2px solid #00ffff',
-                  color: '#00ffff',
-                  fontSize: '20px',
-                  width: '35px',
-                  height: '35px',
-                  borderRadius: '50%',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  transition: '0.3s',
-                  textShadow: '0 0 10px #00ffff'
+                  position: "absolute",
+                  top: "20px",
+                  right: "20px",
+                  background: "transparent",
+                  border: "2px solid #00ffff",
+                  color: "#00ffff",
+                  fontSize: "20px",
+                  width: "35px",
+                  height: "35px",
+                  borderRadius: "50%",
+                  cursor: "pointer",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  transition: "0.3s",
+                  textShadow: "0 0 10px #00ffff",
                 }}
                 onMouseEnter={(e) => {
                   const element = e.target as HTMLElement;
-                  element.style.background = '#00ffff';
-                  element.style.color = '#000';
-                  element.style.boxShadow = '0 0 20px #00ffff';
+                  element.style.background = "#00ffff";
+                  element.style.color = "#000";
+                  element.style.boxShadow = "0 0 20px #00ffff";
                 }}
                 onMouseLeave={(e) => {
                   const element = e.target as HTMLElement;
-                  element.style.background = 'transparent';
-                  element.style.color = '#00ffff';
-                  element.style.boxShadow = 'none';
+                  element.style.background = "transparent";
+                  element.style.color = "#00ffff";
+                  element.style.boxShadow = "none";
                 }}
-              >×</button>
+              >
+                ×
+              </button>
 
               {/* Contenido del modal */}
-              <h2 style={{
-                fontSize: '2.5em',
-                marginBottom: '20px',
-                textAlign: 'center',
-                textShadow: '0 0 20px #00ffff',
-                letterSpacing: '2px'
-              }}>{modalContent.title}</h2>
-              
-              <div style={{
-                fontSize: '1.2em',
-                lineHeight: '1.6',
-                textAlign: 'justify',
-                color: '#e0f7ff',
-                textShadow: '0 0 5px #00ffff'
-              }}>
+              <h2
+                style={{
+                  fontSize: "2.5em",
+                  marginBottom: "20px",
+                  textAlign: "center",
+                  textShadow: "0 0 20px #00ffff",
+                  letterSpacing: "2px",
+                }}
+              >
+                {modalContent.title}
+              </h2>
+
+              <div
+                style={{
+                  fontSize: "1.2em",
+                  lineHeight: "1.6",
+                  textAlign: "justify",
+                  color: "#e0f7ff",
+                  textShadow: "0 0 5px #00ffff",
+                }}
+              >
                 {modalContent.content}
               </div>
 
               {/* Elementos decorativos holográficos */}
-              <div style={{
-                position: 'absolute',
-                top: '50%',
-                left: '0',
-                width: '5px',
-                height: '50px',
-                background: 'linear-gradient(to bottom, transparent, #00ffff, transparent)',
-                transform: 'translateY(-50%)',
-                opacity: 0.5
-              }} />
-              <div style={{
-                position: 'absolute',
-                top: '50%',
-                right: '0',
-                width: '5px',
-                height: '50px',
-                background: 'linear-gradient(to bottom, transparent, #00ffff, transparent)',
-                transform: 'translateY(-50%)',
-                opacity: 0.5
-              }} />
+              <div
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  left: "0",
+                  width: "5px",
+                  height: "50px",
+                  background:
+                    "linear-gradient(to bottom, transparent, #00ffff, transparent)",
+                  transform: "translateY(-50%)",
+                  opacity: 0.5,
+                }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  top: "50%",
+                  right: "0",
+                  width: "5px",
+                  height: "50px",
+                  background:
+                    "linear-gradient(to bottom, transparent, #00ffff, transparent)",
+                  transform: "translateY(-50%)",
+                  opacity: 0.5,
+                }}
+              />
             </div>
           </div>
         )}
