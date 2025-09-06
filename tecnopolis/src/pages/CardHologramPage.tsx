@@ -177,6 +177,7 @@ const CardHologramPage = () => {
       
       .carousel-dots {
         padding: 0 20px;
+        margin-top: 15px;
       }
       
       .carousel-dot {
