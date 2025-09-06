@@ -462,7 +462,7 @@ const CardHologramPage = () => {
         >
           <h2
             style={{
-              fontSize: "2em",
+              fontSize: "1.4em",
               color: "#fff",
               marginBottom: "10px",
             }}
@@ -719,7 +719,7 @@ const CardHologramPage = () => {
               {/* Contenido del modal */}
               <h2
                 style={{
-                  fontSize: "2.5em",
+                  fontSize: "1.7em",
                   marginBottom: "20px",
                   textAlign: "center",
                   textShadow: "0 0 20px #00ffff",
