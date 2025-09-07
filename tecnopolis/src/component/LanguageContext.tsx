@@ -52,17 +52,28 @@ const translations = {
     
     // ServicesPage
     imageDetection: "Detección y Análisis de Imágenes",
+    imageDetectionInfo:"Análisis Médico:Se aplica en la medicina para el análisis de radiografías y resonancias magnéticas.",
+    
     nlpProcessing: "Procesamiento de Lenguaje Natural (NLP)",
+    nlpProcessingInfo: "Análisis de Sentimientos: Monitoreo de redes sociales, feedback de clientes.",
+
     training: "Capacitación",
+
     emotionAnalysis: "Análisis de Emociones",
+    emotionAnalysisInfo:"El análisis de emociones es una técnica de inteligencia artificial que permite identificar y Clasificar las emociones humanas expresadas en datos.",
+
     consulting: "Consultoría",
+
     sentimentAnalysis: "Análisis de Sentimientos",
+    sentimentAnalysisInfo: "Análisis de Sentimientos es una técnica de inteligencia artificial que identifica emociones en textos. Clasifica opiniones como positivas, negativas o neutrales usando procesamiento de lenguaje natural.",
+
     recommendationSystem: "Sistema de Recomendación",
+    recommendationSystemInfo: "Un sistema de recomendación es una aplicación de inteligencia artificial que utiliza algoritmos de filtrado colaborativo o basado en contenido para sugerir productos o servicios personalizados. Estos sistemas analizan datos del comportamiento del usuario para predecir preferencias futuras.",
     
     // Common
     email: "info@tecnopolis.ai",
     phone: "+56 9 2909 9893",
-    address: "123 Calle Casa",
+    address: "Arica - Chile | Cochabamba - Bolivia",
     selectLanguage: "Seleccionar idioma"
   },
   en: {
@@ -107,17 +118,28 @@ const translations = {
     
     // ServicesPage
     imageDetection: "Image Detection and Analysis",
+    imageDetectionInfo:"Medical Analysis: It is applied in medicine for the analysis of X-rays and magnetic resonance imaging.",
+    
     nlpProcessing: "Natural Language Processing (NLP)",
+    nlpProcessingInfo: "Sentiment Analysis: Monitoring of social media and customer feedback.",
+
     training: "Training",
+
     emotionAnalysis: "Emotion Analysis",
+    emotionAnalysisInfo:"Emotion Analysis: It is an artificial intelligence technique that allows the identification and classification of human emotions expressed in data.",
+
     consulting: "Consulting",
+
     sentimentAnalysis: "Sentiment Analysis",
+    sentimentAnalysisInfo: "Sentiment Analysis is an artificial intelligence technique that identifies emotions in text. It classifies opinions as positive, negative, or neutral using natural language processing.",
+
     recommendationSystem: "Recommendation System",
+    recommendationSystemInfo: "A recommendation system is an AI application that uses collaborative or content-based filtering algorithms to suggest personalized products or services. These systems analyze user behavior data to predict future preferences.",
     
     // Common
     email: "info@tecnopolis.ai",
     phone: "+56 9 2909 9893",
-    address: "123 Street House",
+    address: "Arica - Chile | Cochabamba - Bolivia",
     selectLanguage: "Select language"
   },
   pt: {
@@ -162,17 +184,27 @@ const translations = {
     
     // ServicesPage
     imageDetection: "Detecção e Análise de Imagens",
-    nlpProcessing: "Processamento de Linguagem Natural (PLN)",
-    training: "Treinamento",
-    emotionAnalysis: "Análise de Emoções",
-    consulting: "Consultoria",
-    sentimentAnalysis: "Análise de Sentimentos",
-    recommendationSystem: "Sistema de Recomendação",
+    imageDetectionInfo:"Análise Médica: É aplicada na medicina para a análise de radiografias e ressonâncias magnéticas.",
     
+    nlpProcessing: "Processamento de Linguagem Natural (PLN)",
+    nlpProcessingInfo: "Análise de Sentimentos: Monitoramento de redes sociais, feedback de clientes.",
+
+    training: "Treinamento",
+
+    emotionAnalysis: "Análise de Emoções",
+    emotionAnalysisInfo:"Análise de Emoções: É uma técnica de inteligência artificial que permite identificar e classificar as emoções humanas expressas em dados.",
+
+    consulting: "Consultoria",
+
+    sentimentAnalysis: "Análise de Sentimentos",
+    sentimentAnalysisInfo: "Análise de Sentimentos é uma técnica de inteligência artificial que identifica emoções em textos. Classifica opiniões como positivas, negativas ou neutras usando processamento de linguagem natural.",
+
+    recommendationSystem: "Sistema de Recomendação",
+    recommendationSystemInfo: "Um sistema de recomendação é uma aplicação de IA que utiliza algoritmos de filtragem colaborativa ou baseada em conteúdo para sugerir produtos ou serviços personalizados. Esses sistemas analisam dados de comportamento do usuário para prever preferências futuras.",
     // Common
     email: "info@tecnopolis.ai",
     phone: "+56 9 2909 9893",
-    address: "123 Rua Casa",
+    address: "Arica - Chile | Cochabamba - Bolívia",
     selectLanguage: "Selecionar idioma"
   }
 };

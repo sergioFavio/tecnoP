@@ -10,7 +10,9 @@ const ServicesPage: React.FC = () => {
       <div className="grid grid-cols-3 gap-6 p-4">
         {/* Detección y Análisis de Imágenes */}
         <Link 
-          to="/services/card_service?title=Detección y análisis de Imágenes&info=AnálisisMédico:Se aplica en la medicina para el análisis de radiografías y resonancias magnéticas." 
+          to={`/services/card_service?title=${encodeURIComponent(t('imageDetection'))}&info=${encodeURIComponent(t('imageDetectionInfo'))}`} 
+          //to={`/services/card_service?title=${encodeURIComponent(t('imageDetection'))}`}
+
           className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-white shadow-md rounded-lg animate-slide-in-up hover:shadow-lg hover:scale-105 transition-all cursor-pointer"
         >
           <span className="text-xs text-center">{t('imageDetection')}</span>
@@ -18,7 +20,7 @@ const ServicesPage: React.FC = () => {
         
         {/* Procesamiento de Lenguaje Natural */}
         <Link 
-          to="/services/card_service?title=Procesamiento de Lenguaje Natural&info=Análisis de Sentimientos: Monitoreo de redes sociales, feedback de clientes." 
+          to={`/services/card_service?title=${encodeURIComponent(t('nlpProcessing'))}&info=${encodeURIComponent(t('nlpProcessingInfo'))}`} 
           className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-orange-400 shadow-md rounded-lg animate-slide-in-left hover:shadow-lg hover:scale-105 transition-all cursor-pointer"
         >
           <span className="text-xs text-center">{t('nlpProcessing')}</span>
@@ -42,7 +44,7 @@ const ServicesPage: React.FC = () => {
         
         {/* Capacitación */}
         <Link 
-          to="/services/card_service?title=Capacitación" 
+          to={`/services/card_service?title=${encodeURIComponent(t('training'))}`} 
           className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-lime-400 shadow-md rounded-lg animate-slide-out-up hover:shadow-lg hover:scale-105 transition-all cursor-pointer"
         >
           <span className="text-xs text-center">{t('training')}</span>
@@ -50,7 +52,7 @@ const ServicesPage: React.FC = () => {
         
         {/* Análisis de Emociones */}
         <Link 
-          to="/services/card_service?title=Análisis de Emociones&info=El análisis de emociones es una técnica de inteligencia artificial que permite identificar y Clasificar las emociones humanas expresadas en datos." 
+          to={`/services/card_service?title=${encodeURIComponent(t('emotionAnalysis'))}&info=${encodeURIComponent(t('emotionAnalysisInfo'))}`} 
           className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-orange-400 shadow-md rounded-lg animate-slide-out-left hover:shadow-lg hover:scale-105 transition-all cursor-pointer"
         >
           <span className="text-xs text-center">{t('emotionAnalysis')}</span>
@@ -58,7 +60,9 @@ const ServicesPage: React.FC = () => {
         
         {/* Consultoría */}
         <Link 
-          to="/services/card_service?title=Consultoría" 
+          to={`/services/card_service?title=${encodeURIComponent(t('consulting'))}`} 
+          //to={`/services/card_service?title=${encodeURIComponent(t('consulting'))}&info=${encodeURIComponent(t('consultingInfo'))}`} 
+          //to="/services/card_service?title=Consultoría" 
           className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-sky-400 shadow-md rounded-lg animate-slide-out-right hover:shadow-lg hover:scale-105 transition-all cursor-pointer"
         >
           <span className="text-xs text-center">{t('consulting')}</span>
@@ -66,7 +70,7 @@ const ServicesPage: React.FC = () => {
         
         {/* Análisis de Sentimientos */}
         <Link 
-          to="/services/card_service?title=Análisis de sentimientos&info=El análisis de sentimientos es una técnica de procesamiento."
+          to={`/services/card_service?title=${encodeURIComponent(t('sentimentAnalysis'))}&info=${encodeURIComponent(t('sentimentAnalysisInfo'))}`} 
           className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-fuchsia-500 shadow-md rounded-lg animate-slide-down hover:shadow-lg hover:scale-105 transition-all cursor-pointer"
         >
           <span className="text-xs text-center">{t('sentimentAnalysis')}</span>
@@ -74,7 +78,7 @@ const ServicesPage: React.FC = () => {
         
         {/* Sistema de Recomendación */}
         <Link 
-          to="/services/card_service?title=Sistema de Recomendación&info=Un sistema de recomendación es una herramienta que utiliza algoritmos para sugerir productos." 
+          to={`/services/card_service?title=${encodeURIComponent(t('recommendationSystem'))}&info=${encodeURIComponent(t('recommendationSystemInfo'))}`} 
           className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-red-600 shadow-md rounded-lg animate-slide-up hover:shadow-lg hover:scale-105 transition-all cursor-pointer"
         >
           <span className="text-xs text-center">{t('recommendationSystem')}</span>
