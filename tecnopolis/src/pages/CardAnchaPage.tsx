@@ -254,7 +254,10 @@ const CardAnchaPage = () => {
                 marginBottom: '20px',
                 lineHeight: '1.6em',
                 textAlign: 'center'
-              }}></p>
+              }}>La IA generativa es una rama de la inteligencia artificial que crea contenido nuevo —como texto, imágenes,
+               audio o código— a partir de patrones aprendidos en grandes conjuntos de datos, utilizando modelos avanzados
+                que imitan la creatividad humana con coherencia y realismo.
+              </p>
               <div style={{ textAlign: 'center' }}>
                 <Link 
                   to="/technology"
