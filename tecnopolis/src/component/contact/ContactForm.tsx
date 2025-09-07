@@ -1,11 +1,13 @@
 // ContactForm.tsx
 import { useState } from "react";
+import { useLanguage } from "../../component/LanguageContext";
 import IconSend from "../../iconos/IconSend";
 import CheckBox from "../ui/CheckBox";
 import Input from "../ui/Input";
 import { sendEmail } from "../../api/contactService";
 
 const ContactForm = () => {
+  const { t } = useLanguage();
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -23,34 +25,33 @@ const ContactForm = () => {
       <div className="flex flex-col gap-4 flex-1 overflow-y-auto mt-2">
         {/* Bloque oculto en modo responsivo (pantallas pequeñas) */}
         <div className="hidden lg:flex flex-col gap-3">
-          <h3 className="font-bold mt-2">Tengo interés en ...</h3>
+          <h3 className="font-bold mt-2">{t('interestTitle')}</h3>
           <div className="flex gap-1 flex-wrap">
-            <CheckBox text="opción 1" name="interes" />
-            <CheckBox text="opción 2" name="interes" />
-            <CheckBox text="opción 3" name="interes" />
-            <CheckBox text="opción 4" name="interes" />
-            {/*<CheckBox text="opción 5" name="interes" />*/}
+            <CheckBox text={t('option1')} name="interes" />
+            <CheckBox text={t('option2')} name="interes" />
+            <CheckBox text={t('option3')} name="interes" />
+            <CheckBox text={t('option4')} name="interes" />
           </div>
         </div>
         <Input
           value={form.name}
           onChange={(e) => setForm((prev) => ({ ...prev, name: e }))}
-          placeholder="Your Name"
+          placeholder={t('yourName')}
         />
         <Input
           value={form.email}
           onChange={(e) => setForm((prev) => ({ ...prev, email: e }))}
-          placeholder="Your Email"
+          placeholder={t('yourEmail')}
         />
         <Input
           value={form.message}
           onChange={(e) => setForm((prev) => ({ ...prev, message: e }))}
-          placeholder="Your Message"
+          placeholder={t('yourMessage')}
         />
         <Input
           value={form.telephone}
           onChange={(e) => setForm((prev) => ({ ...prev, telephone: e }))}
-          placeholder="Your Whatsapp/Telegram"
+          placeholder={t('yourWhatsapp')}
         />
       </div>
       <button
@@ -63,7 +64,7 @@ const ContactForm = () => {
         <div className="w-4 h-4">
           <IconSend />
         </div>
-        Enviar
+        {t('send')}
       </button>
     </form>
   );

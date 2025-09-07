@@ -1,5 +1,6 @@
 // ContactPage.tsx
 import ContactForm from "../component/contact/ContactForm"
+import { useLanguage } from "../component/LanguageContext"
 import IconFacebook from "../iconos/IconFacebook"
 import IconInstagram from "../iconos/IconInstagram"
 import IconMail from "../iconos/IconMail"
@@ -8,6 +9,8 @@ import IconTelephone from "../iconos/IconTelephone"
 import IconX from "../iconos/IconX"
 
 const ContactPage = () => {
+  const { t } = useLanguage()
+  
   return (
     <div className="text-white w-full min-h-screen flex items-center justify-center py-8 px-4">
         <main className="w-full max-w-4xl flex flex-col lg:flex-row gap-8 items-center lg:items-start justify-center">
@@ -15,20 +18,20 @@ const ContactPage = () => {
                 <div className="flex flex-col gap-6 lg:gap-12">
                     {/* Título oculto en móvil, visible en desktop */}
                     <h2 className="hidden lg:block text-2xl md:text-3xl font-bold text-center lg:text-left">
-                        Let's discuss on something <span className="text-purple-500">cool</span> together
+                        {t('contactTitle')} <span className="text-purple-500">{t('contactTitleHighlight')}</span> {t('contactTitleEnd')}
                     </h2>
                     <div className="flex flex-col gap-3 lg:gap-4">
                         <button className="hover:bg-purple-500/20 flex gap-4 p-2 justify-start items-center ring-0 ring-purple-500 ring-inset hover:ring-2 rounded-md transition-all duration-300 hover:text-purple-600 w-full">
                             <div className="w-6 h-6 flex-shrink-0"><IconMail/></div>
-                            <p className="!text-white text-sm md:text-base truncate">info@tecnopolis.ai</p>
+                            <p className="!text-white text-sm md:text-base truncate">{t('email')}</p>
                         </button>
                         <button className="hover:bg-purple-500/20 flex gap-4 p-2 justify-start items-center ring-0 ring-purple-500 ring-inset hover:ring-2 rounded-md transition-all duration-300 hover:text-purple-600 w-full">
                             <div className="w-6 h-6 flex-shrink-0"><IconTelephone/></div>
-                            <p className="!text-white text-sm md:text-base">+56 9 2909 9893</p>
+                            <p className="!text-white text-sm md:text-base">{t('phone')}</p>
                         </button>
                         <button className="hover:bg-purple-500/20 flex gap-4 p-2 justify-start items-center ring-0 ring-purple-500 ring-inset hover:ring-2 rounded-md transition-all duration-300 hover:text-purple-600 w-full">
                             <div className="w-6 h-6 flex-shrink-0"><IconMapPin/></div>
-                            <p className="!text-white text-sm md:text-base">123 Street House</p>
+                            <p className="!text-white text-sm md:text-base">{t('address')}</p>
                         </button>
                     </div>
                 </div>

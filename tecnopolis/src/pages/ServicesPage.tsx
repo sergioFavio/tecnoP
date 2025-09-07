@@ -1,56 +1,83 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { useLanguage } from '../component/LanguageContext';
 
 const ServicesPage: React.FC = () => {
+  const { t } = useLanguage();
+  
   return (
     <div className="flex items-center justify-center w-full bg-transparent">
       <div className="grid grid-cols-3 gap-6 p-4">
-        {/* Slide In Up */}
-        <Link to="/services/card_service?title=Detección y Análisis de Imágenes&info=Análisis médico: Se aplica en la medicina para el análisis de radiografías y resonancias magnéticas. Se debe destacar la precisión y la velocidad con la que esta tecnología puede procesar grandes volúmenes de imágenes. Diagnóstico por imágenes, detección de anomalías en radiografías." className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-white shadow-md rounded-lg animate-slide-in-up hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
-          <span className="text-xs text-center">Detección y Análisis de Imágenes</span>
+        {/* Detección y Análisis de Imágenes */}
+        <Link 
+          to="/services/card_service?title=Detección y análisis de Imágenes&info=AnálisisMédico:Se aplica en la medicina para el análisis de radiografías y resonancias magnéticas." 
+          className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-white shadow-md rounded-lg animate-slide-in-up hover:shadow-lg hover:scale-105 transition-all cursor-pointer"
+        >
+          <span className="text-xs text-center">{t('imageDetection')}</span>
         </Link>
         
-        {/* Slide In Left */}
-        <Link to="/services/card_service?title=Procesamiento de Lenguaje Natural (NLP)&info=Análisis de sentimientos: Monitoreo de redes sociales, feedback de clientes
-\nExtracción de información: Procesamiento de documentos, análisis de contratos
-\nClasificación de texto: Categorización automática de emails, documentos
-\nDetección de emociones: Análisis del estado emocional en conversaciones" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-orange-400 shadow-md rounded-lg animate-slide-in-left hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
-          <span className="text-xs text-center">Procesamiento de Lenguaje Natural (NLP)</span>
+        {/* Procesamiento de Lenguaje Natural */}
+        <Link 
+          to="/services/card_service?title=Procesamiento de Lenguaje Natural&info=Análisis de Sentimientos: Monitoreo de redes sociales, feedback de clientes." 
+          className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-orange-400 shadow-md rounded-lg animate-slide-in-left hover:shadow-lg hover:scale-105 transition-all cursor-pointer"
+        >
+          <span className="text-xs text-center">{t('nlpProcessing')}</span>
         </Link>
         
-        {/* Slide In Right */}
-        <Link to="/services/card_service?title=Slide In Right" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-green-400 shadow-md rounded-lg animate-slide-in-right hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+        {/* Tercer servicio - placeholder */}
+        <Link 
+          to="/services/card_service?title=Slide In Right" 
+          className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-green-400 shadow-md rounded-lg animate-slide-in-right hover:shadow-lg hover:scale-105 transition-all cursor-pointer"
+        >
           <span className="text-xs text-center">Slide In Right</span>
         </Link>
         
-        {/* Slide Out Down */}
-        <Link to="/services/card_service?title=Slide Out Down" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-amber-300 shadow-md rounded-lg animate-slide-out-down hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
+        {/* Cuarto servicio - placeholder */}
+        <Link 
+          to="/services/card_service?title=Slide Out Down" 
+          className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-amber-300 shadow-md rounded-lg animate-slide-out-down hover:shadow-lg hover:scale-105 transition-all cursor-pointer"
+        >
           <span className="text-xs text-center">Slide Out Down</span>
         </Link>
         
-        {/* Slide Out Up */}
-        <Link to="/services/card_service?title=Capacitación" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-lime-400 shadow-md rounded-lg animate-slide-out-up hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
-          <span className="text-xs text-center">Capacitación</span>
+        {/* Capacitación */}
+        <Link 
+          to="/services/card_service?title=Capacitación" 
+          className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-lime-400 shadow-md rounded-lg animate-slide-out-up hover:shadow-lg hover:scale-105 transition-all cursor-pointer"
+        >
+          <span className="text-xs text-center">{t('training')}</span>
         </Link>
         
-        {/* Slide Out Left */}
-        <Link to="/services/card_service?title=Análisis de Emociones&info=El análisis de emociones es una técnica de inteligencia artificial que permite identificar y clasificar las emociones humanas expresadas en datos como texto, audio, imágenes o video, utilizando modelos de procesamiento del lenguaje natural y aprendizaje automático. Esta herramienta se aplica en diversos campos como el marketing, la atención al cliente, la salud mental, la educación, los recursos humanos y la seguridad, ayudando a comprender mejor las reacciones emocionales de las personas y a tomar decisiones más informadas y empáticas en contextos digitales y sociales." className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-orange-400 shadow-md rounded-lg animate-slide-out-left hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
-          <span className="text-xs text-center">Análisis de Emociones</span>
+        {/* Análisis de Emociones */}
+        <Link 
+          to="/services/card_service?title=Análisis de Emociones&info=El análisis de emociones es una técnica de inteligencia artificial que permite identificar y Clasificar las emociones humanas expresadas en datos." 
+          className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-orange-400 shadow-md rounded-lg animate-slide-out-left hover:shadow-lg hover:scale-105 transition-all cursor-pointer"
+        >
+          <span className="text-xs text-center">{t('emotionAnalysis')}</span>
         </Link>
         
-        {/* Slide Out Right */}
-        <Link to="/services/card_service?title=Consultoría" className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-sky-400 shadow-md rounded-lg animate-slide-out-right hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
-          <span className="text-xs text-center">Consultoría</span>
+        {/* Consultoría */}
+        <Link 
+          to="/services/card_service?title=Consultoría" 
+          className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-sky-400 shadow-md rounded-lg animate-slide-out-right hover:shadow-lg hover:scale-105 transition-all cursor-pointer"
+        >
+          <span className="text-xs text-center">{t('consulting')}</span>
         </Link>
         
-        {/* Slide Down */}
-        <Link to="/services/card_service?title=Anáilis de Sentimientos&info=El análisis de sentimientos es una técnica de procesamiento de lenguaje natural que permite identificar, extraer y clasificar las emociones expresadas en un texto, como opiniones positivas, negativas o neutras. Se utiliza ampliamente en áreas como el marketing, la atención al cliente y la política para entender cómo se sienten los usuarios o consumidores respecto a productos, servicios, marcas o temas específicos. Por ejemplo, una empresa puede aplicar análisis de sentimientos a comentarios en redes sociales para evaluar la percepción pública de una campaña, o un partido político puede analizar opiniones en Twitter para ajustar su estrategia comunicacional." className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-fuchsia-500 shadow-md rounded-lg animate-slide-down hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
-          <span className="text-xs text-center">Anáilis de Sentimientos</span>
+        {/* Análisis de Sentimientos */}
+        <Link 
+          to="/services/card_service?title=Análisis de sentimientos&info=El análisis de sentimientos es una técnica de procesamiento."
+          className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-fuchsia-500 shadow-md rounded-lg animate-slide-down hover:shadow-lg hover:scale-105 transition-all cursor-pointer"
+        >
+          <span className="text-xs text-center">{t('sentimentAnalysis')}</span>
         </Link>
         
-        {/* Slide Up */}
-        <Link to="/services/card_service?title=Sistema de Recomendación&info=Un sistema de recomendación es una herramienta que utiliza algoritmos para sugerir productos, servicios o contenidos personalizados a los usuarios, basándose en sus preferencias, comportamientos anteriores o similitudes con otros usuarios. Su objetivo principal es facilitar la toma de decisiones y mejorar la experiencia del usuario, al mismo tiempo que ayuda a las empresas a aumentar la retención, las ventas y la satisfacción del cliente." className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-red-600 shadow-md rounded-lg animate-slide-up hover:shadow-lg hover:scale-105 transition-all cursor-pointer">
-          <span className="text-xs text-center">Sistema de Recomendación</span>
+        {/* Sistema de Recomendación */}
+        <Link 
+          to="/services/card_service?title=Sistema de Recomendación&info=Un sistema de recomendación es una herramienta que utiliza algoritmos para sugerir productos." 
+          className="w-32 h-24 flex items-center justify-center border border-gray-300 bg-red-600 shadow-md rounded-lg animate-slide-up hover:shadow-lg hover:scale-105 transition-all cursor-pointer"
+        >
+          <span className="text-xs text-center">{t('recommendationSystem')}</span>
         </Link>
       </div>
       

@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
+import { useLanguage } from '../component/LanguageContext';
 
 interface Project {
   id: number;
   title: string;
-  description: string;
+  descriptionKey: string;
   videoUrl: string;
   imageUrl: string;
   color: string;
 }
 
 const ProductsPage: React.FC = () => {
+  const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState<number>(1);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
 
@@ -17,7 +19,7 @@ const ProductsPage: React.FC = () => {
     {
       id: 1,
       title: 'Doctor Tomatto',
-      description: 'Doctor Tomatto es una plataforma de IA que proporciona a los productores de tomate una herramienta mediante procesamiento de imágenes digitales, para la detección temprana de plagas, enfermedades y tratamientos, para actuar a tiempo y mantener una plantación sana y así minimizar la pérdida de producción de tomates debido a plagas y enfermedades.',
+      descriptionKey: 'doctorTomattoDescription',
       videoUrl: 'https://www.youtube.com/embed/94B-oraAOCc',
       imageUrl: '/img/projects/proyectoDoctorTomatto.jpg',
       color: 'red'
@@ -25,7 +27,7 @@ const ProductsPage: React.FC = () => {
     {
       id: 2,
       title: 'Atenea Byte',
-      description: 'Atenea Byte es una plataforma de IA que genera contenido para programas de radio en tiempo real, mediante la utilización de asistentes virtuales, quienes interpretan distintos roles, como ser: Periodista, Astróloga, Humorista, Chef y Asesora de modas y etiqueta, quienes interactúan con el/la conductor(a) del programa de radio.',
+      descriptionKey: 'ateneaByteDescription',
       videoUrl: 'https://www.youtube.com/embed/3Y8tCoTvZKw',
       imageUrl: '/img/projects/proyectoAteneaByte.jpg',
       color: 'green'
@@ -33,7 +35,7 @@ const ProductsPage: React.FC = () => {
     {
       id: 3,
       title: 'Camila Plejia',
-      description: 'El potencial de cambiar las vidas de las personas con ciertos tipos de discapacidad es una de las promesas de la inteligencia artificial (IA). En este contexto nace Camila Plejia, un asistente virtual con IA que permite a las personas con movilidad restringida realizar acciones para las que antes hubieran necesitado ayuda externa. Leer mensajes, redactar correos electrónicos, buscar videos o películas, encender luces o poner música, son tareas que las personas con movilidad dan por sentadas, pero que, para alguien con cuadriplejia (parálisis de las extremidades superiores e inferiores) se convierten en misiones imposibles, pero que ahora son posibles gracias a la tecnología. Una persona que está imposibilitada de mover sus manos y piernas, es muy dependiente de otras personas. Para ayudarlas es que se desarrolló esta herramienta que se llama Camila Plejia y que, mediante comandos de voz posibilita que se pueda interactuar con el computador. Es un asistente virtual que ayuda a personas con tetraplejia a mejorar su comunicación con el mundo exterior.',
+      descriptionKey: 'camilaPlejiaDescription',
       videoUrl: 'https://www.youtube.com/watch?v=iPhoCedKH-c',
       imageUrl: '/img/projects/proyectoProfesoraDislexia.jpg',
       color: 'blue'
@@ -54,8 +56,6 @@ const ProductsPage: React.FC = () => {
       default: return 'text-gray-500';
     }
   };
-
-  console.log('Modal state:', isModalOpen); // Debug log
 
   return (
     <div className="min-h-screen flex justify-center items-center">
@@ -89,7 +89,6 @@ const ProductsPage: React.FC = () => {
       `}</style>
 
       <div className="py-2 w-full flex justify-center">
-        {/* Cambio: Altura ajustada para móviles y padding reducido */}
         <div className="rounded-2xl overflow-hidden p-0 w-[90%] sm:w-[80%] md:w-[70%] h-[80vh] md:h-[55vh] lg:h-[55vh] mx-auto shadow-lg bg-white">
           <div className="flex flex-col lg:flex-row h-full">
             {/* Image Section */}
@@ -100,7 +99,7 @@ const ProductsPage: React.FC = () => {
               <span className="absolute block inset-x-0 bottom-0 lg:hidden lg:inset-y-0 lg:right-auto bg-gradient-to-t lg:bg-gradient-to-r from-white to-transparent w-full h-16 lg:h-full lg:w-16"></span>
               
               <div className="relative flex justify-end lg:justify-start flex-wrap text-white text-xl font-bold m-3 md:m-4">
-                <div className="bg-green-500 px-3 py-1 md:px-4 md:py-1 rounded text-sm md:text-base">Proyecto</div>
+                <div className="bg-green-500 px-3 py-1 md:px-4 md:py-1 rounded text-sm md:text-base">{t('project')}</div>
               </div>
             </div>
 
@@ -109,7 +108,7 @@ const ProductsPage: React.FC = () => {
               <div className="p-4 md:p-6 lg:p-8 flex-1 flex flex-col">
                 <div className="flex justify-between items-start">
                   <h3 className="text-lg md:text-xl font-bold mb-4 md:mb-6 lg:mb-8">
-                    Nuestros Proyectos
+                    {t('ourProjects')}
                   </h3>
                 </div>
 
@@ -140,7 +139,7 @@ const ProductsPage: React.FC = () => {
                         <span className={`font-bold ${getColorClass(currentProject.color)}`}>
                           &nbsp;{currentProject.title}&nbsp;
                         </span>
-                        {currentProject.description}
+                        {t(currentProject.descriptionKey)}
                       </p>
                     </div>
                   </div>
@@ -155,7 +154,7 @@ const ProductsPage: React.FC = () => {
                     }}
                     className="text-blue-700 border border-blue-300 hover:border-blue-700 px-3 py-1 md:px-4 md:py-1 rounded transition-colors duration-200 cursor-pointer text-xs md:text-sm"
                   >
-                    Ver Demo
+                    {t('viewDemo')}
                   </button>
                 </div>
               </div>
@@ -208,7 +207,7 @@ const ProductsPage: React.FC = () => {
                 onClick={() => setIsModalOpen(false)}
                 className="px-4 py-1 md:px-6 md:py-2 bg-gray-200 hover:bg-gray-300 rounded transition-colors font-medium text-sm md:text-base"
               >
-                Cerrar
+                {t('close')}
               </button>
             </div>
           </div>

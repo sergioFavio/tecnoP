@@ -1,14 +1,16 @@
+import { useLanguage } from "../component/LanguageContext"
 import Robot from "../asset/robot.png"
 import Triangulo from "../asset/triangulo.png"
 
 const HomePage = () => {
+  const { t } = useLanguage()
+  
   return (
     <>
       <div className="w-full h-auto flex items-center justify-center p-4 md:p-20">
         <h1 className="text-white text-2xl md:text-4xl lg:text-[56px] leading-tight md:leading-snug text-center">
-          {/*IA para cada desafío, solución para cada necesidad*/}
-          AI for every challenge, a solution for every need
-          </h1>
+          {t('heroTitle')} <span className="text-orange-500">{t('heroTitleHighlight')}</span> {t('heroTitleEnd')}
+        </h1>
       </div>
       <div className="w-full h-auto md:h-full flex justify-center">
         <div className="relative h-auto md:h-full w-full max-w-4xl flex items-center justify-center isolate">

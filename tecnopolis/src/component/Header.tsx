@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom"
 import Logo from "../asset/logo_tecnopolis_02.png"
 import { useState } from "react"
+import { useLanguage } from "../component/LanguageContext"
 
 // Importar imágenes de banderas en formato PNG
 import UsFlag from "../asset/flags/us.png"
@@ -10,38 +11,16 @@ import EsFlag from "../asset/flags/es.png"
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false)
-  const [currentLanguage, setCurrentLanguage] = useState("en") // Cambiado a inglés por defecto
-
-  // Textos traducidos para cada idioma
-  const translations = {
-    es: {
-      home: "Inicio",
-      products: "Productos",
-      services: "Servicios",
-      contact: "Contacto"
-    },
-    en: {
-      home: "Home",
-      products: "Products",
-      services: "Services",
-      contact: "Contact"
-    },
-    pt: {
-      home: "Início",
-      products: "Produtos",
-      services: "Serviços",
-      contact: "Contato"
-    }
-  }
+  const { currentLanguage, setCurrentLanguage, t } = useLanguage()
 
   // Configuración de banderas e idiomas
   const languages = [
-    { code: "en", name: "English", flag: UsFlag },
-    { code: "pt", name: "Português", flag: BrFlag },
-    { code: "es", name: "Español", flag: EsFlag }
+    { code: "en" as const, name: "English", flag: UsFlag },
+    { code: "pt" as const, name: "Português", flag: BrFlag },
+    { code: "es" as const, name: "Español", flag: EsFlag }
   ]
 
-  const handleLanguageChange = (langCode: string) => {
+  const handleLanguageChange = (langCode: "es" | "en" | "pt") => {
     setCurrentLanguage(langCode)
     setIsLanguageMenuOpen(false)
     setIsMenuOpen(false) // Cerrar el menú móvil al cambiar idioma
@@ -69,28 +48,28 @@ const Header = () => {
             to="/" 
             className={({isActive}) => `${isActive ? 'underline text-orange-500' : ''}`}
           >
-            {translations[currentLanguage as keyof typeof translations].home}
+            {t('home')}
           </NavLink>
           <NavLink 
             to="/products" 
             className={({isActive}) => `${isActive ? 'underline text-orange-500' : ''}`}
           >
-            {translations[currentLanguage as keyof typeof translations].products}
+            {t('products')}
           </NavLink>
           <NavLink 
             to="/services" 
             className={({isActive}) => `${isActive ? 'underline text-orange-500' : ''}`}
           >
-            {translations[currentLanguage as keyof typeof translations].services}
+            {t('services')}
           </NavLink>
           <NavLink 
             to="/contact" 
             className={({isActive}) => `${isActive ? 'underline text-orange-500' : ''}`}
           >
-            {translations[currentLanguage as keyof typeof translations].contact}
+            {t('contact')}
           </NavLink>
           
-          {/* Selector de idiomas - Versión escritorio (después de Contacto) */}
+          {/* Selector de idiomas - Versión escritorio */}
           <div className="relative">
             <button 
               className="flex items-center gap-2 p-2 rounded-md hover:bg-white/10 transition-colors"
@@ -128,33 +107,33 @@ const Header = () => {
             className={({isActive}) => `py-2 ${isActive ? 'underline text-orange-500' : ''}`} 
             onClick={() => setIsMenuOpen(false)}
           >
-            {translations[currentLanguage as keyof typeof translations].home}
+            {t('home')}
           </NavLink>
           <NavLink 
             to="/products" 
             className={({isActive}) => `py-2 ${isActive ? 'underline text-orange-500' : ''}`} 
             onClick={() => setIsMenuOpen(false)}
           >
-            {translations[currentLanguage as keyof typeof translations].products}
+            {t('products')}
           </NavLink>
           <NavLink 
             to="/services" 
             className={({isActive}) => `py-2 ${isActive ? 'underline text-orange-500' : ''}`} 
             onClick={() => setIsMenuOpen(false)}
           >
-            {translations[currentLanguage as keyof typeof translations].services}
+            {t('services')}
           </NavLink>
           <NavLink 
             to="/contact" 
             className={({isActive}) => `py-2 ${isActive ? 'underline text-orange-500' : ''}`} 
             onClick={() => setIsMenuOpen(false)}
           >
-            {translations[currentLanguage as keyof typeof translations].contact}
+            {t('contact')}
           </NavLink>
           
-          {/* Selector de idiomas - Versión móvil (después de Contacto) */}
+          {/* Selector de idiomas - Versión móvil */}
           <div className="pt-4 border-t border-gray-700">
-            <p className="text-sm text-gray-400 mb-2">Seleccionar idioma:</p>
+            <p className="text-sm text-gray-400 mb-2">{t('selectLanguage')}:</p>
             <div className="flex gap-3">
               {languages.map(lang => (
                 <button

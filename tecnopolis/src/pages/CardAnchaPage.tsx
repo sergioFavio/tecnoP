@@ -254,7 +254,7 @@ const CardAnchaPage = () => {
                 marginBottom: '20px',
                 lineHeight: '1.6em',
                 textAlign: 'center'
-              }}>La IA Generativa es un área de la inteligencia artificial que permite a las máquinas crear contenido nuevo y original, como textos, imágenes, música o código, a partir de patrones aprendidos de grandes volúmenes de datos. Utiliza modelos avanzados, como redes neuronales profundas, para simular la creatividad humana y generar resultados que antes solo podían producir las personas, siendo útil en campos como el arte, el diseño, la programación, la educación y más.</p>
+              }}></p>
               <div style={{ textAlign: 'center' }}>
                 <Link 
                   to="/technology"
