@@ -1,8 +1,11 @@
 import { Outlet, Link } from "react-router-dom";
 import Header from "../component/Header";
 import FooterInfo from "../component/home/FooterInfo";
+import { useLanguage } from "../component/LanguageContext";
 
 const LayoutFooter = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="w-screen h-screen overflow-hidden flex relative">
       <Header />
@@ -15,20 +18,20 @@ const LayoutFooter = () => {
           <div className="hidden md:flex md:justify-center md:items-stretch md:gap-0.5">
             <FooterInfo
               linking="/what_we_do"
-              title="What We Do"
-              content="Quienes somos, que hacemos, nuestros servicios, nuestros objetivos. "
+              titleKey="whatWeDo"
+              contentKey="whatWeDoContent"
             />
 
             <FooterInfo
               linking="/technology"
-              title="Technologies"
-              content="En Tecnópolis.Ai utilizamos cuatro tipos de tecnologías de Inteligencia Artificial (IA). "
+              titleKey="technologies"
+              contentKey="technologiesContent"
             />
 
             <FooterInfo
               linking="/blog"
-              title="Blog"
-              content="Publicaciones de artículos recientes sobre las áreas de IA, con temas de interés y actualidad. "
+              titleKey="blog"
+              contentKey="blogContent"
             />
           </div>
 
@@ -39,7 +42,7 @@ const LayoutFooter = () => {
                 to="/what_we_do"
                 className="block text-lg font-sans text-white hover:text-orange-500"
               >
-                What We Do
+                {t('whatWeDo')}
               </Link>
             </div>
             <div className="mb-1">
@@ -47,7 +50,7 @@ const LayoutFooter = () => {
                 to="/technology"
                 className="block text-lg font-sans text-white hover:text-orange-500"
               >
-                Technologies
+                {t('technologies')}
               </Link>
             </div>
             <div>
@@ -55,7 +58,7 @@ const LayoutFooter = () => {
                 to="/blog"
                 className="block text-lg font-sans text-white hover:text-orange-500"
               >
-                Blog
+                {t('blog')}
               </Link>
             </div>
           </div>

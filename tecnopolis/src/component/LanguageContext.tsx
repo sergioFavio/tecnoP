@@ -70,6 +70,14 @@ const translations = {
     recommendationSystem: "Sistema de Recomendación",
     recommendationSystemInfo: "Un sistema de recomendación es una aplicación de inteligencia artificial que utiliza algoritmos de filtrado colaborativo o basado en contenido para sugerir productos o servicios personalizados. Estos sistemas analizan datos del comportamiento del usuario para predecir preferencias futuras.",
     
+    // Footer
+    whatWeDo: "Qué Hacemos",
+    whatWeDoContent: "Quiénes somos, qué hacemos, nuestros servicios, nuestros objetivos.",
+    technologies: "Tecnologías",
+    technologiesContent: "En Tecnópolis.Ai utilizamos cuatro tipos de tecnologías de Inteligencia Artificial (IA).",
+    blog: "Blog",
+    blogContent: "Publicaciones de artículos recientes sobre las áreas de IA, con temas de interés y actualidad.",
+    
     // Common
     email: "info@tecnopolis.ai",
     phone: "+56 9 2909 9893",
@@ -136,6 +144,14 @@ const translations = {
     recommendationSystem: "Recommendation System",
     recommendationSystemInfo: "A recommendation system is an AI application that uses collaborative or content-based filtering algorithms to suggest personalized products or services. These systems analyze user behavior data to predict future preferences.",
     
+    // Footer
+    whatWeDo: "What We Do",
+    whatWeDoContent: "Who we are, what we do, our services, our objectives.",
+    technologies: "Technologies",
+    technologiesContent: "At Tecnópolis.Ai we use four types of Artificial Intelligence (AI) technologies.",
+    blog: "Blog",
+    blogContent: "Recent article publications on AI areas, with topics of interest and current events.",
+    
     // Common
     email: "info@tecnopolis.ai",
     phone: "+56 9 2909 9893",
@@ -201,6 +217,15 @@ const translations = {
 
     recommendationSystem: "Sistema de Recomendação",
     recommendationSystemInfo: "Um sistema de recomendação é uma aplicação de IA que utiliza algoritmos de filtragem colaborativa ou baseada em conteúdo para sugerir produtos ou serviços personalizados. Esses sistemas analisam dados de comportamento do usuário para prever preferências futuras.",
+    
+    // Footer
+    whatWeDo: "O Que Fazemos",
+    whatWeDoContent: "Quem somos, o que fazemos, nossos serviços, nossos objetivos.",
+    technologies: "Tecnologias",
+    technologiesContent: "Na Tecnópolis.Ai utilizamos quatro tipos de tecnologias de Inteligência Artificial (IA).",
+    blog: "Blog",
+    blogContent: "Publicações de artigos recentes sobre as áreas de IA, com temas de interesse e atualidade.",
+    
     // Common
     email: "info@tecnopolis.ai",
     phone: "+56 9 2909 9893",
