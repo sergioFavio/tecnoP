@@ -45,6 +45,10 @@ const translations = {
     viewDemo: "Ver Demo",
     close: "Cerrar",
     
+    // BlogPage
+    readMore: "Leer más",
+    goToArticle: "Ir al artículo",
+    
     // Project Descriptions
     doctorTomattoDescription: "Doctor Tomatto es una plataforma de IA que proporciona a los productores de tomate una herramienta mediante procesamiento de imágenes digitales, para la detección temprana de plagas, enfermedades y tratamientos, para actuar a tiempo y mantener una plantación sana y así minimizar la pérdida de producción de tomates debido a plagas y enfermedades.",
     ateneaByteDescription: "Atenea Byte es una plataforma de IA que genera contenido para programas de radio en tiempo real, mediante la utilización de asistentes virtuales, quienes interpretan distintos roles, como ser: Periodista, Astróloga, Humorista, Chef y Asesora de modas y etiqueta, quienes interactúan con el/la conductor(a) del programa de radio.",
@@ -119,6 +123,10 @@ const translations = {
     viewDemo: "View Demo",
     close: "Close",
     
+    // BlogPage
+    readMore: "Read more",
+    goToArticle: "Go to article",
+    
     // Project Descriptions
     doctorTomattoDescription: "Doctor Tomatto is an AI platform that provides tomato producers with a tool through digital image processing, for early detection of pests, diseases and treatments, to act in time and maintain a healthy plantation and thus minimize the loss of tomato production due to pests and diseases.",
     ateneaByteDescription: "Atenea Byte is an AI platform that generates content for radio programs in real time, through the use of virtual assistants, who interpret different roles, such as: Journalist, Astrologer, Humorist, Chef and Fashion and etiquette advisor, who interact with the radio program host.",
@@ -192,6 +200,10 @@ const translations = {
     ourProjects: "Nossos Projetos",
     viewDemo: "Ver Demo",
     close: "Fechar",
+    
+    // BlogPage
+    readMore: "Leia mais",
+    goToArticle: "Ir ao artigo",
     
     // Project Descriptions
     doctorTomattoDescription: "Doctor Tomatto é uma plataforma de IA que fornece aos produtores de tomate uma ferramenta através do processamento de imagens digitais, para detecção precoce de pragas, doenças e tratamentos, para agir a tempo e manter uma plantação saudável e assim minimizar a perda de produção de tomate devido a pragas e doenças.",
