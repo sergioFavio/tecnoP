@@ -49,6 +49,33 @@ const translations = {
     readMore: "Leer más",
     goToArticle: "Ir al artículo",
     
+    // WhatWeDoPage - Cube faces
+    frontFace: "Inicio",
+    backFace: "Atrás", 
+    rightFace: "Derecha",
+    leftFace: "Izquierda",
+    topFace: "Arriba",
+    bottomFace: "Abajo",
+    
+    // WhatWeDoPage - Modal titles and content
+    frontFaceTitle: "Nuestra Misión",
+    frontFaceContent: "En Tecnópolis.AI, nos dedicamos a transformar desafíos complejos en soluciones inteligentes mediante inteligencia artificial. Desarrollamos tecnología de vanguardia que impulsa la innovación y mejora la calidad de vida, creando un futuro donde la IA sea accesible y beneficiosa para todos.",
+    
+    backFaceTitle: "Nuestra Visión",
+    backFaceContent: "Ser líderes en el desarrollo de soluciones de inteligencia artificial que transformen industrias y comunidades. Aspiramos a crear un ecosistema tecnológico donde la IA democratice el acceso al conocimiento y potencie las capacidades humanas en todos los sectores.",
+    
+    rightFaceTitle: "Nuestros Servicios",
+    rightFaceContent: "Ofrecemos desarrollo de sistemas de recomendación, análisis de sentimientos, procesamiento de lenguaje natural, detección de imágenes, consultoría en IA y capacitación especializada. Nuestras soluciones están diseñadas para adaptarse a las necesidades específicas de cada cliente y sector.",
+    
+    leftFaceTitle: "Nuestro Equipo",
+    leftFaceContent: "Contamos con un equipo multidisciplinario de ingenieros en sistemas, científicos de datos, especialistas en machine learning y expertos en UX/UI. Nuestro enfoque colaborativo y pasión por la innovación nos permite entregar soluciones que superan las expectativas.",
+    
+    topFaceTitle: "Nuestros Logros",
+    topFaceContent: "Hemos desarrollado exitosamente proyectos como Doctor Tomatto para detección de plagas, Atenea Byte para generación de contenido radial, y Camila Plejia para asistencia a personas con movilidad reducida. Estos logros reflejan nuestro compromiso con la innovación social.",
+    
+    bottomFaceTitle: "Contacto",
+    bottomFaceContent: "¿Listo para transformar tu negocio con IA? Contáctanos en info@tecnopolis.ai o al +56 9 2909 9893. Tenemos oficinas en Arica, Chile y Cochabamba, Bolivia. Trabajemos juntos para crear soluciones que marquen la diferencia.",
+    
     // Project Descriptions
     doctorTomattoDescription: "Doctor Tomatto es una plataforma de IA que proporciona a los productores de tomate una herramienta mediante procesamiento de imágenes digitales, para la detección temprana de plagas, enfermedades y tratamientos, para actuar a tiempo y mantener una plantación sana y así minimizar la pérdida de producción de tomates debido a plagas y enfermedades.",
     ateneaByteDescription: "Atenea Byte es una plataforma de IA que genera contenido para programas de radio en tiempo real, mediante la utilización de asistentes virtuales, quienes interpretan distintos roles, como ser: Periodista, Astróloga, Humorista, Chef y Asesora de modas y etiqueta, quienes interactúan con el/la conductor(a) del programa de radio.",
@@ -127,6 +154,33 @@ const translations = {
     readMore: "Read more",
     goToArticle: "Go to article",
     
+    // WhatWeDoPage - Cube faces
+    frontFace: "Front",
+    backFace: "Back",
+    rightFace: "Right", 
+    leftFace: "Left",
+    topFace: "Top",
+    bottomFace: "Bottom",
+    
+    // WhatWeDoPage - Modal titles and content
+    frontFaceTitle: "Our Mission",
+    frontFaceContent: "At Tecnópolis.AI, we are dedicated to transforming complex challenges into intelligent solutions through artificial intelligence. We develop cutting-edge technology that drives innovation and improves quality of life, creating a future where AI is accessible and beneficial for everyone.",
+    
+    backFaceTitle: "Our Vision",
+    backFaceContent: "To be leaders in developing artificial intelligence solutions that transform industries and communities. We aspire to create a technological ecosystem where AI democratizes access to knowledge and enhances human capabilities across all sectors.",
+    
+    rightFaceTitle: "Our Services",
+    rightFaceContent: "We offer recommendation systems development, sentiment analysis, natural language processing, image detection, AI consulting, and specialized training. Our solutions are designed to adapt to the specific needs of each client and sector.",
+    
+    leftFaceTitle: "Our Team",
+    leftFaceContent: "We have a multidisciplinary team of systems engineers, data scientists, machine learning specialists, and UX/UI experts. Our collaborative approach and passion for innovation allows us to deliver solutions that exceed expectations.",
+    
+    topFaceTitle: "Our Achievements",
+    topFaceContent: "We have successfully developed projects like Doctor Tomatto for pest detection, Atenea Byte for radio content generation, and Camila Plejia for assistance to people with reduced mobility. These achievements reflect our commitment to social innovation.",
+    
+    bottomFaceTitle: "Contact",
+    bottomFaceContent: "Ready to transform your business with AI? Contact us at info@tecnopolis.ai or +56 9 2909 9893. We have offices in Arica, Chile and Cochabamba, Bolivia. Let's work together to create solutions that make a difference.",
+    
     // Project Descriptions
     doctorTomattoDescription: "Doctor Tomatto is an AI platform that provides tomato producers with a tool through digital image processing, for early detection of pests, diseases and treatments, to act in time and maintain a healthy plantation and thus minimize the loss of tomato production due to pests and diseases.",
     ateneaByteDescription: "Atenea Byte is an AI platform that generates content for radio programs in real time, through the use of virtual assistants, who interpret different roles, such as: Journalist, Astrologer, Humorist, Chef and Fashion and etiquette advisor, who interact with the radio program host.",
@@ -204,6 +258,33 @@ const translations = {
     // BlogPage
     readMore: "Leia mais",
     goToArticle: "Ir ao artigo",
+    
+    // WhatWeDoPage - Cube faces
+    frontFace: "Frente",
+    backFace: "Atrás",
+    rightFace: "Direita",
+    leftFace: "Esquerda", 
+    topFace: "Topo",
+    bottomFace: "Base",
+    
+    // WhatWeDoPage - Modal titles and content
+    frontFaceTitle: "Nossa Missão",
+    frontFaceContent: "Na Tecnópolis.AI, nos dedicamos a transformar desafios complexos em soluções inteligentes através da inteligência artificial. Desenvolvemos tecnologia de ponta que impulsiona a inovação e melhora a qualidade de vida, criando um futuro onde a IA seja acessível e benéfica para todos.",
+    
+    backFaceTitle: "Nossa Visão",
+    backFaceContent: "Ser líderes no desenvolvimento de soluções de inteligência artificial que transformem indústrias e comunidades. Aspiramos criar um ecossistema tecnológico onde a IA democratize o acesso ao conhecimento e potencialize as capacidades humanas em todos os setores.",
+    
+    rightFaceTitle: "Nossos Serviços",
+    rightFaceContent: "Oferecemos desenvolvimento de sistemas de recomendação, análise de sentimentos, processamento de linguagem natural, detecção de imagens, consultoria em IA e treinamento especializado. Nossas soluções são projetadas para se adaptar às necessidades específicas de cada cliente e setor.",
+    
+    leftFaceTitle: "Nossa Equipe",
+    leftFaceContent: "Contamos com uma equipe multidisciplinar de engenheiros de sistemas, cientistas de dados, especialistas em machine learning e experts em UX/UI. Nossa abordagem colaborativa e paixão pela inovação nos permite entregar soluções que superam expectativas.",
+    
+    topFaceTitle: "Nossos Conquistas",
+    topFaceContent: "Desenvolvemos com sucesso projetos como Doctor Tomatto para detecção de pragas, Atenea Byte para geração de conteúdo radial, e Camila Plejia para assistência a pessoas com mobilidade reduzida. Essas conquistas refletem nosso compromisso com a inovação social.",
+    
+    bottomFaceTitle: "Contato",
+    bottomFaceContent: "Pronto para transformar seu negócio com IA? Entre em contato conosco em info@tecnopolis.ai ou +56 9 2909 9893. Temos escritórios em Arica, Chile e Cochabamba, Bolívia. Vamos trabalhar juntos para criar soluções que façam a diferença.",
     
     // Project Descriptions
     doctorTomattoDescription: "Doctor Tomatto é uma plataforma de IA que fornece aos produtores de tomate uma ferramenta através do processamento de imagens digitais, para detecção precoce de pragas, doenças e tratamentos, para agir a tempo e manter uma plantação saudável e assim minimizar a perda de produção de tomate devido a pragas e doenças.",

@@ -1,48 +1,50 @@
 import { useState } from 'react';
+import { useLanguage } from '../component/LanguageContext';
 import "./WhatWeDoPage.css";
 
 const WhatWeDoPage = () => {
+  const { t } = useLanguage();
   const [modalOpen, setModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState({ title: '', content: '', color: '' });
 
-  const faceData:Record<string,{
+  const faceData: Record<string, {
     title: string;
     content: string;
-    color:string;
+    color: string;
   }> = {
     front: {
-      title: 'Front Face',
-      content: 'Esta es la cara frontal del cubo. Aquí puedes mostrar información sobre servicios principales, presentación de la empresa, o cualquier contenido destacado que desees que los usuarios vean primero.',
+      title: t('frontFaceTitle'),
+      content: t('frontFaceContent'),
       color: '#646cff'
     },
     back: {
-      title: 'Back Face', 
-      content: 'Cara posterior del cubo. Ideal para mostrar información adicional, testimonios de clientes, o detalles complementarios que apoyen tu mensaje principal.',
+      title: t('backFaceTitle'),
+      content: t('backFaceContent'),
       color: '#00bcd4'
     },
     right: {
-      title: 'Right Face',
-      content: 'Cara derecha del cubo. Perfecta para mostrar productos, servicios específicos, o características técnicas que quieras destacar de manera organizada.',
+      title: t('rightFaceTitle'),
+      content: t('rightFaceContent'),
       color: '#4caf50'
     },
     left: {
-      title: 'Left Face',
-      content: 'Cara izquierda del cubo. Espacio ideal para mostrar el equipo de trabajo, historia de la empresa, o valores corporativos que definan tu identidad.',
+      title: t('leftFaceTitle'),
+      content: t('leftFaceContent'),
       color: '#ff4081'
     },
     top: {
-      title: 'Top Face',
-      content: 'Cara superior del cubo. Excelente para mostrar logros, certificaciones, premios obtenidos, o cualquier información que eleve el prestigio de tu organización.',
+      title: t('topFaceTitle'),
+      content: t('topFaceContent'),
       color: '#ffc107'
     },
     bottom: {
-      title: 'Bottom Face',
-      content: 'Cara inferior del cubo. Útil para información de contacto, ubicación, redes sociales, o cualquier detalle fundamental que los usuarios necesiten conocer.',
+      title: t('bottomFaceTitle'),
+      content: t('bottomFaceContent'),
       color: '#9c27b0'
     }
   };
 
-  const openModal = (face:string) => {
+  const openModal = (face: string) => {
     setModalContent(faceData[face]);
     setModalOpen(true);
   };
@@ -51,7 +53,7 @@ const WhatWeDoPage = () => {
     setModalOpen(false);
   };
 
-  const handleFaceClick = (face:string, event: any) => {
+  const handleFaceClick = (face: string, event: any) => {
     event.stopPropagation();
     openModal(face);
   };
@@ -64,37 +66,37 @@ const WhatWeDoPage = () => {
             className="face front" 
             onClick={(e) => handleFaceClick('front', e)}
           >
-            Front
+            {t('frontFace')}
           </div>
           <div 
             className="face back"
             onClick={(e) => handleFaceClick('back', e)}
           >
-            Back
+            {t('backFace')}
           </div>
           <div 
             className="face right"
             onClick={(e) => handleFaceClick('right', e)}
           >
-            Right
+            {t('rightFace')}
           </div>
           <div 
             className="face left"
             onClick={(e) => handleFaceClick('left', e)}
           >
-            Left
+            {t('leftFace')}
           </div>
           <div 
             className="face top"
             onClick={(e) => handleFaceClick('top', e)}
           >
-            Top
+            {t('topFace')}
           </div>
           <div 
             className="face bottom"
             onClick={(e) => handleFaceClick('bottom', e)}
           >
-            Bottom
+            {t('bottomFace')}
           </div>
         </div>
 
@@ -107,7 +109,7 @@ const WhatWeDoPage = () => {
               left: 0,
               width: '100%',
               height: '100%',
-              backgroundColor: 'transparent',
+              backgroundColor: 'transparent',  //'rgba(0, 0, 0, 0.8)',
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
@@ -133,7 +135,7 @@ const WhatWeDoPage = () => {
               }}
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Esquinas holográficas */}
+              {/* Holographic corners */}
               <div style={{
                 position: 'absolute',
                 top: '15px',
@@ -175,7 +177,7 @@ const WhatWeDoPage = () => {
                 opacity: 0.8
               }} />
 
-              {/* Botón de cierre */}
+              {/* Close button */}
               <button
                 onClick={closeModal}
                 style={{
@@ -213,7 +215,7 @@ const WhatWeDoPage = () => {
                 }}
               >×</button>
 
-              {/* Contenido del modal */}
+              {/* Modal content */}
               <h2 style={{
                 fontSize: '2.5em',
                 marginBottom: '30px',
@@ -237,7 +239,7 @@ const WhatWeDoPage = () => {
                 {modalContent.content}
               </div>
 
-              {/* Elementos decorativos */}
+              {/* Decorative elements */}
               <div style={{
                 position: 'absolute',
                 top: '50%',
@@ -261,7 +263,7 @@ const WhatWeDoPage = () => {
                 borderRadius: '3px'
               }} />
 
-              {/* Línea decorativa inferior */}
+              {/* Bottom decorative line */}
               <div style={{
                 position: 'absolute',
                 bottom: '10px',
