@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useLanguage } from "../component/LanguageContext";
 
 const CardAnchaPage = () => {
+  const { t } = useLanguage();
+
   // Estilos CSS como string para incluir las animaciones
   const styles = `
     @keyframes float1 {
@@ -248,15 +251,14 @@ const CardAnchaPage = () => {
                 color: '#fff',
                 marginBottom: '20px',
                 textAlign: 'center'
-              }}>AI Generative</h2>
+              }}>{t('aiGenerativeTitle')}</h2>
               <p style={{
                 fontSize: '1.3em',
                 marginBottom: '20px',
                 lineHeight: '1.6em',
                 textAlign: 'center'
-              }}>La IA generativa es una rama de la inteligencia artificial que crea contenido nuevo —como texto, imágenes,
-               audio o código— a partir de patrones aprendidos en grandes conjuntos de datos, utilizando modelos avanzados
-                que imitan la creatividad humana con coherencia y realismo.
+              }}>
+                {t('aiGenerativeDescription')}
               </p>
               <div style={{ textAlign: 'center' }}>
                 <Link 
@@ -285,7 +287,7 @@ const CardAnchaPage = () => {
                     target.style.border = 'none';
                     target.style.boxShadow = 'none';
                   }}
-                >Close</Link>
+                >{t('close')}</Link>
               </div>
             </div>
           </div>

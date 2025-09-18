@@ -101,6 +101,10 @@ const translations = {
     recommendationSystem: "Sistema de Recomendación",
     recommendationSystemInfo: "Un sistema de recomendación es una aplicación de inteligencia artificial que utiliza algoritmos de filtrado colaborativo o basado en contenido para sugerir productos o servicios personalizados. Estos sistemas analizan datos del comportamiento del usuario para predecir preferencias futuras.",
     
+    // CardAnchaPage
+    aiGenerativeTitle: "IA Generativa",
+    aiGenerativeDescription: "La IA generativa es una rama de la inteligencia artificial que crea contenido nuevo —como texto, imágenes, audio o código— a partir de patrones aprendidos en grandes conjuntos de datos, utilizando modelos avanzados que imitan la creatividad humana con coherencia y realismo.",
+    
     // Footer
     whatWeDo: "Qué Hacemos",
     whatWeDoContent: "Quiénes somos, qué hacemos, nuestros servicios, nuestros objetivos.",
@@ -206,6 +210,10 @@ const translations = {
     recommendationSystem: "Recommendation System",
     recommendationSystemInfo: "A recommendation system is an AI application that uses collaborative or content-based filtering algorithms to suggest personalized products or services. These systems analyze user behavior data to predict future preferences.",
     
+    // CardAnchaPage
+    aiGenerativeTitle: "Generative AI",
+    aiGenerativeDescription: "Generative AI is a branch of artificial intelligence that creates new content—such as text, images, audio or code—from patterns learned in large datasets, using advanced models that mimic human creativity with coherence and realism.",
+    
     // Footer
     whatWeDo: "What We Do",
     whatWeDoContent: "Who we are, what we do, our services, our objectives.",
@@ -310,6 +318,10 @@ const translations = {
 
     recommendationSystem: "Sistema de Recomendação",
     recommendationSystemInfo: "Um sistema de recomendação é uma aplicação de IA que utiliza algoritmos de filtragem colaborativa ou baseada em conteúdo para sugerir produtos ou serviços personalizados. Esses sistemas analisam dados de comportamento do usuário para prever preferências futuras.",
+    
+    // CardAnchaPage
+    aiGenerativeTitle: "IA Generativa", 
+    aiGenerativeDescription: "A IA generativa é um ramo da inteligência artificial que cria conteúdo novo —como texto, imagens, áudio ou código— a partir de padrões aprendidos em grandes conjuntos de dados, utilizando modelos avançados que imitam a criatividade humana com coerência e realismo.",
     
     // Footer
     whatWeDo: "O Que Fazemos",
