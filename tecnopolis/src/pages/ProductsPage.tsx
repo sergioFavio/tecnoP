@@ -89,7 +89,7 @@ const ProductsPage: React.FC = () => {
       `}</style>
 
       <div className="py-2 w-full flex justify-center">
-        <div className="rounded-2xl overflow-hidden p-0 w-[90%] sm:w-[80%] md:w-[70%] h-[80vh] md:h-[55vh] lg:h-[55vh] mx-auto shadow-lg bg-white">
+        <div className="rounded-2xl overflow-hidden p-0 w-[90%] sm:w-[80%] md:w-[70%] h-[63vh] md:h-[55vh] lg:h-[55vh] mx-auto shadow-lg bg-white">
           <div className="flex flex-col lg:flex-row h-full">
             {/* Image Section */}
             <div className="relative h-48 sm:h-64 md:h-80 w-full lg:h-full lg:w-1/3 xl:w-2/5 flex-none">
