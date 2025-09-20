@@ -716,7 +716,7 @@ const CardHologramPage = () => {
               {/* Contenido del modal */}
               <h2
                 style={{
-                  fontSize: "1.7em",
+                  fontSize: isMobile ? "0.85em" : "1.7em",
                   marginBottom: "20px",
                   textAlign: "center",
                   textShadow: "0 0 20px #00ffff",
@@ -728,11 +728,14 @@ const CardHologramPage = () => {
 
               <div
                 style={{
-                  fontSize: "1.2em",
+                  fontSize: isMobile ? "0.6em" : "1.2em",
                   lineHeight: "1.6",
                   textAlign: "justify",
                   color: "#e0f7ff",
                   textShadow: "0 0 5px #00ffff",
+                  maxHeight: isMobile ? "60vh" : "none",
+                  overflowY: isMobile ? "auto" : "visible",
+                  paddingRight: isMobile ? "10px" : "0",
                 }}
               >
                 {modalContent.content}
