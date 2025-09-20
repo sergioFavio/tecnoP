@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
+import { useLanguage } from "../component/LanguageContext";
 
 const CardHologramPage = () => {
+  const { t } = useLanguage();
   const [modalOpen, setModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState({ title: "", content: "" });
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -213,27 +215,22 @@ const CardHologramPage = () => {
 
   const cardData = [
     {
-      title: "Computer Vision (1)",
-      description:
-        "Computer Vision (Visión por Computador), concepto y objetivo.",
+      title: t('computerVision1Title'),
+      description: t('computerVision1Description'),
       gradient: "linear-gradient(315deg, #ffbc00, #ff0058)",
-      modalContent:
-        "Computer Vision (visión por computadora) es un campo de la inteligencia artificial que permite a las máquinas interpretar y comprender el mundo visual. Utiliza algoritmos y modelos de aprendizaje automático para analizar imágenes y videos, extrayendo información útil como objetos, rostros, texto o movimientos. Su objetivo es imitar la capacidad humana de ver y entender el entorno, pero con la precisión y velocidad de una máquina.",
+      modalContent: t('computerVision1Content'),
     },
     {
-      title: "Computer Vision (2)",
-      description:
-        "Aplicaciones de Computer Vision (Visión por Computador), en distintos tipos de industrias.",
+      title: t('computerVision2Title'),
+      description: t('computerVision2Description'),
       gradient: "linear-gradient(315deg, #03a9f4, #ff0058)",
-      modalContent:
-        "Esta tecnología se aplica en una amplia variedad de sectores. En la medicina, por ejemplo, ayuda a detectar enfermedades en radiografías o resonancias. En la industria automotriz, es clave para los vehículos autónomos, que deben reconocer señales de tránsito, peatones y otros vehículos. También se usa en la seguridad, el comercio minorista, la agricultura y muchas otras áreas donde la interpretación visual automatizada puede aportar eficiencia y precisión.",
+      modalContent: t('computerVision2Content'),
     },
     {
-      title: "Computer Vision (3)",
-      description: "Proceso y etapas de la Visión por Computador.",
+      title: t('computerVision3Title'),
+      description: t('computerVision3Description'),
       gradient: "linear-gradient(315deg, #4dff03, #00d0ff)",
-      modalContent:
-        "El proceso de Computer Vision generalmente incluye varias etapas: adquisición de la imagen, preprocesamiento, detección de características, clasificación y toma de decisiones. Gracias a los avances en redes neuronales profundas (deep learning), especialmente las redes convolucionales (CNN), la precisión de los sistemas de visión por computadora ha mejorado notablemente, acercándose e incluso superando en algunos casos la capacidad humana.",
+      modalContent: t('computerVision3Content'),
     },
   ];
 
@@ -510,7 +507,7 @@ const CardHologramPage = () => {
               target.style.boxShadow = "none";
             }}
           >
-            Read More
+            {t('readMore')}
           </button>
         </div>
       </div>

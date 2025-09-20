@@ -105,6 +105,19 @@ const translations = {
     aiGenerativeTitle: "IA Generativa",
     aiGenerativeDescription: "La IA generativa es una rama de la inteligencia artificial que crea contenido nuevo —como texto, imágenes, audio o código— a partir de patrones aprendidos en grandes conjuntos de datos, utilizando modelos avanzados que imitan la creatividad humana con coherencia y realismo.",
     
+    // CardHologramPage - Computer Vision
+    computerVision1Title: "Computer Vision (1)",
+    computerVision1Description: "Computer Vision (Visión por Computador), concepto y objetivo.",
+    computerVision1Content: "Computer Vision (visión por computadora) es un campo de la inteligencia artificial que permite a las máquinas interpretar y comprender el mundo visual. Utiliza algoritmos y modelos de aprendizaje automático para analizar imágenes y videos, extrayendo información útil como objetos, rostros, texto o movimientos. Su objetivo es imitar la capacidad humana de ver y entender el entorno, pero con la precisión y velocidad de una máquina.",
+
+    computerVision2Title: "Computer Vision (2)",
+    computerVision2Description: "Aplicaciones de Computer Vision (Visión por Computador), en distintos tipos de industrias.",
+    computerVision2Content: "Esta tecnología se aplica en una amplia variedad de sectores. En la medicina, por ejemplo, ayuda a detectar enfermedades en radiografías o resonancias. En la industria automotriz, es clave para los vehículos autónomos, que deben reconocer señales de tránsito, peatones y otros vehículos. También se usa en la seguridad, el comercio minorista, la agricultura y muchas otras áreas donde la interpretación visual automatizada puede aportar eficiencia y precisión.",
+
+    computerVision3Title: "Computer Vision (3)",
+    computerVision3Description: "Proceso y etapas de la Visión por Computador.",
+    computerVision3Content: "El proceso de Computer Vision generalmente incluye varias etapas: adquisición de la imagen, preprocesamiento, detección de características, clasificación y toma de decisiones. Gracias a los avances en redes neuronales profundas (deep learning), especialmente las redes convolucionales (CNN), la precisión de los sistemas de visión por computadora ha mejorado notablemente, acercándose e incluso superando en algunos casos la capacidad humana.",
+    
     // Footer
     whatWeDo: "Qué Hacemos",
     whatWeDoContent: "Quiénes somos, qué hacemos, nuestros servicios, nuestros objetivos.",
@@ -214,6 +227,19 @@ const translations = {
     aiGenerativeTitle: "Generative AI",
     aiGenerativeDescription: "Generative AI is a branch of artificial intelligence that creates new content—such as text, images, audio or code—from patterns learned in large datasets, using advanced models that mimic human creativity with coherence and realism.",
     
+    // CardHologramPage - Computer Vision
+    computerVision1Title: "Computer Vision (1)",
+    computerVision1Description: "Computer Vision concept and objective.",
+    computerVision1Content: "Computer Vision is a field of artificial intelligence that enables machines to interpret and understand the visual world. It uses algorithms and machine learning models to analyze images and videos, extracting useful information such as objects, faces, text or movements. Its goal is to mimic the human ability to see and understand the environment, but with the precision and speed of a machine.",
+
+    computerVision2Title: "Computer Vision (2)",
+    computerVision2Description: "Computer Vision applications in different types of industries.",
+    computerVision2Content: "This technology is applied in a wide variety of sectors. In medicine, for example, it helps detect diseases in X-rays or MRI scans. In the automotive industry, it is key for autonomous vehicles, which must recognize traffic signs, pedestrians and other vehicles. It is also used in security, retail, agriculture and many other areas where automated visual interpretation can provide efficiency and precision.",
+
+    computerVision3Title: "Computer Vision (3)",
+    computerVision3Description: "Computer Vision process and stages.",
+    computerVision3Content: "The Computer Vision process generally includes several stages: image acquisition, preprocessing, feature detection, classification and decision making. Thanks to advances in deep neural networks, especially convolutional neural networks (CNN), the accuracy of computer vision systems has improved remarkably, approaching and even surpassing human capability in some cases.",
+    
     // Footer
     whatWeDo: "What We Do",
     whatWeDoContent: "Who we are, what we do, our services, our objectives.",
@@ -322,6 +348,19 @@ const translations = {
     // CardAnchaPage
     aiGenerativeTitle: "IA Generativa", 
     aiGenerativeDescription: "A IA generativa é um ramo da inteligência artificial que cria conteúdo novo —como texto, imagens, áudio ou código— a partir de padrões aprendidos em grandes conjuntos de dados, utilizando modelos avançados que imitam a criatividade humana com coerência e realismo.",
+    
+    // CardHologramPage - Computer Vision
+    computerVision1Title: "Computer Vision (1)",
+    computerVision1Description: "Computer Vision (Visão Computacional), conceito e objetivo.",
+    computerVision1Content: "Computer Vision (visão computacional) é um campo da inteligência artificial que permite às máquinas interpretar e compreender o mundo visual. Utiliza algoritmos e modelos de aprendizado automático para analisar imagens e vídeos, extraindo informações úteis como objetos, rostos, texto ou movimentos. Seu objetivo é imitar a capacidade humana de ver e entender o ambiente, mas com a precisão e velocidade de uma máquina.",
+
+    computerVision2Title: "Computer Vision (2)",
+    computerVision2Description: "Aplicações de Computer Vision (Visão Computacional), em diferentes tipos de indústrias.",
+    computerVision2Content: "Esta tecnologia é aplicada em uma ampla variedade de setores. Na medicina, por exemplo, ajuda a detectar doenças em radiografias ou ressonâncias. Na indústria automotiva, é fundamental para veículos autônomos, que devem reconhecer sinais de trânsito, pedestres e outros veículos. Também é usada em segurança, comércio varejista, agricultura e muitas outras áreas onde a interpretação visual automatizada pode fornecer eficiência e precisão.",
+
+    computerVision3Title: "Computer Vision (3)",
+    computerVision3Description: "Processo e etapas da Visão Computacional.",
+    computerVision3Content: "O processo de Computer Vision geralmente inclui várias etapas: aquisição da imagem, pré-processamento, detecção de características, classificação e tomada de decisões. Graças aos avanços em redes neurais profundas (deep learning), especialmente as redes convolucionais (CNN), a precisão dos sistemas de visão computacional melhorou notavelmente, aproximando-se e até mesmo superando em alguns casos a capacidade humana.",
     
     // Footer
     whatWeDo: "O Que Fazemos",
