@@ -27,10 +27,10 @@ const ContactForm = () => {
         <div className="hidden lg:flex flex-col gap-3">
           <h3 className="font-bold mt-2">{t('interestTitle')}</h3>
           <div className="flex gap-1 flex-wrap">
-            <CheckBox text={t('option1')} name="interes" />
-            <CheckBox text={t('option2')} name="interes" />
-            <CheckBox text={t('option3')} name="interes" />
-            <CheckBox text={t('option4')} name="interes" />
+            <CheckBox text={t('AI Generative')} name="interes" />
+            <CheckBox text={t('Natural Language Processing')} name="interes" />
+            <CheckBox text={t('Computer Vision')} name="interes" />
+            <CheckBox text={t('Virtual Assistants')} name="interes" />
           </div>
         </div>
         <Input
