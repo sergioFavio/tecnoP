@@ -86,6 +86,49 @@ const ProductsPage: React.FC = () => {
           background-size: cover;
           background-position: center;
         }
+
+        /* Estilos para el scroll personalizado */
+        .description-scroll {
+          max-height: calc(1.5em * 5); /* Aproximadamente 7 líneas */
+          overflow-y: auto;
+        }
+
+        /* Scrollbar personalizado para el contenedor de descripción */
+        .description-scroll::-webkit-scrollbar {
+          width: 6px;
+        }
+
+        .description-scroll::-webkit-scrollbar-track {
+          background: rgba(0, 0, 0, 0.1);
+          border-radius: 3px;
+        }
+
+        .description-scroll::-webkit-scrollbar-thumb {
+          background: rgba(0, 0, 0, 0.3);
+          border-radius: 3px;
+        }
+
+        .description-scroll::-webkit-scrollbar-thumb:hover {
+          background: rgba(0, 0, 0, 0.5);
+        }
+
+        /* Para Firefox */
+        .description-scroll {
+          scrollbar-width: thin;
+          scrollbar-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.1);
+        }
+
+        /* Gradiente para indicar que hay más contenido */
+        .description-scroll::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 20px;
+          background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.8));
+          pointer-events: none;
+        }
       `}</style>
 
       <div className="py-2 w-full flex justify-center">
@@ -132,10 +175,10 @@ const ProductsPage: React.FC = () => {
                     ))}
                   </header>
 
-                  {/* Tab Content */}
-                  <div className="border p-2 md:p-3 flex-1 overflow-y-auto rounded-b-xl rounded-tr-xl">
-                    <div className="block">
-                      <p className="text-xs md:text-sm text-gray-500">
+                  {/* Tab Content - Contenedor con scroll personalizado */}
+                  <div className="border p-2 md:p-3 flex-1 rounded-b-xl rounded-tr-xl relative">
+                    <div className="description-scroll relative">
+                      <p className="text-xs md:text-sm text-gray-500 leading-relaxed">
                         <span className={`font-bold ${getColorClass(currentProject.color)}`}>
                           &nbsp;{currentProject.title}&nbsp;
                         </span>
