@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useLanguage } from '../component/LanguageContext';
 import "./WhatWeDoPage.css";
 
@@ -6,6 +6,19 @@ const WhatWeDoPage = () => {
   const { t } = useLanguage();
   const [modalOpen, setModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState({ title: '', content: '', color: '' });
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detectar si estamos en modo móvil
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   const faceData: Record<string, {
     title: string;
@@ -57,6 +70,10 @@ const WhatWeDoPage = () => {
     event.stopPropagation();
     openModal(face);
   };
+
+  // Calcular tamaños de fuente según si es móvil o no
+  const titleFontSize = isMobile ? '1.5em' : '2.5em'; // 60% del tamaño original (40% de reducción)
+  const contentFontSize = isMobile ? '0.78em' : '1.3em'; // 60% del tamaño original (40% de reducción)
 
   return (
     <>
@@ -127,7 +144,7 @@ const WhatWeDoPage = () => {
                 background: 'rgba(20, 20, 40, 0.95)',
                 border: `2px solid ${modalContent.color}`,
                 borderRadius: '15px',
-                padding: '40px',
+                padding: isMobile ? '30px' : '40px',
                 backdropFilter: 'blur(15px)',
                 boxShadow: `0 0 50px ${modalContent.color}40, inset 0 0 50px ${modalContent.color}20, 0 0 100px ${modalContent.color}30`,
                 overflow: 'auto',
@@ -140,8 +157,8 @@ const WhatWeDoPage = () => {
                 position: 'absolute',
                 top: '15px',
                 left: '15px',
-                width: '40px',
-                height: '40px',
+                width: isMobile ? '30px' : '40px',
+                height: isMobile ? '30px' : '40px',
                 borderTop: `3px solid ${modalContent.color}`,
                 borderLeft: `3px solid ${modalContent.color}`,
                 opacity: 0.8
@@ -150,8 +167,8 @@ const WhatWeDoPage = () => {
                 position: 'absolute',
                 top: '15px',
                 right: '15px',
-                width: '40px',
-                height: '40px',
+                width: isMobile ? '30px' : '40px',
+                height: isMobile ? '30px' : '40px',
                 borderTop: `3px solid ${modalContent.color}`,
                 borderRight: `3px solid ${modalContent.color}`,
                 opacity: 0.8
@@ -160,8 +177,8 @@ const WhatWeDoPage = () => {
                 position: 'absolute',
                 bottom: '15px',
                 left: '15px',
-                width: '40px',
-                height: '40px',
+                width: isMobile ? '30px' : '40px',
+                height: isMobile ? '30px' : '40px',
                 borderBottom: `3px solid ${modalContent.color}`,
                 borderLeft: `3px solid ${modalContent.color}`,
                 opacity: 0.8
@@ -170,8 +187,8 @@ const WhatWeDoPage = () => {
                 position: 'absolute',
                 bottom: '15px',
                 right: '15px',
-                width: '40px',
-                height: '40px',
+                width: isMobile ? '30px' : '40px',
+                height: isMobile ? '30px' : '40px',
                 borderBottom: `3px solid ${modalContent.color}`,
                 borderRight: `3px solid ${modalContent.color}`,
                 opacity: 0.8
@@ -187,9 +204,9 @@ const WhatWeDoPage = () => {
                   background: 'transparent',
                   border: `2px solid ${modalContent.color}`,
                   color: modalContent.color,
-                  fontSize: '24px',
-                  width: '40px',
-                  height: '40px',
+                  fontSize: isMobile ? '18px' : '24px',
+                  width: isMobile ? '32px' : '40px',
+                  height: isMobile ? '32px' : '40px',
                   borderRadius: '50%',
                   cursor: 'pointer',
                   display: 'flex',
@@ -217,11 +234,11 @@ const WhatWeDoPage = () => {
 
               {/* Modal content */}
               <h2 style={{
-                fontSize: '2.5em',
-                marginBottom: '30px',
+                fontSize: titleFontSize,
+                marginBottom: isMobile ? '20px' : '30px',
                 textAlign: 'center',
                 textShadow: `0 0 20px ${modalContent.color}`,
-                letterSpacing: '2px',
+                letterSpacing: isMobile ? '1px' : '2px',
                 color: modalContent.color,
                 fontWeight: 'bold'
               }}>
@@ -229,12 +246,12 @@ const WhatWeDoPage = () => {
               </h2>
               
               <div style={{
-                fontSize: '1.3em',
+                fontSize: contentFontSize,
                 lineHeight: '1.8',
                 textAlign: 'justify',
                 color: '#e0f0ff',
                 textShadow: `0 0 5px ${modalContent.color}`,
-                padding: '0 10px'
+                padding: isMobile ? '0 5px' : '0 10px'
               }}>
                 {modalContent.content}
               </div>
@@ -244,8 +261,8 @@ const WhatWeDoPage = () => {
                 position: 'absolute',
                 top: '50%',
                 left: '0',
-                width: '6px',
-                height: '60px',
+                width: isMobile ? '4px' : '6px',
+                height: isMobile ? '40px' : '60px',
                 background: `linear-gradient(to bottom, transparent, ${modalContent.color}, transparent)`,
                 transform: 'translateY(-50%)',
                 opacity: 0.6,
@@ -255,8 +272,8 @@ const WhatWeDoPage = () => {
                 position: 'absolute',
                 top: '50%',
                 right: '0',
-                width: '6px',
-                height: '60px',
+                width: isMobile ? '4px' : '6px',
+                height: isMobile ? '40px' : '60px',
                 background: `linear-gradient(to bottom, transparent, ${modalContent.color}, transparent)`,
                 transform: 'translateY(-50%)',
                 opacity: 0.6,
