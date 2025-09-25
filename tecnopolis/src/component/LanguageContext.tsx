@@ -50,12 +50,12 @@ const translations = {
     goToArticle: "Ir al artículo",
     
     // WhatWeDoPage - Cube faces
-    frontFace: "Inicio",
-    backFace: "Atrás", 
-    rightFace: "Derecha",
-    leftFace: "Izquierda",
-    topFace: "Arriba",
-    bottomFace: "Abajo",
+    frontFace: "Misión",
+    backFace: "Visión", 
+    rightFace: "Servicios",
+    leftFace: "Equipo",
+    topFace: "Logros",
+    bottomFace: "Contacto",
     
     // WhatWeDoPage - Modal titles and content
     frontFaceTitle: "Nuestra Misión",
@@ -172,12 +172,12 @@ const translations = {
     goToArticle: "Go to article",
     
     // WhatWeDoPage - Cube faces
-    frontFace: "Front",
-    backFace: "Back",
-    rightFace: "Right", 
-    leftFace: "Left",
-    topFace: "Top",
-    bottomFace: "Bottom",
+    frontFace: "Our Mission",
+    backFace: "Our Vision",
+    rightFace: "Our Services", 
+    leftFace: "Our Team",
+    topFace: "Achievements",
+    bottomFace: "Contact",
     
     // WhatWeDoPage - Modal titles and content
     frontFaceTitle: "Our Mission",
@@ -294,12 +294,12 @@ const translations = {
     goToArticle: "Ir ao artigo",
     
     // WhatWeDoPage - Cube faces
-    frontFace: "Frente",
-    backFace: "Atrás",
-    rightFace: "Direita",
-    leftFace: "Esquerda", 
-    topFace: "Topo",
-    bottomFace: "Base",
+    frontFace: "Missão",
+    backFace: "Visão",
+    rightFace: "Serviços",
+    leftFace: "Equipe", 
+    topFace: "Conquistas",
+    bottomFace: "Contato",
     
     // WhatWeDoPage - Modal titles and content
     frontFaceTitle: "Nossa Missão",
@@ -314,7 +314,7 @@ const translations = {
     leftFaceTitle: "Nossa Equipe",
     leftFaceContent: "Contamos com uma equipe multidisciplinar de engenheiros de sistemas, cientistas de dados, especialistas em machine learning e experts em UX/UI. Nossa abordagem colaborativa e paixão pela inovação nos permite entregar soluções que superam expectativas.",
     
-    topFaceTitle: "Nossos Conquistas",
+    topFaceTitle: "Nossas Conquistas",
     topFaceContent: "Desenvolvemos com sucesso projetos como Doctor Tomatto para detecção de pragas, Atenea Byte para geração de conteúdo radial, e Camila Plejia para assistência a pessoas com mobilidade reduzida. Essas conquistas refletem nosso compromisso com a inovação social.",
     
     bottomFaceTitle: "Contato",
