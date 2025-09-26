@@ -1,3 +1,5 @@
+import { VITE_BACKEND } from "../constants/environment";
+
 interface SendEmailDTO {
   name: string;
   email: string;
@@ -11,7 +13,7 @@ interface SendEmailResponse {
 }
 
 export const sendEmail = async (body: SendEmailDTO): Promise<SendEmailResponse> => {
-  const response = await fetch("http://localhost:5000/api/contact", {
+  const response = await fetch(VITE_BACKEND +"api/contact", {
     method: "POST",
     body: JSON.stringify(body),
     headers: {
