@@ -29,10 +29,10 @@ const translations = {
     
     // ContactForm
     interestTitle: "Tengo interés en ...",
-    option1: "opción 1",
-    option2: "opción 2", 
-    option3: "opción 3",
-    option4: "opción 4",
+    option1: "IA Generativa",
+    option2: "Proces. Lenguaje Natural", 
+    option3: "Visión por Computador",
+    option4: "Asistentes Virtuales",
     yourName: "Tu Nombre",
     yourEmail: "Tu Email",
     yourMessage: "Tu Mensaje",
@@ -151,10 +151,10 @@ const translations = {
     
     // ContactForm
     interestTitle: "I'm interested in ...",
-    option1: "option 1",
-    option2: "option 2",
-    option3: "option 3", 
-    option4: "option 4",
+    option1: "AI Generative",
+    option2: "Natural Language Processing",
+    option3: "Computer Vision", 
+    option4: "Virtual Assistants",
     yourName: "Your Name",
     yourEmail: "Your Email",
     yourMessage: "Your Message",
@@ -273,10 +273,10 @@ const translations = {
     
     // ContactForm
     interestTitle: "Tenho interesse em ...",
-    option1: "opção 1",
-    option2: "opção 2",
-    option3: "opção 3",
-    option4: "opção 4", 
+    option1: "IA Generativa",
+    option2: "Proces. Linguagem Natural",
+    option3: "Visão Computacional",
+    option4: "Assistentes Virtuais", 
     yourName: "Seu Nome",
     yourEmail: "Seu Email",
     yourMessage: "Sua Mensagem",
