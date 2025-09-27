@@ -18,7 +18,7 @@ const TechnologyPage = () => {
           </Link>
         </li>
         <li>
-          <Link to="/technology/spread_fx_gallery">
+          <Link to="/technology/spread_fx_gallery_nlp">
             <i className="fa fa-google-plus" aria-hidden="true"></i>
             <span> - NLP Natural La..</span>
           </Link>

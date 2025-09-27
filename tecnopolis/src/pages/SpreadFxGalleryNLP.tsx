@@ -98,34 +98,34 @@ const SpreadFxGallery = () => {
     {
       width: 120,
       height: 80,
-      image: 'https://tecnopolis.pythonanywhere.com/assets/vassistants01sp.png',
+      image: 'https://tecnopolis.pythonanywhere.com/assets/tecnologia01sp.png',
       //text: 'La creatividad es la inteligencia divirtiéndose. Cada idea que surge de la imaginación tiene el potencial de transformar el mundo. '
     },
     {
       width: 90,
       height: 130,
-      image: 'https://tecnopolis.pythonanywhere.com/assets/vassistants02sp.png'
+      image: 'https://tecnopolis.pythonanywhere.com/assets/tecnologia02sp.png'
       //text: 'El arte y la tecnología se fusionan para crear experiencias inmersivas que desafían nuestra percepción de la realidad. Cada interacción es una oportunidad para descubrir algo nuevo.'
     },
     {
       width: 130,
       height: 90,
-      image: 'https://tecnopolis.pythonanywhere.com/assets/vassistants03sp.png' // 'http://localhost:5173/src/asset/ai_model.png' 
+      image: 'https://tecnopolis.pythonanywhere.com/assets/tecnologia03sp.png' // 'http://localhost:5173/src/asset/ai_model.png' 
     },
     {
       width: 120,
       height: 80,
-      image: 'https://tecnopolis.pythonanywhere.com/assets/vassistants04sp.png' // 'https://picsum.photos/1200/800?random=1005'
+      image: 'https://tecnopolis.pythonanywhere.com/assets/tecnologia04sp.png' // 'https://picsum.photos/1200/800?random=1005'
     },
     {
       width: 64,
       height: 84,
-      image: 'https://tecnopolis.pythonanywhere.com/assets/vassistants05sp.png'  //'https://picsum.photos/1042/1356?random=978'
+      image: 'https://tecnopolis.pythonanywhere.com/assets/tecnologia05sp.png'  //'https://picsum.photos/1042/1356?random=978'
     },
     {
       width: 100,
       height: 66,
-      image: 'https://tecnopolis.pythonanywhere.com/assets/vassistants06sp.png' //'https://picsum.photos/1000/666?random=943'
+      image: 'https://tecnopolis.pythonanywhere.com/assets/tecnologia06sp.png' //'https://picsum.photos/1000/666?random=943'
     }
   ];
 
