@@ -36,7 +36,7 @@ const ProductsPage: React.FC = () => {
       id: 3,
       title: 'Camila Plejia',
       descriptionKey: 'camilaPlejiaDescription',
-      videoUrl: 'https://www.youtube.com/watch?v=iPhoCedKH-c',
+      videoUrl: 'https://youtu.be/vWf83FoxJVo',
       imageUrl: '/img/projects/proyectoProfesoraDislexia.jpg',
       color: 'blue'
     }
