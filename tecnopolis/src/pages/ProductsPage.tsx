@@ -28,7 +28,7 @@ const ProductsPage: React.FC = () => {
       id: 2,
       title: 'Atenea Byte',
       descriptionKey: 'ateneaByteDescription',
-      videoUrl: 'https://www.youtube.com/embed/3Y8tCoTvZKw',
+      videoUrl: 'https://www.youtube.com/embed/UAQWd9OpB9w?si=YS2AU1qsVCS_9CMa',
       imageUrl: '/img/projects/proyectoAteneaByte.jpg',
       color: 'green'
     },
@@ -36,7 +36,7 @@ const ProductsPage: React.FC = () => {
       id: 3,
       title: 'Camila Plejia',
       descriptionKey: 'camilaPlejiaDescription',
-      videoUrl: 'https://youtu.be/vWf83FoxJVo',
+      videoUrl: 'https://www.youtube.com/embed/vWf83FoxJVo?si=yn2W0P3xkiQYlgFE',
       imageUrl: '/img/projects/proyectoProfesoraDislexia.jpg',
       color: 'blue'
     }
