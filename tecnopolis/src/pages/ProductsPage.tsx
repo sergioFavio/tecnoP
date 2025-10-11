@@ -28,7 +28,7 @@ const ProductsPage: React.FC = () => {
       id: 2,
       title: 'Atenea Byte',
       descriptionKey: 'ateneaByteDescription',
-      videoUrl: 'https://www.youtube.com/embed/UAQWd9OpB9w?si=YS2AU1qsVCS_9CMa',
+      videoUrl: 'https://www.youtube.com/embed/tirN-ZtSSBQ?si=vk4Ie8wPc7KCRDbz',
       imageUrl: '/img/projects/proyectoAteneaByte.jpg',
       color: 'green'
     },

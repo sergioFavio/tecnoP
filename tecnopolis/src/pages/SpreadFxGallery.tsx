@@ -1,4 +1,5 @@
 import React, { type CSSProperties } from 'react';
+import { useLanguage } from '../component/LanguageContext'; // Ajusta la ruta según tu estructura
 
 interface CubeConfig{
   width: number;
@@ -8,6 +9,8 @@ interface CubeConfig{
 }
 
 const SpreadFxGallery = () => {
+  const { t } = useLanguage(); // Hook para acceder a las traducciones
+  
   const styles: Record<string, CSSProperties> = {
     container: {
       minHeight: '100vh',
@@ -94,38 +97,39 @@ const SpreadFxGallery = () => {
     }
   };
 
+  // Obtener las imágenes desde las traducciones según el idioma actual
+  const galleryImages = t('gallery_va.images') as string[];
+
   const cubeConfigs: CubeConfig[] = [
     {
       width: 120,
       height: 80,
-      image: 'https://tecnopolis.pythonanywhere.com/assets/vassistants01sp.png',
-      //text: 'La creatividad es la inteligencia divirtiéndose. Cada idea que surge de la imaginación tiene el potencial de transformar el mundo. '
+      image: galleryImages[0]
     },
     {
       width: 90,
       height: 130,
-      image: 'https://tecnopolis.pythonanywhere.com/assets/vassistants02sp.png'
-      //text: 'El arte y la tecnología se fusionan para crear experiencias inmersivas que desafían nuestra percepción de la realidad. Cada interacción es una oportunidad para descubrir algo nuevo.'
+      image: galleryImages[1]
     },
     {
       width: 130,
       height: 90,
-      image: 'https://tecnopolis.pythonanywhere.com/assets/vassistants03sp.png' // 'http://localhost:5173/src/asset/ai_model.png' 
+      image: galleryImages[2]
     },
     {
       width: 120,
       height: 80,
-      image: 'https://tecnopolis.pythonanywhere.com/assets/vassistants04sp.png' // 'https://picsum.photos/1200/800?random=1005'
+      image: galleryImages[3]
     },
     {
       width: 64,
       height: 84,
-      image: 'https://tecnopolis.pythonanywhere.com/assets/vassistants05sp.png'  //'https://picsum.photos/1042/1356?random=978'
+      image: galleryImages[4]
     },
     {
       width: 100,
       height: 66,
-      image: 'https://tecnopolis.pythonanywhere.com/assets/vassistants06sp.png' //'https://picsum.photos/1000/666?random=943'
+      image: galleryImages[5]
     }
   ];
 

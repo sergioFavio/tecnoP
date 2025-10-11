@@ -6,7 +6,7 @@ type Language = 'es' | 'en' | 'pt';
 interface LanguageContextType {
   currentLanguage: Language;
   setCurrentLanguage: (language: Language) => void;
-  t: (key: string) => string;
+  t: (key: string) => any; // Cambiado de string a any para soportar objetos anidados
 }
 
 const translations = {
@@ -105,6 +105,18 @@ const translations = {
     aiGenerativeTitle: "IA Generativa",
     aiGenerativeDescription: "La IA generativa es una rama de la inteligencia artificial que crea contenido nuevo —como texto, imágenes, audio o código— a partir de patrones aprendidos en grandes conjuntos de datos, utilizando modelos avanzados que imitan la creatividad humana con coherencia y realismo.",
     
+    // gallery_va virtual assistants
+    gallery_va: {
+      images: [
+        'https://tecnopolis.pythonanywhere.com/assets/vassistants01sp.png',
+        'https://tecnopolis.pythonanywhere.com/assets/vassistants02sp.png',
+        'https://tecnopolis.pythonanywhere.com/assets/vassistants03sp.png',
+        'https://tecnopolis.pythonanywhere.com/assets/vassistants04sp.png',
+        'https://tecnopolis.pythonanywhere.com/assets/vassistants05sp.png',
+        'https://tecnopolis.pythonanywhere.com/assets/vassistants06sp.png'
+      ]
+    },
+
     // CardHologramPage - Computer Vision
     computerVision1Title: "Computer Vision (1)",
     computerVision1Description: "Computer Vision (Visión por Computador), concepto y objetivo.",
@@ -227,6 +239,18 @@ const translations = {
     aiGenerativeTitle: "Generative AI",
     aiGenerativeDescription: "Generative AI is a branch of artificial intelligence that creates new content—such as text, images, audio or code—from patterns learned in large datasets, using advanced models that mimic human creativity with coherence and realism.",
     
+    // gallery_va virtual assistants
+    gallery_va: {
+      images: [
+        'https://tecnopolis.pythonanywhere.com/assets/vassistants01en.png',
+        'https://tecnopolis.pythonanywhere.com/assets/vassistants02en.png',
+        'https://tecnopolis.pythonanywhere.com/assets/vassistants03en.png',
+        'https://tecnopolis.pythonanywhere.com/assets/vassistants04en.png',
+        'https://tecnopolis.pythonanywhere.com/assets/vassistants05en.png',
+        'https://tecnopolis.pythonanywhere.com/assets/vassistants06en.png'
+      ]
+    },
+
     // CardHologramPage - Computer Vision
     computerVision1Title: "Computer Vision (1)",
     computerVision1Description: "Computer Vision concept and objective.",
@@ -349,6 +373,18 @@ const translations = {
     aiGenerativeTitle: "IA Generativa", 
     aiGenerativeDescription: "A IA generativa é um ramo da inteligência artificial que cria conteúdo novo —como texto, imagens, áudio ou código— a partir de padrões aprendidos em grandes conjuntos de dados, utilizando modelos avançados que imitam a criatividade humana com coerência e realismo.",
     
+    // gallery_va virtual assistans
+    gallery_va: {
+      images: [
+        'https://tecnopolis.pythonanywhere.com/assets/vassistants01pt.png',
+        'https://tecnopolis.pythonanywhere.com/assets/vassistants02pt.png',
+        'https://tecnopolis.pythonanywhere.com/assets/vassistants03pt.png',
+        'https://tecnopolis.pythonanywhere.com/assets/vassistants04pt.png',
+        'https://tecnopolis.pythonanywhere.com/assets/vassistants05pt.png',
+        'https://tecnopolis.pythonanywhere.com/assets/vassistants06pt.png'
+      ]
+    },
+
     // CardHologramPage - Computer Vision
     computerVision1Title: "Computer Vision (1)",
     computerVision1Description: "Computer Vision (Visão Computacional), conceito e objetivo.",
@@ -383,8 +419,20 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [currentLanguage, setCurrentLanguage] = useState<Language>('en');
 
-  const t = (key: string): string => {
-    return translations[currentLanguage][key as keyof typeof translations[typeof currentLanguage]] || key;
+  const t = (key: string): any => {
+    // Separar la clave por puntos para acceder a objetos anidados
+    const keys = key.split('.');
+    let result: any = translations[currentLanguage];
+    
+    for (const k of keys) {
+      if (result && typeof result === 'object' && k in result) {
+        result = result[k];
+      } else {
+        return key; // Retornar la clave si no se encuentra
+      }
+    }
+    
+    return result;
   };
 
   return (
