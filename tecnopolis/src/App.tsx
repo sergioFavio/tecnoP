@@ -1,5 +1,5 @@
 import { HashRouter, Route, Routes } from "react-router-dom";
-import { LanguageProvider } from './component/LanguageContext';
+import { LanguageProvider } from "./component/LanguageContext";
 import Layout from "./templates/Layout";
 import HomePage from "./pages/HomePage";
 import ContactPage from "./pages/ContactPage";
@@ -17,8 +17,14 @@ import CardAnchaPage from "./pages/CardAnchaPage";
 import CardServicePage from "./pages/CardServicePage";
 import BlogPage from "./pages/BlogPage";
 import LayoutFooter from "./templates/LayoutFooter";
+import { useEffect } from "react";
+//import { VITE_BACKEND } from "./constants/environment";
 
 function App() {
+  useEffect(() => {
+    fetch( "/api/myip");
+  }, []);
+
   return (
     <LanguageProvider>
       <HashRouter>
@@ -44,7 +50,10 @@ function App() {
             <Route path="/products" element={<ProductsPage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/contact" element={<ContactPage />} />
-            <Route path="/services/card_service" element={<CardServicePage />} />
+            <Route
+              path="/services/card_service"
+              element={<CardServicePage />}
+            />
           </Route>
 
           <Route path="/" element={<Layout />}></Route>

@@ -5,6 +5,8 @@ interface SendEmailDTO {
   email: string;
   message: string;
   telephone: string;
+  intereses: string
+
 }
 
 interface SendEmailResponse {

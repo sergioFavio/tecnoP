@@ -8,11 +8,38 @@ import { sendEmail } from "../../api/contactService";
 
 const ContactForm = () => {
   const { t } = useLanguage();
-  const [form, setForm] = useState({
+
+  const intereses = [
+    {
+      id: 1,
+      text: t("option1"),
+    },
+    {
+      id: 2,
+      text: t("option2"),
+    },
+    {
+      id: 3,
+      text: t("option3"),
+    },
+    {
+      id: 4,
+      text: t("option4"),
+    },
+  ];
+
+  const [form, setForm] = useState<{
+    name: string;
+    email: string;
+    message: string;
+    telephone: string;
+    intereses: number[];
+  }>({
     name: "",
     email: "",
     message: "",
     telephone: "",
+    intereses: [],
   });
 
   const handleSend = async () => {
@@ -32,18 +59,27 @@ const ContactForm = () => {
       return alert("telephone is required");
     }
 
-    const telregexp = /^\+?\d{7,15}$/
+    const telregexp = /^\+?\d{7,15}$/;
     if (!telregexp.test(form.telephone)) {
       return alert("only + without spaces, numbers is required");
     }
-    const response = await sendEmail(form);
+    const response = await sendEmail({
+      ...form,
+      intereses: form.intereses
+        .map(
+          (interesid) =>
+            intereses.find((interes) => interes.id === interesid)?.text ?? ""
+        )
+        .join(", "),
+    });
     alert(`${response.status}: ${response.message}`);
     setForm({
-      name:"",
+      name: "",
       email: "",
       message: "",
-      telephone: ""
-    })
+      telephone: "",
+      intereses: [],
+    });
   };
 
   return (
@@ -53,10 +89,29 @@ const ContactForm = () => {
         <div className="hidden lg:flex flex-col gap-3">
           <h3 className="font-bold mt-2">{t("interestTitle")}</h3>
           <div className="flex gap-1 flex-wrap">
-            <CheckBox text={t("option1")} name="interes" />
-            <CheckBox text={t("option2")} name="interes" />
-            <CheckBox text={t("option3")} name="interes" />
-            <CheckBox text={t("option4")} name="interes" />
+            {intereses.map((interes) => (
+              <CheckBox
+                key={interes.id}
+                text={interes.text}
+                name="interes"
+                checked={form.intereses.includes(interes.id)}
+                onChange={(checked) => {
+                  if (!checked) {
+                    setForm((prev) => ({
+                      ...prev,
+                      intereses: prev.intereses.filter(
+                        (interesid) => interesid !== interes.id
+                      ),
+                    }));
+                  } else {
+                    setForm((prev) => ({
+                      ...prev,
+                      intereses: [...prev.intereses, interes.id],
+                    }));
+                  }
+                }}
+              />
+            ))}
           </div>
         </div>
         <Input
